@@ -1,63 +1,102 @@
+# app.py
 import streamlit as st
 import pandas as pd
-import requests
-from io import BytesIO
+import plotly.express as px
+import plotly.graph_objects as go
 
-# ==========================================
-# CONFIGURAÇÃO DA PÁGINA
-# ==========================================
-st.set_page_config(page_title="TCC - Evasão EaD", layout="wide")
+st.set_page_config(
+    page_title="Evasão EaD | TCC Univesp",
+    page_icon="🎓",
+    layout="wide"
+)
 
-st.title("📊 Análise de Evasão no Ensino Superior a Distância")
-st.markdown("### Comparação entre os anos de 2023 e 2024")
-st.markdown("---")
+COR_2023, COR_2024 = "#2E86AB", "#E84855"
+COR_COM, COR_SEM   = "#3BB273", "#F4A259"
 
-# ==========================================
-# CARREGAR DADOS (com cache para não recarregar toda hora)
-# ==========================================
 @st.cache_data
-def carregar_dados(url, nome):
-    """Carrega CSV diretamente do Google Drive"""
+def load(nome):
+    return pd.read_csv(f"streamlit_data/{nome}.csv")
+
+# Cabeçalho
+st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
+st.caption("TCC — Ciência de Dados | Univesp 2026 · Fonte: Censo INEP 2023-2024")
+st.divider()
+
+# KPIs
+kpi = load("kpi")
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Cursos EaD 2023", f"{kpi[kpi.ano==2023]['n_cursos'].values[0]:,.0f}")
+c2.metric("Cursos EaD 2024", f"{kpi[kpi.ano==2024]['n_cursos'].values[0]:,.0f}")
+t23 = kpi[kpi.ano==2023]['taxa_media'].values[0]
+t24 = kpi[kpi.ano==2024]['taxa_media'].values[0]
+c3.metric("Taxa Média 2023", f"{t23:.1%}")
+c4.metric("Taxa Média 2024", f"{t24:.1%}", delta=f"{t24-t23:+.1%}")
+
+st.divider()
+
+tabs = st.tabs(["🏫 Rede", "🗺️ Região", "🏛️ Organização",
+                "💰 Apoio Financeiro", "👤 Sexo", "📊 Distribuição"])
+
+def bar_chart(df, x, y, title, ylim=0.65):
+    fig = px.bar(df, x=x, y=y, color="ano", barmode="group",
+                 color_discrete_map={2023: COR_2023, 2024: COR_2024},
+                 text=df[y].map(lambda v: f"{v:.1%}"),
+                 title=title,
+                 labels={y: "Taxa Média de Evasão", "ano": "Ano"})
+    fig.update_traces(textposition="outside")
+    fig.update_layout(yaxis_tickformat=".0%", yaxis_range=[0, ylim],
+                      plot_bgcolor="white", paper_bgcolor="#fafafa")
+    return fig
+
+with tabs[0]:
+    df = load("rede")
+    st.plotly_chart(bar_chart(df, "Rede", "taxa_media",
+                    "Evasão por Rede de Ensino"), use_container_width=True)
+
+with tabs[1]:
+    df = load("regiao")
+    st.plotly_chart(bar_chart(df, "Região", "taxa_media",
+                    "Evasão por Região"), use_container_width=True)
+
+with tabs[2]:
+    df = load("org")
+    st.plotly_chart(bar_chart(df, "Organização", "taxa_media",
+                    "Evasão por Organização Acadêmica", ylim=0.75),
+                    use_container_width=True)
+
+with tabs[3]:
+    df = load("apoio")
+    fig = px.bar(df, x="Programa", y="taxa_media", color="Situação",
+                 facet_col="ano", barmode="group",
+                 color_discrete_map={"Com apoio": COR_COM, "Sem apoio": COR_SEM},
+                 text=df["taxa_media"].map(lambda v: f"{v:.1%}"),
+                 title="Evasão por Apoio Financeiro")
+    fig.update_traces(textposition="outside")
+    fig.update_layout(yaxis_tickformat=".0%", yaxis_range=[0, 0.70],
+                      plot_bgcolor="white", paper_bgcolor="#fafafa")
+    st.plotly_chart(fig, use_container_width=True)
+
+with tabs[4]:
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        df = pd.read_csv(BytesIO(response.content), sep=';', encoding='utf-8-sig')
-        return df
-    except Exception as e:
-        st.error(f"Erro ao carregar {nome}: {e}")
-        return None
+        df = load("sexo")
+        st.plotly_chart(bar_chart(df, "PREDOM_SEXO", "taxa_media",
+                        "Evasão por Predominância de Sexo"),
+                        use_container_width=True)
+    except Exception:
+        st.info("Variável PREDOM_SEXO não disponível nos dados.")
 
-# URLs diretas
-url_2023 = 'https://drive.google.com/uc?export=download&id=1LSrqZinGmmRFn20S8vUF449t4wQmfjT7'
-url_2024 = 'https://drive.google.com/uc?export=download&id=1utCj6vZg1LBfWqXNBoCYCdaJFMrMQAwR'
+with tabs[5]:
+    df = load("distribuicao")
+    fig = go.Figure()
+    for ano, cor in [(2023, COR_2023), (2024, COR_2024)]:
+        vals = df[df["ano"] == ano]["TAXA_EVASAO"]
+        fig.add_trace(go.Violin(y=vals, name=str(ano), box_visible=True,
+                                meanline_visible=True, fillcolor=cor,
+                                opacity=0.65, line_color=cor, points=False))
+    fig.update_layout(title="Distribuição da Taxa de Evasão",
+                      yaxis_tickformat=".0%",
+                      plot_bgcolor="white", paper_bgcolor="#fafafa")
+    st.plotly_chart(fig, use_container_width=True)
 
-# Carregar
-df_2023 = carregar_dados(url_2023, "2023")
-df_2024 = carregar_dados(url_2024, "2024")
-
-if df_2023 is not None and df_2024 is not None:
-    st.success(f"✅ Dados carregados! 2023: {df_2023.shape[0]:,} registros | 2024: {df_2024.shape[0]:,} registros")
-else:
-    st.stop()
-
-# ==========================================
-# VISUALIZAÇÃO RÁPIDA
-# ==========================================
-with st.expander("🔍 Ver primeiras linhas dos dados"):
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("2023")
-        st.dataframe(df_2023.head())
-    with col2:
-        st.subheader("2024")
-        st.dataframe(df_2024.head())
-
-# ==========================================
-# AQUI VOCÊ INSERE OS GRÁFICOS (QUE VAMOS MONTAR DEPOIS)
-# ==========================================
-st.markdown("---")
-st.subheader("📈 Análises")
-
-# Por enquanto, vamos testar se os dados carregaram corretamente
-st.write("Taxa média de evasão 2023:", f"{df_2023['TAXA_EVASAO'].mean():.2%}")
-st.write("Taxa média de evasão 2024:", f"{df_2024['TAXA_EVASAO'].mean():.2%}")
+st.divider()
+st.caption("Uma Investigação sobre os Fatores da Evasão no Ensino Superior a Distância no Brasil · Univesp 2026")
