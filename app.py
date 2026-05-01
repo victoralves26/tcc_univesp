@@ -343,13 +343,11 @@ with tabs[5]:
         st.warning("Arquivo dist_faixas.csv não encontrado. "
                    "Execute o bloco de geração no Colab e suba o arquivo.")
     else:
-        opcao = st.radio(
+        opcao = st.selectbox(
             "Granularidade das faixas:",
-            options=["🔍  Detalhada — faixas de 10% em 10%",
-                     "🗂️  Resumida — Baixa / Média / Alta / Crítica"],
-            horizontal=True,
+            options=["Detalhada", "Resumida"],
         )
-        tipo_sel = "10pct" if "10%" in opcao else "categorias"
+        tipo_sel = "10pct" if opcao == "Detalhada" else "categorias"
         df_d = dist_faixas[dist_faixas["tipo"] == tipo_sel].copy()
         df_d["ano_str"] = df_d["ano"].astype(str)
         df_d["texto"]   = df_d["pct_cursos"].map(lambda v: f"{v:.1%}")
@@ -362,17 +360,24 @@ with tabs[5]:
                 text="texto",
                 title="Distribuição dos Cursos EaD por Faixa de Evasão — 2023 vs 2024",
                 labels={"n_cursos": "Nº de Cursos", "Faixa": "Faixa de Evasão",
-                        "ano_str": "Ano"},
+                        "ano_str": ""},
             )
             fig.update_traces(textposition="outside",
                               textfont=dict(size=11, color="#dddddd"), width=0.38)
             fig = layout_dark(fig, ylim=df_d["n_cursos"].max() * 1.18,
                               height=440, yformat=",d", ytitle="Número de Cursos")
-            fig.update_layout(xaxis=dict(tickangle=-40, tickfont=dict(size=11,
-                                                                      color=TEXTO_EIXO)))
+            fig.update_layout(
+                xaxis=dict(tickangle=-40, tickfont=dict(size=11, color=TEXTO_EIXO)),
+                legend=dict(
+                    orientation="h", x=0.5, xanchor="center",
+                    y=1.04, yanchor="bottom", title_text="",
+                ),
+                margin=dict(t=70, b=60, l=65, r=20),
+            )
             st.plotly_chart(fig, use_container_width=True)
-            st.caption("Cada barra mostra quantos cursos EaD têm evasão naquela faixa. "
-                       "O percentual indica a proporção sobre o total de cursos do ano.")
+            st.caption("Visão detalhada — cada barra mostra quantos cursos EaD têm evasão "
+                       "naquela faixa de 10 pontos percentuais. O rótulo indica a proporção "
+                       "sobre o total de cursos do ano.")
         else:
             ordem_cat = ["Baixa (0–25%)", "Média (25–50%)",
                          "Alta (50–75%)", "Crítica (75–100%)"]
@@ -391,11 +396,20 @@ with tabs[5]:
                               insidetextanchor="middle")
             fig = layout_dark(fig, ylim=1.05, height=440,
                               yformat=".0%", ytitle="Proporção de Cursos")
-            fig.update_layout(xaxis=dict(tickfont=dict(size=14, color="#cccccc")),
-                              bargap=0.45)
+            fig.update_layout(
+                xaxis=dict(tickfont=dict(size=14, color="#cccccc")),
+                legend=dict(
+                    orientation="v", x=1.02, xanchor="left",
+                    y=0.5, yanchor="middle", title_text="",
+                ),
+                bargap=0.45,
+                margin=dict(t=55, b=60, l=65, r=160),
+            )
             st.plotly_chart(fig, use_container_width=True)
-            st.caption("Cada segmento mostra a proporção dos cursos naquela categoria. "
-                       "Cursos com evasão acima de 50% (Alta + Crítica) indicam sinal de alerta.")
+            st.caption("Visão resumida — cada segmento mostra a proporção dos cursos na "
+                       "categoria: Baixa (0–25%), Média (25–50%), Alta (50–75%) e "
+                       "Crítica (75–100%). Cursos com evasão acima de 50% (Alta + Crítica) "
+                       "indicam sinal de alerta.")
 
 # ── Autores ───────────────────────────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
