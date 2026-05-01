@@ -1,4 +1,4 @@
-# app.py — TCC Evasão EaD | Univesp 2026 — v2
+# app.py — TCC Evasão EaD | Univesp 2026 — v3
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -10,81 +10,127 @@ st.set_page_config(
     layout="wide"
 )
 
-# ── Paleta ────────────────────────────────────────────────────────────────────
-COR_2023 = "#2E86AB"
-COR_2024 = "#E84855"
-COR_COM  = "#3BB273"
-COR_SEM  = "#F4A259"
-BG       = "#fafafa"
+# ── Paleta dark ───────────────────────────────────────────────────────────────
+COR_2023    = "#4CA3CC"   # azul mais claro — legível no dark
+COR_2024    = "#E84855"   # vermelho/coral
+COR_COM     = "#4DBD8A"   # verde
+COR_SEM     = "#F4A259"   # laranja
+BG_CARD     = "rgba(255,255,255,0.04)"
+BG_GRAF     = "rgba(255,255,255,0.03)"
+BORDA       = "rgba(255,255,255,0.10)"
+GRID        = "rgba(255,255,255,0.06)"
+TEXTO_EIXO  = "#aaaaaa"
+FONTE       = "Inter, Arial, sans-serif"
 
-# ── CSS global ────────────────────────────────────────────────────────────────
+# ── CSS ───────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-    .main { background-color: #fafafa; }
-    .block-container { padding-top: 1.8rem; padding-bottom: 2rem; }
+  .block-container { padding-top: 1.8rem; padding-bottom: 2rem; }
 
-    /* Card de KPI customizado */
-    .kpi-card {
-        background: white;
-        border-radius: 10px;
-        padding: 18px 20px 14px 20px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-        height: 100%;
-    }
-    .kpi-label  { font-size: 12px; color: #888; font-weight: 600;
-                  text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
-    .kpi-value  { font-size: 28px; font-weight: 700; color: #1a1a2e; line-height: 1.1; }
-    .kpi-delta-bad  { font-size: 13px; color: #E84855; font-weight: 600; margin-top: 3px; }
-    .kpi-delta-good { font-size: 13px; color: #3BB273; font-weight: 600; margin-top: 3px; }
-    .kpi-desc   { font-size: 11.5px; color: #999; margin-top: 6px; line-height: 1.4; }
+  /* --- Bloco ano (2023 / 2024) --- */
+  .bloco-ano {
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px;
+    padding: 20px 24px 18px;
+    background: rgba(255,255,255,0.04);
+  }
+  .bloco-titulo {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+    text-transform: uppercase; color: #888; margin-bottom: 14px;
+  }
+  .bloco-row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .bloco-item { flex: 1; min-width: 100px; }
+  .kpi-label {
+    font-size: 11px; color: #777; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .4px; margin-bottom: 3px;
+  }
+  .kpi-value { font-size: 26px; font-weight: 700; color: #e8e8e8; line-height: 1.1; }
+  .kpi-desc  { font-size: 11px; color: #666; margin-top: 5px; line-height: 1.45; }
 
-    /* Caixa de premissas */
-    .premissa-box {
-        background: #fff8e1;
-        border-left: 4px solid #F4A259;
-        border-radius: 6px;
-        padding: 14px 18px;
-        margin-bottom: 6px;
-        font-size: 13.5px;
-        color: #444;
-        line-height: 1.6;
-    }
-    /* Rodapé de autores */
-    .autores-box {
-        background: white;
-        border-radius: 10px;
-        padding: 20px 24px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-        font-size: 13px;
-        color: #555;
-        line-height: 1.8;
-    }
-    .autores-box h4 { color: #1a1a2e; margin-bottom: 8px; font-size: 15px; }
+  /* --- Caixa delta --- */
+  .delta-box {
+    border-radius: 10px;
+    padding: 16px 22px;
+    background: rgba(232,72,85,0.10);
+    border: 1px solid rgba(232,72,85,0.25);
+    text-align: center;
+  }
+  .delta-box.positivo { background: rgba(232,72,85,0.10); border-color: rgba(232,72,85,0.25); }
+  .delta-box.negativo { background: rgba(77,189,138,0.10); border-color: rgba(77,189,138,0.25); }
+  .delta-valor-pos { font-size: 26px; font-weight: 700; color: #E84855; }
+  .delta-valor-neg { font-size: 26px; font-weight: 700; color: #4DBD8A; }
+  .delta-desc { font-size: 12px; color: #888; margin-top: 4px; }
+
+  /* --- Premissas --- */
+  .premissa-box {
+    border-left: 3px solid rgba(244,162,89,0.6);
+    border-radius: 6px;
+    padding: 14px 18px;
+    background: rgba(244,162,89,0.07);
+    font-size: 13px; color: #bbb; line-height: 1.65;
+  }
+  .premissa-box b { color: #e0e0e0; }
+  .premissa-box code {
+    background: rgba(255,255,255,0.08);
+    padding: 1px 5px; border-radius: 3px; font-size: 12px;
+  }
+
+  /* --- Tabs --- */
+  .tab-instrucao {
+    font-size: 13px; color: #888; margin-bottom: 6px; margin-top: 2px;
+  }
+
+  /* --- Autores --- */
+  .autores-box {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 4px 8px;
+    font-size: 12.5px; color: #666; line-height: 1.9;
+  }
+  .autores-box b { color: #999; }
 </style>
 """, unsafe_allow_html=True)
 
-# ── Carga de dados ─────────────────────────────────────────────────────────────
+# ── Dados ─────────────────────────────────────────────────────────────────────
 @st.cache_data
 def load(nome):
     return pd.read_csv(f"streamlit_data/{nome}.csv")
 
-kpi   = load("kpi")
+# KPI — tenta v2 (com IES/cursos distintos), cai para v1
+try:
+    kpi = load("kpi_v2")
+    tem_kpi_v2 = True
+except Exception:
+    kpi = load("kpi")
+    tem_kpi_v2 = False
+
 rede  = load("rede")
 reg   = load("regiao")
 org   = load("org")
 apoio = load("apoio")
 dist  = load("distribuicao")
 try:
-    sexo = load("sexo")
-    tem_sexo = True
+    sexo = load("sexo"); tem_sexo = True
 except Exception:
     tem_sexo = False
 
-n23 = int(kpi[kpi.ano == 2023]["n_cursos"].values[0])
-n24 = int(kpi[kpi.ano == 2024]["n_cursos"].values[0])
-t23 = float(kpi[kpi.ano == 2023]["taxa_media"].values[0])
-t24 = float(kpi[kpi.ano == 2024]["taxa_media"].values[0])
+def kpi_val(col, ano):
+    try:
+        v = kpi[kpi["ano"] == ano][col].values[0]
+        return v if pd.notna(v) else None
+    except Exception:
+        return None
+
+t23   = kpi_val("taxa_media", 2023) or 0
+t24   = kpi_val("taxa_media", 2024) or 0
 delta = t24 - t23
+
+n_ies23  = kpi_val("n_instituicoes",    2023)
+n_ies24  = kpi_val("n_instituicoes",    2024)
+n_cur23  = kpi_val("n_cursos_distintos", 2023)
+n_cur24  = kpi_val("n_cursos_distintos", 2024)
+
+def fmt_int(v):
+    return f"{int(v):,}".replace(",", ".") if v is not None else "—"
 
 # ── Cabeçalho ─────────────────────────────────────────────────────────────────
 st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
@@ -92,134 +138,185 @@ st.caption("TCC — Ciência de Dados | Univesp 2026 · Fonte: Censo da Educaç�
 st.divider()
 
 # ── KPIs ──────────────────────────────────────────────────────────────────────
-c1, c2, c3, c4 = st.columns(4)
+col_23, col_sep, col_24, col_delta = st.columns([5, 0.2, 5, 3])
 
-with c1:
+with col_23:
     st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-label">Vínculos EaD — 2023</div>
-        <div class="kpi-value">{n23:,.0f}</div>
-        <div class="kpi-desc">
-            Total de vínculos ativos em cursos superiores
-            na modalidade EaD registrados no Censo INEP 2023.
+    <div class="bloco-ano">
+      <div class="bloco-titulo">📅 2023</div>
+      <div class="bloco-row">
+        <div class="bloco-item">
+          <div class="kpi-label">Instituições EaD</div>
+          <div class="kpi-value">{fmt_int(n_ies23)}</div>
+          <div class="kpi-desc">IES distintas que oferecem ao menos um curso EaD</div>
         </div>
-    </div>""", unsafe_allow_html=True)
+        <div class="bloco-item">
+          <div class="kpi-label">Cursos EaD</div>
+          <div class="kpi-value">{fmt_int(n_cur23)}</div>
+          <div class="kpi-desc">Cursos distintos na modalidade EaD (graduação)</div>
+        </div>
+        <div class="bloco-item">
+          <div class="kpi-label">Taxa de Evasão</div>
+          <div class="kpi-value">{t23:.1%}</div>
+          <div class="kpi-desc">Média de desvinculados ÷ ingressantes por curso</div>
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-with c2:
+with col_24:
     st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-label">Vínculos EaD — 2024</div>
-        <div class="kpi-value">{n24:,.0f}</div>
-        <div class="kpi-desc">
-            Total de vínculos ativos em cursos superiores
-            na modalidade EaD registrados no Censo INEP 2024.
+    <div class="bloco-ano">
+      <div class="bloco-titulo">📅 2024</div>
+      <div class="bloco-row">
+        <div class="bloco-item">
+          <div class="kpi-label">Instituições EaD</div>
+          <div class="kpi-value">{fmt_int(n_ies24)}</div>
+          <div class="kpi-desc">IES distintas que oferecem ao menos um curso EaD</div>
         </div>
-    </div>""", unsafe_allow_html=True)
+        <div class="bloco-item">
+          <div class="kpi-label">Cursos EaD</div>
+          <div class="kpi-value">{fmt_int(n_cur24)}</div>
+          <div class="kpi-desc">Cursos distintos na modalidade EaD (graduação)</div>
+        </div>
+        <div class="bloco-item">
+          <div class="kpi-label">Taxa de Evasão</div>
+          <div class="kpi-value">{t24:.1%}</div>
+          <div class="kpi-desc">Média de desvinculados ÷ ingressantes por curso</div>
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-with c3:
+with col_delta:
+    cls_box   = "positivo" if delta > 0 else "negativo"
+    cls_valor = "delta-valor-pos" if delta > 0 else "delta-valor-neg"
+    sinal     = f"▲ +{delta:.1%}" if delta > 0 else f"▼ {delta:.1%}"
+    msg       = "Aumento na evasão — sinal de alerta" if delta > 0 else "Redução na evasão"
     st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-label">Taxa Média de Evasão — 2023</div>
-        <div class="kpi-value">{t23:.1%}</div>
-        <div class="kpi-desc">
-            <b>Cálculo:</b> Desvinculados ÷ Ingressantes, por curso.<br>
-            Média entre todos os cursos EaD com ingressantes em 2023.
+    <div style="height:100%; display:flex; align-items:center;">
+      <div class="delta-box {cls_box}" style="width:100%">
+        <div style="font-size:11px;color:#888;font-weight:600;
+                    text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">
+          Variação da evasão
         </div>
-    </div>""", unsafe_allow_html=True)
-
-with c4:
-    delta_class = "kpi-delta-bad" if delta > 0 else "kpi-delta-good"
-    delta_sinal = f"▲ +{delta:.1%}" if delta > 0 else f"▼ {delta:.1%}"
-    st.markdown(f"""
-    <div class="kpi-card">
-        <div class="kpi-label">Taxa Média de Evasão — 2024</div>
-        <div class="kpi-value">{t24:.1%}</div>
-        <div class="{delta_class}">{delta_sinal} em relação a 2023</div>
-        <div class="kpi-desc">
-            <b>Cálculo:</b> Desvinculados ÷ Ingressantes, por curso.<br>
-            Média entre todos os cursos EaD com ingressantes em 2024.
-        </div>
-    </div>""", unsafe_allow_html=True)
+        <div class="{cls_valor}">{sinal}</div>
+        <div class="delta-desc">{msg}<br>2023 → 2024</div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ── Premissas ─────────────────────────────────────────────────────────────────
-with st.expander("⚠️ Premissas e definições dos dados — leia antes de interpretar", expanded=False):
+with st.expander("⚠️  Premissas e definições — leia antes de interpretar os dados", expanded=False):
     st.markdown("""
     <div class="premissa-box">
-    <b>O que é a "taxa de evasão"?</b><br>
-    Para cada curso, calculamos: <code>TAXA_EVASAO = QT_SIT_DESVINCULADO / QT_ING</code>.<br>
-    O numerador (<b>QT_SIT_DESVINCULADO</b>) conta os alunos que se desvincularam do curso no ano —
-    por abandono, desistência formal ou exclusão por norma institucional.<br>
-    O denominador (<b>QT_ING</b>) é o total de ingressantes naquele curso no mesmo ano de referência.<br><br>
+    <b>O que é a taxa de evasão?</b><br>
+    Para cada curso: <code>TAXA_EVASAO = QT_SIT_DESVINCULADO / QT_ING</code>.
+    O numerador conta alunos que se desvincularam do curso no ano (abandono, desistência formal
+    ou exclusão por norma institucional). O denominador é o total de ingressantes naquele curso
+    no mesmo ano de referência.<br><br>
 
     <b>Unidade de análise</b><br>
-    Os dados do Censo INEP são agregados por <b>curso × instituição</b>, não por aluno individual.
-    Portanto, os valores representam taxas médias de evasão entre cursos — não a probabilidade
-    de um aluno específico evadir.<br><br>
+    O Censo INEP é organizado por <b>curso × instituição</b>. Cada linha representa um curso
+    em uma IES específica — não um aluno. Uma mesma universidade aparece tantas vezes
+    quantos cursos EaD ela oferece. Por isso os números de vínculos (~400 mil) são maiores
+    que o número de cursos ou instituições distintos.<br><br>
 
-    <b>Recorte da base</b><br>
-    Foram mantidos apenas cursos na modalidade <b>EaD</b> (educação a distância), com pelo menos
-    1 ingressante e taxa de evasão entre 0% e 100%. Cursos com dados ausentes nessas variáveis
-    foram excluídos.<br><br>
+    <b>O que são "Cursos EaD" nos KPIs?</b><br>
+    Contagem de <b>códigos de curso distintos</b> (ex: Administração, Pedagogia, Direito…)
+    presentes na base após o filtro EaD. Um mesmo código pode existir em múltiplas IES —
+    o que é contado aqui é a variedade de cursos, não a quantidade de ofertas.<br><br>
 
-    <b>Sobre os totais (401 mil / 379 mil)</b><br>
-    Esses números representam o total de <b>vínculos curso-IES</b> na base após o recorte EaD —
-    não o número de alunos individuais nem de instituições. Uma mesma instituição aparece
-    múltiplas vezes, uma entrada por curso oferecido.<br><br>
+    <b>Escopo da base</b><br>
+    Apenas cursos de <b>graduação na modalidade EaD</b> com pelo menos 1 ingressante e
+    taxa entre 0% e 100%. Cursos com dados ausentes nessas variáveis foram excluídos.
+    Dados de pós-graduação, cursos técnicos e presenciais não estão incluídos.<br><br>
 
     <b>Fonte</b><br>
     Microdados do Censo da Educação Superior, INEP, anos-base 2023 e 2024.
-    Acesso público em <a href="https://www.gov.br/inep" target="_blank">gov.br/inep</a>.
+    Acesso em: <a href="https://www.gov.br/inep" target="_blank" style="color:#4CA3CC">gov.br/inep</a>
     </div>
     """, unsafe_allow_html=True)
 
 st.divider()
 
-# ── Função auxiliar para gráficos de barra ────────────────────────────────────
+# ── Helper: layout padrão dos gráficos (dark) ─────────────────────────────────
+def layout_dark(fig, ylim=0.65, height=420):
+    fig.update_layout(
+        height=height,
+        plot_bgcolor=BG_GRAF,
+        paper_bgcolor="rgba(0,0,0,0)",
+        font=dict(family=FONTE, size=13, color="#cccccc"),
+        title_font=dict(size=15, color="#e0e0e0"),
+        legend=dict(
+            bgcolor="rgba(255,255,255,0.05)",
+            bordercolor="rgba(255,255,255,0.10)",
+            borderwidth=1,
+            font=dict(color="#cccccc", size=12),
+            orientation="h", y=-0.20, x=0.5, xanchor="center",
+        ),
+        xaxis=dict(
+            gridcolor=GRID,
+            linecolor="rgba(255,255,255,0.10)",
+            tickfont=dict(color=TEXTO_EIXO, size=12),
+            title_font=dict(color=TEXTO_EIXO),
+            showgrid=False,
+        ),
+        yaxis=dict(
+            gridcolor=GRID,
+            linecolor="rgba(255,255,255,0.10)",
+            tickfont=dict(color=TEXTO_EIXO, size=12),
+            title_font=dict(color=TEXTO_EIXO),
+            tickformat=".0%",
+            range=[0, ylim],
+            showgrid=True,
+            gridwidth=1,
+        ),
+        margin=dict(t=55, b=90, l=60, r=20),
+        bargap=0.30,
+    )
+    return fig
+
 def bar_comparativo(df, x, y, title, ylim=0.65, height=420):
     df = df.copy()
     df["ano_str"] = df["ano"].astype(str)
     df["texto"]   = df[y].map(lambda v: f"{v:.1%}")
-
     fig = px.bar(
         df, x=x, y=y, color="ano_str",
         barmode="group",
         color_discrete_map={"2023": COR_2023, "2024": COR_2024},
         text="texto",
         title=title,
-        labels={y: "Taxa Média de Evasão", "ano_str": "Ano", x: ""},
+        labels={y: "Taxa de Evasão", "ano_str": "Ano", x: ""},
     )
     fig.update_traces(
         textposition="outside",
-        textfont=dict(size=13, color="#333"),
-        width=0.35,
+        textfont=dict(size=13, color="#dddddd"),
+        width=0.33,
     )
-    fig.update_layout(
-        height=height,
-        yaxis_tickformat=".0%",
-        yaxis_range=[0, ylim],
-        plot_bgcolor="white",
-        paper_bgcolor=BG,
-        font=dict(family="Inter, Arial, sans-serif", size=13),
-        legend=dict(title="Ano", orientation="h", y=-0.18, x=0.5,
-                    xanchor="center"),
-        margin=dict(t=55, b=80, l=55, r=20),
-        bargap=0.3,
-    )
-    fig.update_xaxes(tickfont=dict(size=13))
-    return fig
+    return layout_dark(fig, ylim=ylim, height=height)
 
-# ── Abas de gráficos ──────────────────────────────────────────────────────────
-tabs = st.tabs(["🏫 Rede de Ensino", "🗺️ Região", "🏛️ Organização",
-                "💰 Apoio Financeiro", "👤 Sexo", "📊 Distribuição"])
+# ── Tabs ──────────────────────────────────────────────────────────────────────
+st.markdown('<p class="tab-instrucao">Selecione a dimensão para analisar a taxa de evasão:</p>',
+            unsafe_allow_html=True)
+
+tabs = st.tabs([
+    "🏫  Rede de Ensino",
+    "🗺️  Região",
+    "🏛️  Organização",
+    "💰  Apoio Financeiro",
+    "👤  Gênero",
+    "📊  Distribuição",
+])
 
 # TAB 1 — Rede
 with tabs[0]:
     st.subheader("Taxa de Evasão por Rede de Ensino")
-    st.caption("Comparativo entre cursos de instituições públicas e privadas nos dois anos.")
+    st.caption("Comparativo entre cursos de instituições públicas e privadas.")
     fig = bar_comparativo(rede, "Rede", "taxa_media",
-                          "Evasão por Rede de Ensino — 2023 vs 2024", ylim=0.60, height=430)
+                          "Evasão por Rede de Ensino — 2023 vs 2024", ylim=0.60)
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 2 — Região
@@ -227,7 +324,7 @@ with tabs[1]:
     st.subheader("Taxa de Evasão por Região do Brasil")
     st.caption("Média da taxa de evasão dos cursos EaD por grande região geográfica.")
     fig = bar_comparativo(reg, "Região", "taxa_media",
-                          "Evasão por Região — 2023 vs 2024", ylim=0.60, height=430)
+                          "Evasão por Região — 2023 vs 2024", ylim=0.60)
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 3 — Organização
@@ -235,13 +332,13 @@ with tabs[2]:
     st.subheader("Taxa de Evasão por Tipo de Organização Acadêmica")
     st.caption("Universidades, centros universitários, faculdades e institutos federais.")
     fig = bar_comparativo(org, "Organização", "taxa_media",
-                          "Evasão por Organização Acadêmica — 2023 vs 2024", ylim=0.75, height=430)
+                          "Evasão por Organização Acadêmica — 2023 vs 2024", ylim=0.75)
     st.plotly_chart(fig, use_container_width=True)
 
 # TAB 4 — Apoio Financeiro
 with tabs[3]:
     st.subheader("Taxa de Evasão por Apoio Financeiro (FIES / ProUni)")
-    st.caption("Comparação entre cursos com e sem beneficiários de programas de apoio financeiro.")
+    st.caption("Cursos com e sem beneficiários de programas de financiamento e bolsas.")
     df_ap = apoio.copy()
     df_ap["ano_str"] = df_ap["ano"].astype(str)
     df_ap["texto"]   = df_ap["taxa_media"].map(lambda v: f"{v:.1%}")
@@ -251,31 +348,34 @@ with tabs[3]:
         color_discrete_map={"Com apoio": COR_COM, "Sem apoio": COR_SEM},
         text="texto",
         title="Evasão por Apoio Financeiro — 2023 vs 2024",
-        labels={"taxa_media": "Taxa Média de Evasão", "ano_str": "Ano"},
+        labels={"taxa_media": "Taxa de Evasão", "ano_str": "Ano"},
     )
-    fig.update_traces(textposition="outside", textfont=dict(size=13), width=0.35)
+    fig.update_traces(
+        textposition="outside",
+        textfont=dict(size=13, color="#dddddd"),
+        width=0.33,
+    )
+    fig = layout_dark(fig, ylim=0.70)
+    # Replicar eixo y no facet
     fig.update_layout(
-        height=430,
-        yaxis_tickformat=".0%",
-        yaxis_range=[0, 0.70],
-        yaxis2_tickformat=".0%",
-        yaxis2_range=[0, 0.70],
-        plot_bgcolor="white",
-        paper_bgcolor=BG,
-        font=dict(family="Inter, Arial, sans-serif", size=13),
-        margin=dict(t=55, b=80, l=55, r=20),
-        bargap=0.3,
+        yaxis2=dict(
+            tickformat=".0%", range=[0, 0.70],
+            gridcolor=GRID, gridwidth=1,
+            tickfont=dict(color=TEXTO_EIXO, size=12),
+            showgrid=True,
+        )
     )
     st.plotly_chart(fig, use_container_width=True)
 
-# TAB 5 — Sexo
+# TAB 5 — Gênero
 with tabs[4]:
-    st.subheader("Taxa de Evasão por Predominância de Sexo")
-    st.caption("Cursos agrupados pela predominância do sexo dos ingressantes.")
+    st.subheader("Taxa de Evasão por Predominância de Gênero")
+    st.caption("Cursos agrupados pela predominância do gênero dos ingressantes.")
     if tem_sexo:
-        fig = bar_comparativo(sexo, "PREDOM_SEXO", "taxa_media",
-                              "Evasão por Predominância de Sexo — 2023 vs 2024",
-                              ylim=0.60, height=430)
+        df_s = sexo.copy()
+        df_s = df_s.rename(columns={"PREDOM_SEXO": "Gênero predominante"})
+        fig = bar_comparativo(df_s, "Gênero predominante", "taxa_media",
+                              "Evasão por Gênero Predominante — 2023 vs 2024", ylim=0.60)
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("Variável PREDOM_SEXO não disponível no arquivo de dados.")
@@ -283,45 +383,51 @@ with tabs[4]:
 # TAB 6 — Distribuição
 with tabs[5]:
     st.subheader("Distribuição da Taxa de Evasão por Curso")
-    st.caption("Cada ponto representa um curso EaD. A linha central é a mediana; o box mostra o IQR.")
+    st.caption("A linha central é a mediana; o box mostra o intervalo interquartil (IQR).")
     fig = go.Figure()
     for ano, cor in [(2023, COR_2023), (2024, COR_2024)]:
         vals = dist[dist["ano"] == ano]["TAXA_EVASAO"]
         fig.add_trace(go.Violin(
             y=vals, name=str(ano),
             box_visible=True, meanline_visible=True,
-            fillcolor=cor, opacity=0.60,
+            fillcolor=cor, opacity=0.55,
             line_color=cor, points=False,
         ))
     fig.update_layout(
         height=430,
-        yaxis_tickformat=".0%",
-        yaxis_title="Taxa de Evasão",
-        plot_bgcolor="white",
-        paper_bgcolor=BG,
-        font=dict(family="Inter, Arial, sans-serif", size=13),
-        legend=dict(title="Ano"),
-        margin=dict(t=40, b=40, l=55, r=20),
+        plot_bgcolor=BG_GRAF,
+        paper_bgcolor="rgba(0,0,0,0)",
+        font=dict(family=FONTE, size=13, color="#cccccc"),
+        title_font=dict(size=15, color="#e0e0e0"),
+        yaxis=dict(
+            tickformat=".0%", title="Taxa de Evasão",
+            gridcolor=GRID, gridwidth=1,
+            tickfont=dict(color=TEXTO_EIXO, size=12),
+            title_font=dict(color=TEXTO_EIXO),
+        ),
+        xaxis=dict(
+            tickfont=dict(color=TEXTO_EIXO),
+            showgrid=False,
+        ),
+        legend=dict(
+            bgcolor="rgba(255,255,255,0.05)",
+            bordercolor="rgba(255,255,255,0.10)",
+            borderwidth=1,
+            font=dict(color="#cccccc"),
+        ),
+        margin=dict(t=40, b=40, l=60, r=20),
     )
     st.plotly_chart(fig, use_container_width=True)
 
 # ── Autores ───────────────────────────────────────────────────────────────────
-st.divider()
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("""
 <div class="autores-box">
-<h4>👥 Autores do Trabalho</h4>
-Edesio de Barros &nbsp;·&nbsp;
-Euclides Soares Barata &nbsp;·&nbsp;
-Guilherme de Menezes Vaz de Mello &nbsp;·&nbsp;
-Gustavo Antonio de Paula &nbsp;·&nbsp;
-Marco Jose Franceschini &nbsp;·&nbsp;
-Mariana Oliveira Silva &nbsp;·&nbsp;
-Roger Marcio Reis da Silva &nbsp;·&nbsp;
-Victor Lucas Pedroso Alves
-<br><br>
-<b>Trabalho de Conclusão de Curso</b> — Bacharelado em Ciência de Dados<br>
-Universidade Virtual do Estado de São Paulo (Univesp) · São Paulo, 2026
+<b>Autores:</b>
+Edesio de Barros · Euclides Soares Barata · Guilherme de Menezes Vaz de Mello ·
+Gustavo Antonio de Paula · Marco Jose Franceschini · Mariana Oliveira Silva ·
+Roger Marcio Reis da Silva · Victor Lucas Pedroso Alves<br>
+<b>Trabalho de Conclusão de Curso</b> — Bacharelado em Ciência de Dados ·
+Universidade Virtual do Estado de São Paulo (Univesp) · 2026
 </div>
 """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
