@@ -145,4 +145,39 @@ for df, ano in [(df23, 2023), (df24, 2024)]:
 
 salvar(pd.concat(tops, ignore_index=True), "top_cursos.csv")
 
+# ── 5. faixa_etaria.csv ───────────────────────────────────────────────────────
+# Identifica a faixa etária predominante por polo e agrega a taxa média de evasão.
+# Agrupa colunas de idade em 4 faixas amplas relevantes para o perfil EaD.
+print("[5/5] Gerando faixa_etaria.csv...")
+
+FAIXAS_ETARIAS = {
+    "Até 24 anos":    ["QT_ING_0_17", "QT_ING_18_24"],
+    "25–34 anos":     ["QT_ING_25_29", "QT_ING_30_34"],
+    "35–49 anos":     ["QT_ING_35_39", "QT_ING_40_49"],
+    "50 anos ou mais":["QT_ING_50_59", "QT_ING_60_MAIS"],
+}
+
+def gerar_faixa_etaria(df, ano):
+    df_g = df.copy()
+    for faixa, cols in FAIXAS_ETARIAS.items():
+        cols_ok = [c for c in cols if c in df_g.columns]
+        df_g[faixa] = df_g[cols_ok].fillna(0).sum(axis=1) if cols_ok else 0
+
+    faixa_cols = list(FAIXAS_ETARIAS.keys())
+    total = df_g[faixa_cols].sum(axis=1)
+    df_g = df_g[total > 0].copy()
+    df_g["Faixa etária predominante"] = df_g[faixa_cols].idxmax(axis=1)
+
+    return (
+        df_g.groupby("Faixa etária predominante")["TAXA_EVASAO"]
+        .agg(taxa_media="mean", n_cursos="count")
+        .reset_index()
+        .rename(columns={"Faixa etária predominante": "Faixa Etária"})
+        .assign(ano=ano)
+    )
+
+fe23 = gerar_faixa_etaria(df23, 2023)
+fe24 = gerar_faixa_etaria(df24, 2024)
+salvar(pd.concat([fe23, fe24], ignore_index=True), "faixa_etaria.csv")
+
 print("\nConcluido! Arquivos gerados em streamlit_data/")

@@ -1,4 +1,4 @@
-# app.py — TCC Evasão EaD | Univesp 2026 — v7
+# app.py — TCC Evasão EaD | Univesp 2026 — v8
 import os
 import streamlit as st
 import pandas as pd
@@ -78,7 +78,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Carregamento de dados ──────────────────────────────────────────────────────
-_DATA_VERSION = "20260502-v6"  # atualizar sempre que os CSVs mudarem de formato
+_DATA_VERSION = "20260502-v8"  # atualizar sempre que os CSVs mudarem de formato
 
 @st.cache_data
 def load(nome, version=_DATA_VERSION):
@@ -108,6 +108,11 @@ try:
     grau = load("grau"); tem_grau = True
 except Exception:
     tem_grau = False
+
+try:
+    faixa_etaria = load("faixa_etaria"); tem_faixa = True
+except Exception:
+    tem_faixa = False
 
 try:
     top_cursos = load("top_cursos"); tem_top = True
@@ -144,7 +149,7 @@ with _col_titulo:
     st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
     st.caption("TCC — Ciência de Dados | Univesp 2026 · Fonte: Censo da Educação Superior — INEP 2023 e 2024")
 with _col_logo:
-    _logo = "assets/logo_univesp.png"
+    _logo = "assets/wallpaper-univesp-black.jpg"
     if os.path.exists(_logo):
         st.image(_logo, width=140)
 st.divider()
@@ -298,15 +303,17 @@ def layout_dark(fig, ylim=0.65, height=420, yformat=".0%", ytitle="Taxa de Evas�
     )
     return fig
 
-def bar_comparativo(df, x, y, title, ylim=0.65, height=420):
+def bar_comparativo(df, x, y, title, ylim=0.65, height=420, ordem_x=None):
     df = df.copy()
     df["ano_str"] = df["ano"].astype(str)
     df["texto"]   = df[y].map(lambda v: f"{v:.1%}")
+    cat_orders = {x: ordem_x} if ordem_x else None
     fig = px.bar(
         df, x=x, y=y, color="ano_str", barmode="group",
         color_discrete_map={"2023": COR_2023, "2024": COR_2024},
         text="texto", title=title,
         labels={y: "Taxa de Evasão", "ano_str": "", x: ""},
+        category_orders=cat_orders,
     )
     fig.update_traces(textposition="outside",
                       textfont=dict(size=13, color="#dddddd"), width=0.33)
@@ -328,6 +335,7 @@ tabs = st.tabs([
     "🎓  Grau Acadêmico",
     "💰  Apoio Financeiro",
     "👤  Gênero",
+    "🎂  Faixa Etária",
     "📊  Distribuição",
     "🏆  Top Cursos",
 ])
@@ -402,8 +410,34 @@ with tabs[5]:
     else:
         st.info("Arquivo genero.csv não encontrado. Execute gerar_agregados.py.")
 
-# ── Distribuição ──────────────────────────────────────────────────────────────
+# ── Faixa Etária ─────────────────────────────────────────────────────────────
 with tabs[6]:
+    ORDEM_FAIXAS = ["Até 24 anos", "25–34 anos", "35–49 anos", "50 anos ou mais"]
+    st.subheader("Taxa de Evasão por Faixa Etária dos Ingressantes")
+    st.caption(
+        "Cursos agrupados pela faixa etária predominante dos ingressantes. "
+        "Cada polo é classificado pela faixa com maior número de ingressantes no ano."
+    )
+    if tem_faixa:
+        st.plotly_chart(
+            bar_comparativo(
+                faixa_etaria, "Faixa Etária", "taxa_media",
+                "Evasão por Faixa Etária Predominante — 2023 vs 2024",
+                ylim=0.60, ordem_x=ORDEM_FAIXAS,
+            ),
+            use_container_width=True,
+        )
+        st.caption(
+            "Tendência observada: cursos com público predominantemente mais jovem (até 24 anos) "
+            "apresentam taxas de evasão mais elevadas, enquanto cursos com perfil de estudantes "
+            "mais maduros (35 anos ou mais) registram menores taxas — alinhado ao referencial teórico "
+            "(Juliani, 2025; Silva et al., 2025)."
+        )
+    else:
+        st.info("Arquivo faixa_etaria.csv não encontrado. Execute gerar_agregados.py.")
+
+# ── Distribuição ──────────────────────────────────────────────────────────────
+with tabs[7]:
     st.subheader("Distribuição dos Cursos EaD por Taxa de Evasão")
     st.caption("Quantos cursos se enquadram em cada faixa de evasão? "
                "Alterne entre a visão detalhada (10% em 10%) e a visão por categorias.")
@@ -474,7 +508,7 @@ with tabs[6]:
                        "indicam sinal de alerta.")
 
 # ── Top Cursos ────────────────────────────────────────────────────────────────
-with tabs[7]:
+with tabs[8]:
     st.subheader("Cursos EaD com Maior Taxa de Evasão")
     st.caption(
         "Taxa agregada nacionalmente por nome de curso — soma de ingressantes e evadidos "
