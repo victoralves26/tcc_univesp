@@ -1,4 +1,5 @@
-# app.py — TCC Evasão EaD | Univesp 2026 — v6
+# app.py — TCC Evasão EaD | Univesp 2026 — v7
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -41,10 +42,10 @@ st.markdown("""
   .bloco-item { flex: 1; min-width: 90px; }
   .kpi-label {
     font-size: 11px; color: #777; font-weight: 600;
-    text-transform: uppercase; letter-spacing: .4px; margin-bottom: 3px;
+    letter-spacing: .4px; margin-bottom: 3px;
   }
-  .kpi-value { font-size: 24px; font-weight: 700; color: #e8e8e8; line-height: 1.1; }
-  .kpi-value-sm { font-size: 18px; font-weight: 600; color: #c0c0c0; line-height: 1.1; }
+  .kpi-value    { font-size: 24px; font-weight: 700; color: #e8e8e8; line-height: 1.1; }
+  .kpi-value-sm { font-size: 24px; font-weight: 700; color: #e8e8e8; line-height: 1.1; }
   .kpi-desc  { font-size: 11px; color: #666; margin-top: 5px; line-height: 1.45; }
   .delta-box {
     border-radius: 10px; padding: 16px 22px;
@@ -138,8 +139,14 @@ def fmt_pct(v):
     return f"{v:.1%}" if v is not None else "—"
 
 # ── Cabeçalho ─────────────────────────────────────────────────────────────────
-st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
-st.caption("TCC — Ciência de Dados | Univesp 2026 · Fonte: Censo da Educação Superior — INEP 2023 e 2024")
+_col_titulo, _col_logo = st.columns([8, 1.4])
+with _col_titulo:
+    st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
+    st.caption("TCC — Ciência de Dados | Univesp 2026 · Fonte: Censo da Educação Superior — INEP 2023 e 2024")
+with _col_logo:
+    _logo = "assets/logo_univesp.png"
+    if os.path.exists(_logo):
+        st.image(_logo, width=140)
 st.divider()
 
 # ── KPIs ──────────────────────────────────────────────────────────────────────
@@ -240,11 +247,9 @@ with st.expander("⚠️  Premissas e definições — leia antes de interpretar
 
     <b>Média vs. Mediana de Evasão</b><br>
     — <b>Média ({t23:.1%} em 2023 · {t24:.1%} em 2024):</b> calculada por curso como
-    <code>QT_SIT_DESVINCULADO / QT_ING</code>, depois calculada a média entre todos os cursos.
-    Sensível a valores extremos (cursos com 100% de evasão).<br>
+    <code>QT_SIT_DESVINCULADO / QT_ING</code>, depois calculada a média entre todos os cursos.<br>
     — <b>Mediana ({fmt_pct(med23)} em 2023 · {fmt_pct(med24)} em 2024):</b> valor central da
-    distribuição — indica o ponto onde metade dos cursos tem evasão abaixo e metade acima.
-    Mais robusta a outliers.<br><br>
+    distribuição — indica o ponto onde metade dos cursos tem evasão abaixo e metade acima.<br><br>
 
     <b>Atenção: unidade de análise</b><br>
     Os dados do Censo INEP são organizados por <b>curso × IES</b>, não por aluno individual.
@@ -501,7 +506,7 @@ with tabs[7]:
         MIN_ING = 500  # mínimo de ingressantes nacionais por curso
 
         def get_top(ano):
-            """Filtra, agrega por curso e retorna top 15."""
+            """Filtra, agrega por curso e retorna top 15 com numeração."""
             df_f = top_cursos[
                 (top_cursos["ano"] == ano) &
                 (top_cursos["Rede"].isin(sel_rede if sel_rede else redes_disp)) &
@@ -517,16 +522,18 @@ with tabs[7]:
             agg = agg[agg["Ingressantes"] >= MIN_ING].copy()
             agg["TAXA_EVASAO"] = agg["Evadidos"] / agg["Ingressantes"]
             agg["Taxa de Evasão"] = agg["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
-            return agg.sort_values("TAXA_EVASAO", ascending=False).head(15).reset_index(drop=True)
+            agg = agg.sort_values("TAXA_EVASAO", ascending=False).head(15).reset_index(drop=True)
+            agg["Curso"] = (agg.index + 1).astype(str) + ". " + agg["NO_CURSO"]
+            return agg
 
         def chart_top(df_top, ano, cor):
             """Gráfico horizontal de barras para o top cursos de um ano."""
             fig = px.bar(
-                df_top, x="TAXA_EVASAO", y="NO_CURSO",
+                df_top, x="TAXA_EVASAO", y="Curso",
                 orientation="h",
                 text="Taxa de Evasão",
                 title=f"Top 15 — {ano}",
-                labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": ""},
+                labels={"TAXA_EVASAO": "Taxa de Evasão", "Curso": ""},
             )
             fig.update_traces(
                 marker_color=cor,
@@ -567,8 +574,7 @@ with tabs[7]:
                     st.plotly_chart(chart_top(df_top, ano, cor),
                                     use_container_width=True)
                     st.dataframe(
-                        df_top[["NO_CURSO", "Ingressantes", "Evadidos", "Taxa de Evasão"]]
-                        .rename(columns={"NO_CURSO": "Curso"}),
+                        df_top[["Curso", "Ingressantes", "Evadidos", "Taxa de Evasão"]],
                         use_container_width=True, hide_index=True,
                     )
 
