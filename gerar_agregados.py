@@ -121,47 +121,27 @@ for df, ano in [(df23, 2023), (df24, 2024)]:
 salvar(pd.DataFrame(rows), "apoio.csv")
 
 # ── 4. top_cursos.csv ─────────────────────────────────────────────────────────
-# IMPORTANTE: os dados são por polo (município). Agregar por IES × curso
-# somando QT_ING e QT_SIT_DESVINCULADO de todos os polos antes de calcular
-# a taxa — evita o artefato de 100% em polos pequenos.
+# Agrega por Curso × Rede × Grau × Região (sem instituição).
+# O app filtra por essas dimensões e depois agrega ao nível de curso para exibir.
+# Dados são por polo (município) — soma todos os polos de todas as IES por grupo.
 print("[4/4] Gerando top_cursos.csv...")
 col_rede = "TP_REDE_y" if "TP_REDE_y" in df23.columns else "TP_REDE_x"
-MIN_ING_IES = 500  # mínimo de ingressantes no nível IES para entrar no ranking
 
 tops = []
-for df, ies_df, ano in [(df23, ies23, 2023), (df24, ies24, 2024)]:
+for df, ano in [(df23, 2023), (df24, 2024)]:
     df_t = df.copy()
     df_t["Rede"] = df_t[col_rede].map(MAPA_REDE)
 
-    # Agregar por IES × curso, somando volumes de todos os polos
     agg = (
-        df_t.groupby(["CO_IES", "NO_CURSO", "Rede", "Grau", "NO_REGIAO_IES"])
+        df_t.groupby(["NO_CURSO", "Rede", "Grau", "NO_REGIAO_IES"])
         .agg(
             QT_ING_TOTAL=("QT_ING", "sum"),
             QT_DESV_TOTAL=("QT_SIT_DESVINCULADO", "sum"),
-            N_POLOS=("QT_ING", "count"),
         )
         .reset_index()
-    )
-
-    # Recalcular taxa correta: total desvinculados / total ingressantes
-    agg["TAXA_EVASAO"] = agg["QT_DESV_TOTAL"] / agg["QT_ING_TOTAL"].replace(0, pd.NA)
-
-    # Filtrar: volume mínimo e taxa válida (<=1.0)
-    agg = agg[(agg["QT_ING_TOTAL"] >= MIN_ING_IES) & (agg["TAXA_EVASAO"] <= 1.0)]
-
-    # Juntar nome da IES
-    agg = agg.merge(ies_df[["CO_IES", "NO_IES"]], on="CO_IES", how="left")
-
-    df_top = (
-        agg[["NO_CURSO", "NO_IES", "Rede", "Grau", "NO_REGIAO_IES",
-             "TAXA_EVASAO", "QT_ING_TOTAL", "QT_DESV_TOTAL", "N_POLOS"]]
-        .sort_values("TAXA_EVASAO", ascending=False)
-        .head(15)
         .assign(ano=ano)
-        .reset_index(drop=True)
     )
-    tops.append(df_top)
+    tops.append(agg)
 
 salvar(pd.concat(tops, ignore_index=True), "top_cursos.csv")
 

@@ -469,88 +469,111 @@ with tabs[6]:
 # ── Top Cursos ────────────────────────────────────────────────────────────────
 with tabs[7]:
     st.subheader("Cursos EaD com Maior Taxa de Evasão")
-    st.caption("Top 15 cursos por ano com a maior taxa de evasão registrada. "
-               "Filtro mínimo de 30 ingressantes para evitar distorções estatísticas.")
+    st.caption(
+        "Taxa agregada nacionalmente por nome de curso — soma de ingressantes e evadidos "
+        "de todas as instituições. Use os filtros para recortar a análise por rede, grau e região."
+    )
 
     if not tem_top:
         st.info("Arquivo top_cursos.csv não encontrado. Execute gerar_agregados.py.")
     else:
-        ano_sel = st.radio("Ano:", [2023, 2024], horizontal=True)
-        df_t = top_cursos[top_cursos["ano"] == ano_sel].copy()
-        df_t["Taxa"] = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+        # ── Filtros compartilhados ────────────────────────────────────────────
+        redes_disp   = sorted(top_cursos["Rede"].dropna().unique())
+        graus_disp   = sorted(top_cursos["Grau"].dropna().unique())
+        regioes_disp = sorted(top_cursos["NO_REGIAO_IES"].dropna().unique())
 
-        # Compatibilidade com versão antiga do CSV (coluna QT_ING) e nova (QT_ING_TOTAL)
-        if "QT_ING_TOTAL" not in df_t.columns and "QT_ING" in df_t.columns:
-            df_t = df_t.rename(columns={"QT_ING": "QT_ING_TOTAL"})
-        if "QT_DESV_TOTAL" not in df_t.columns:
-            df_t["QT_DESV_TOTAL"] = 0
-        if "N_POLOS" not in df_t.columns:
-            df_t["N_POLOS"] = 0
-
-        df_t["QT_ING_TOTAL"]  = df_t["QT_ING_TOTAL"].astype(int)
-        df_t["QT_DESV_TOTAL"] = df_t["QT_DESV_TOTAL"].astype(int)
-        df_t["N_POLOS"]       = df_t["N_POLOS"].astype(int)
-
-        fig = px.bar(
-            df_t, x="TAXA_EVASAO", y="NO_CURSO",
-            orientation="h",
-            color="TAXA_EVASAO",
-            color_continuous_scale=[[0, COR_2023], [1, COR_2024]],
-            text="Taxa",
-            custom_data=["NO_IES", "Rede", "Grau", "NO_REGIAO_IES",
-                         "QT_ING_TOTAL", "QT_DESV_TOTAL", "N_POLOS"],
-            title=f"Top 15 Cursos EaD com Maior Taxa de Evasão — {ano_sel}",
-            labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": ""},
-        )
-        fig.update_traces(
-            textposition="outside",
-            textfont=dict(size=12, color="#dddddd"),
-            hovertemplate=(
-                "<b>%{y}</b><br>"
-                "Instituição: %{customdata[0]}<br>"
-                "Rede: %{customdata[1]} · Grau: %{customdata[2]}<br>"
-                "Região: %{customdata[3]}<br>"
-                "──────────────────────<br>"
-                "Taxa de Evasão: <b>%{x:.1%}</b><br>"
-                "Ingressantes: %{customdata[4]:,}<br>"
-                "Desvinculados: %{customdata[5]:,}<br>"
-                "Polos (municípios): %{customdata[6]:,}<br>"
-                "<extra></extra>"
-            ),
-        )
-        fig.update_layout(
-            height=520,
-            plot_bgcolor=BG_GRAF,
-            paper_bgcolor="rgba(0,0,0,0)",
-            font=dict(family=FONTE, size=12, color="#cccccc"),
-            title_font=dict(size=15, color="#e0e0e0"),
-            coloraxis_showscale=False,
-            yaxis=dict(autorange="reversed",
-                       tickfont=dict(color=TEXTO_EIXO, size=11),
-                       gridcolor=GRID),
-            xaxis=dict(tickformat=".0%", range=[0, 1.05],
-                       tickfont=dict(color=TEXTO_EIXO, size=11),
-                       gridcolor=GRID, showgrid=True),
-            margin=dict(t=60, b=40, l=280, r=80),
-        )
-        st.plotly_chart(fig, use_container_width=True)
-
-        with st.expander("Ver tabela detalhada"):
-            st.dataframe(
-                df_t[["NO_CURSO", "NO_IES", "Rede", "Grau",
-                       "NO_REGIAO_IES", "Taxa", "QT_ING_TOTAL", "QT_DESV_TOTAL", "N_POLOS"]]
-                .rename(columns={
-                    "NO_CURSO": "Curso", "NO_IES": "Instituição",
-                    "NO_REGIAO_IES": "Região", "Taxa": "Taxa de Evasão",
-                    "QT_ING_TOTAL": "Ingressantes", "QT_DESV_TOTAL": "Desvinculados",
-                    "N_POLOS": "Polos",
-                }),
-                use_container_width=True, hide_index=True,
+        fc1, fc2, fc3 = st.columns(3)
+        with fc1:
+            sel_rede = st.multiselect(
+                "Rede de Ensino", redes_disp, default=redes_disp, key="top_rede"
             )
+        with fc2:
+            sel_grau = st.multiselect(
+                "Grau Acadêmico", graus_disp, default=graus_disp, key="top_grau"
+            )
+        with fc3:
+            sel_regiao = st.multiselect(
+                "Região", regioes_disp, default=regioes_disp, key="top_regiao"
+            )
+
+        MIN_ING = 500  # mínimo de ingressantes nacionais por curso
+
+        def get_top(ano):
+            """Filtra, agrega por curso e retorna top 15."""
+            df_f = top_cursos[
+                (top_cursos["ano"] == ano) &
+                (top_cursos["Rede"].isin(sel_rede if sel_rede else redes_disp)) &
+                (top_cursos["Grau"].isin(sel_grau if sel_grau else graus_disp)) &
+                (top_cursos["NO_REGIAO_IES"].isin(sel_regiao if sel_regiao else regioes_disp))
+            ]
+            agg = (
+                df_f.groupby("NO_CURSO")
+                .agg(Ingressantes=("QT_ING_TOTAL", "sum"),
+                     Evadidos=("QT_DESV_TOTAL", "sum"))
+                .reset_index()
+            )
+            agg = agg[agg["Ingressantes"] >= MIN_ING].copy()
+            agg["TAXA_EVASAO"] = agg["Evadidos"] / agg["Ingressantes"]
+            agg["Taxa de Evasão"] = agg["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+            return agg.sort_values("TAXA_EVASAO", ascending=False).head(15).reset_index(drop=True)
+
+        def chart_top(df_top, ano, cor):
+            """Gráfico horizontal de barras para o top cursos de um ano."""
+            fig = px.bar(
+                df_top, x="TAXA_EVASAO", y="NO_CURSO",
+                orientation="h",
+                text="Taxa de Evasão",
+                title=f"Top 15 — {ano}",
+                labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": ""},
+            )
+            fig.update_traces(
+                marker_color=cor,
+                textposition="outside",
+                textfont=dict(size=11, color="#dddddd"),
+                hovertemplate=(
+                    "<b>%{y}</b><br>"
+                    "Taxa de Evasão: <b>%{x:.1%}</b><br>"
+                    "<extra></extra>"
+                ),
+            )
+            fig.update_layout(
+                height=480,
+                plot_bgcolor=BG_GRAF,
+                paper_bgcolor="rgba(0,0,0,0)",
+                font=dict(family=FONTE, size=11, color="#cccccc"),
+                title_font=dict(size=14, color="#e0e0e0"),
+                showlegend=False,
+                yaxis=dict(autorange="reversed",
+                           tickfont=dict(color=TEXTO_EIXO, size=10),
+                           gridcolor=GRID),
+                xaxis=dict(tickformat=".0%", range=[0, 1.08],
+                           tickfont=dict(color=TEXTO_EIXO, size=10),
+                           gridcolor=GRID, showgrid=True),
+                margin=dict(t=50, b=30, l=220, r=60),
+            )
+            return fig
+
+        # ── Layout lado a lado ────────────────────────────────────────────────
+        col23, col24 = st.columns(2)
+
+        for col, ano, cor in [(col23, 2023, COR_2023), (col24, 2024, COR_2024)]:
+            with col:
+                df_top = get_top(ano)
+                if df_top.empty:
+                    st.warning(f"Nenhum curso com ≥ {MIN_ING} ingressantes nos filtros selecionados ({ano}).")
+                else:
+                    st.plotly_chart(chart_top(df_top, ano, cor),
+                                    use_container_width=True)
+                    st.dataframe(
+                        df_top[["NO_CURSO", "Ingressantes", "Evadidos", "Taxa de Evasão"]]
+                        .rename(columns={"NO_CURSO": "Curso"}),
+                        use_container_width=True, hide_index=True,
+                    )
+
         st.caption(
-            f"Dados agregados por IES × curso, somando todos os polos (municípios) de cada instituição. "
-            f"Mínimo de 500 ingressantes por IES para compor o ranking. "
-            f"Passe o mouse sobre as barras para ver ingressantes, desvinculados e número de polos."
+            f"Mínimo de {MIN_ING:,} ingressantes nacionais por curso para entrar no ranking. "
+            "Taxa calculada como total de evadidos ÷ total de ingressantes de todas as instituições "
+            "e polos dentro dos filtros selecionados."
         )
 
 # ── Autores ───────────────────────────────────────────────────────────────────

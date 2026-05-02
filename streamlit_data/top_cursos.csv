@@ -1,31 +1,2657 @@
-NO_CURSO,NO_IES,Rede,Grau,NO_REGIAO_IES,TAXA_EVASAO,QT_ING_TOTAL,QT_DESV_TOTAL,N_POLOS,ano
-Marketing,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8546845124282982,523,447,50,2023
-Gestão Comercial,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8425253991291727,1378,1161,85,2023
-Gestão De Recursos Humanos,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8404411764705882,1360,1143,69,2023
-Análise E Desenvolvimento De Sistemas,CENTRO UNIVERSITÁRIO IBMR,Privada,Tecnólogo,Sudeste,0.8190298507462687,536,439,18,2023
-Administração,UNIVERSIDADE VEIGA DE ALMEIDA,Privada,Bacharelado,Sudeste,0.8023715415019763,759,609,6,2023
-Enfermagem,CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN,Privada,Bacharelado,Centro-Oeste,0.7815573770491804,2440,1907,22,2023
-Engenharia Civil,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7796526054590571,2015,1571,126,2023
-Administração,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Bacharelado,Sudeste,0.7768803634528016,1981,1539,73,2023
-Marketing,Centro Universitário União das Américas Descomplica,Privada,Tecnólogo,Sul,0.7703984819734345,527,406,20,2023
-Arquitetura E Urbanismo,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7693023255813953,1075,827,52,2023
-Gestão Da Tecnologia Da Informação,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.763302752293578,545,416,39,2023
-Ciências Contábeis,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Bacharelado,Sudeste,0.7616136919315404,818,623,53,2023
-Engenharia Mecânica,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7597911227154047,1915,1455,127,2023
-Administração,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.749236766708938,21291,15952,770,2023
-Gestão Financeira,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.7485549132947977,692,518,50,2023
-Teologia,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.9078242229367631,933,847,111,2024
-Pedagogia,Faculdade ALFAUNIPAC de Almenara,Privada,Licenciatura,Sudeste,0.8741845293569431,1073,938,1,2024
-Enfermagem,CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN,Privada,Bacharelado,Centro-Oeste,0.8547008547008547,1170,1000,19,2024
-Ciências Econômicas,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.8379942140790743,1037,869,79,2024
-Biomedicina,UNIVERSIDADE PAULISTA,Privada,Bacharelado,Sudeste,0.832089552238806,1072,892,43,2024
-Relações Internacionais,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.8315629742033384,659,548,90,2024
-Administração,Centro Universitário Doctum de Teófilo Otoni,Privada,Bacharelado,Sudeste,0.8273273273273273,666,551,1,2024
-Enfermagem,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.8256181159978433,12983,10719,258,2024
-Podologia,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.8056552962298025,4456,3590,257,2024
-Administração,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.8050215936997206,23618,19013,739,2024
-Gastronomia,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7980337078651686,3560,2841,560,2024
-Gestão Do Agronegócio,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7970049916805324,2404,1916,496,2024
-Estética E Cosmética,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7965245978630974,8517,6784,288,2024
-Engenharia Civil,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7963963963963964,1665,1326,163,2024
-Investigação Forense E Perícia Criminal,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7940298507462686,4020,3192,573,2024
+NO_CURSO,Rede,Grau,NO_REGIAO_IES,QT_ING_TOTAL,QT_DESV_TOTAL,ano
+Acupuntura,Privada,Tecnólogo,Sul,135,20,2023
+Administração,Privada,Bacharelado,Centro-Oeste,8776,4857,2023
+Administração,Privada,Bacharelado,Nordeste,7940,2680,2023
+Administração,Privada,Bacharelado,Norte,861,429,2023
+Administração,Privada,Bacharelado,Sudeste,74765,35705,2023
+Administração,Privada,Bacharelado,Sul,122517,75386,2023
+Administração,Pública,Bacharelado,Nordeste,86,19,2023
+Administração,Pública,Bacharelado,Sudeste,5436,1186,2023
+Administração,Pública,Bacharelado,Sul,42,18,2023
+Administração Pública,Privada,Bacharelado,Centro-Oeste,165,87,2023
+Administração Pública,Privada,Bacharelado,Nordeste,4,1,2023
+Administração Pública,Privada,Bacharelado,Sudeste,968,395,2023
+Administração Pública,Privada,Bacharelado,Sul,2893,1147,2023
+Administração Pública,Pública,Bacharelado,Centro-Oeste,191,67,2023
+Administração Pública,Pública,Bacharelado,Nordeste,802,81,2023
+Administração Pública,Pública,Bacharelado,Sudeste,521,77,2023
+Administração Rural,Privada,Tecnólogo,Sul,183,54,2023
+Agente Comunitário,Privada,Tecnólogo,Sul,136,0,2023
+Agente Comunitário De Saúde E Endemias,Privada,Tecnólogo,Sul,1048,282,2023
+Agricultura,Privada,Tecnólogo,Sul,909,313,2023
+Agrimensura,Privada,Tecnólogo,Sul,81,28,2023
+Agrocomputação,Privada,Tecnólogo,Sul,627,148,2023
+Agroecologia,Privada,Tecnólogo,Sudeste,69,0,2023
+Agronegócio,Privada,Bacharelado,Sul,55,21,2023
+Agronegócio,Privada,Tecnólogo,Centro-Oeste,738,444,2023
+Agronegócio,Privada,Tecnólogo,Nordeste,16,10,2023
+Agronegócio,Privada,Tecnólogo,Sudeste,51,37,2023
+Agronegócio,Privada,Tecnólogo,Sul,1955,1423,2023
+Agronomia,Privada,Bacharelado,Centro-Oeste,529,264,2023
+Agronomia,Privada,Bacharelado,Nordeste,16,1,2023
+Agronomia,Privada,Bacharelado,Sudeste,3534,561,2023
+Agronomia,Privada,Bacharelado,Sul,20378,10512,2023
+Agronomia,Privada,Tecnólogo,Sul,2000,661,2023
+Andragogia,Privada,Licenciatura,Sul,102,11,2023
+Animação,Privada,Bacharelado,Sudeste,4,2,2023
+Antropologia,Privada,Bacharelado,Sul,696,212,2023
+Análise De Dados,Privada,Tecnólogo,Sudeste,33,12,2023
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Centro-Oeste,6127,2735,2023
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Nordeste,7587,2543,2023
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Norte,547,91,2023
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Sudeste,64416,25307,2023
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Sul,76962,37935,2023
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Nordeste,213,93,2023
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Norte,143,0,2023
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Sudeste,80,6,2023
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Sul,108,22,2023
+Análises Clínicas,Privada,Tecnólogo,Sul,74,17,2023
+Arqueologia,Privada,Bacharelado,Sudeste,79,4,2023
+Arquitetura De Dados,Privada,Tecnólogo,Centro-Oeste,70,51,2023
+Arquitetura De Dados,Privada,Tecnólogo,Sudeste,61,30,2023
+Arquitetura De Dados,Privada,Tecnólogo,Sul,333,193,2023
+Arquitetura E Urbanismo,Privada,Bacharelado,Centro-Oeste,168,91,2023
+Arquitetura E Urbanismo,Privada,Bacharelado,Nordeste,478,210,2023
+Arquitetura E Urbanismo,Privada,Bacharelado,Norte,61,43,2023
+Arquitetura E Urbanismo,Privada,Bacharelado,Sudeste,2730,1167,2023
+Arquitetura E Urbanismo,Privada,Bacharelado,Sul,6635,3224,2023
+Arquivologia,Privada,Bacharelado,Sul,746,238,2023
+Artes,Privada,Licenciatura,Sudeste,72,28,2023
+Artes,Privada,Licenciatura,Sul,689,8,2023
+Artes Cênicas,Privada,Licenciatura,Nordeste,2,1,2023
+Artes Cênicas,Privada,Licenciatura,Sudeste,27,7,2023
+Artes Visuais,Privada,Bacharelado,Centro-Oeste,168,99,2023
+Artes Visuais,Privada,Bacharelado,Sudeste,144,61,2023
+Artes Visuais,Privada,Bacharelado,Sul,1543,599,2023
+Artes Visuais,Privada,Licenciatura,Centro-Oeste,303,129,2023
+Artes Visuais,Privada,Licenciatura,Nordeste,14,3,2023
+Artes Visuais,Privada,Licenciatura,Sudeste,5011,2532,2023
+Artes Visuais,Privada,Licenciatura,Sul,8011,3585,2023
+Artes Visuais,Privada,Tecnólogo,Nordeste,18,6,2023
+Artes Visuais,Privada,Tecnólogo,Sudeste,72,33,2023
+Artes Visuais,Pública,Licenciatura,Centro-Oeste,295,19,2023
+Artes Visuais,Pública,Licenciatura,Nordeste,227,41,2023
+Ascensão Feminina E Liderança,Privada,Tecnólogo,Sul,7,6,2023
+Assessoria Executiva Digital,Privada,Tecnólogo,Sul,35,13,2023
+Auditoria Em Saúde,Privada,Tecnólogo,Sul,119,30,2023
+Automação Industrial,Privada,Tecnólogo,Centro-Oeste,76,16,2023
+Automação Industrial,Privada,Tecnólogo,Sudeste,1499,381,2023
+Automação Industrial,Privada,Tecnólogo,Sul,3225,1152,2023
+Banco De Dados,Privada,Tecnólogo,Centro-Oeste,78,30,2023
+Banco De Dados,Privada,Tecnólogo,Nordeste,87,17,2023
+Banco De Dados,Privada,Tecnólogo,Sudeste,2017,816,2023
+Banco De Dados,Privada,Tecnólogo,Sul,939,216,2023
+Banco De Dados E Armazenamento De Big Data,Privada,Tecnólogo,Centro-Oeste,36,29,2023
+Biblioteconomia,Privada,Bacharelado,Sudeste,1780,178,2023
+Biblioteconomia,Privada,Bacharelado,Sul,2208,916,2023
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Centro-Oeste,7,5,2023
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Nordeste,11,4,2023
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Sudeste,578,339,2023
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Sul,682,357,2023
+Big Data E Inteligência Artificial,Privada,Tecnólogo,Centro-Oeste,99,89,2023
+Biologia,Privada,Bacharelado,Sul,71,33,2023
+Biologia,Privada,Licenciatura,Nordeste,66,23,2023
+Biologia,Privada,Licenciatura,Norte,1,0,2023
+Biologia,Privada,Licenciatura,Sudeste,427,214,2023
+Biologia,Privada,Licenciatura,Sul,41,18,2023
+Biomedicina,Privada,Bacharelado,Centro-Oeste,1233,553,2023
+Biomedicina,Privada,Bacharelado,Nordeste,1427,510,2023
+Biomedicina,Privada,Bacharelado,Norte,213,134,2023
+Biomedicina,Privada,Bacharelado,Sudeste,21079,9140,2023
+Biomedicina,Privada,Bacharelado,Sul,30530,18204,2023
+Blockchain E Criptografia Digital,Privada,Tecnólogo,Sudeste,23,5,2023
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Centro-Oeste,87,49,2023
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Sudeste,79,32,2023
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Sul,459,267,2023
+Cibersegurança,Privada,Tecnólogo,Centro-Oeste,300,186,2023
+Cibersegurança,Privada,Tecnólogo,Sudeste,179,85,2023
+Cibersegurança,Privada,Tecnólogo,Sul,2903,1107,2023
+Cinema E Audiovisual,Privada,Bacharelado,Sudeste,1,0,2023
+Ciência  De Dados E Big Data,Privada,Tecnólogo,Sudeste,126,0,2023
+Ciência Da Computação,Privada,Bacharelado,Centro-Oeste,463,62,2023
+Ciência Da Computação,Privada,Bacharelado,Nordeste,760,128,2023
+Ciência Da Computação,Privada,Bacharelado,Sudeste,3782,1901,2023
+Ciência Da Computação,Privada,Bacharelado,Sul,6270,2299,2023
+Ciência Da Computação,Privada,Licenciatura,Sul,216,27,2023
+Ciência Da Computação,Pública,Licenciatura,Nordeste,25,14,2023
+Ciência Da Criatividade,Privada,Tecnólogo,Sul,146,0,2023
+Ciência Da Felicidade,Privada,Tecnólogo,Sul,1132,63,2023
+Ciência Da Religião,Privada,Licenciatura,Sudeste,63,0,2023
+Ciência De Dados,Privada,Bacharelado,Sudeste,160,0,2023
+Ciência De Dados,Privada,Bacharelado,Sul,9,4,2023
+Ciência De Dados,Privada,Tecnólogo,Centro-Oeste,281,161,2023
+Ciência De Dados,Privada,Tecnólogo,Nordeste,83,22,2023
+Ciência De Dados,Privada,Tecnólogo,Sudeste,3869,1466,2023
+Ciência De Dados,Privada,Tecnólogo,Sul,3788,1109,2023
+Ciência De Dados,Pública,Bacharelado,Sudeste,2894,2030,2023
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Nordeste,39,22,2023
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Sudeste,25,15,2023
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Sul,230,19,2023
+Ciência Dos Dados,Pública,Tecnólogo,Centro-Oeste,548,102,2023
+Ciência E Tecnologia,Pública,Bacharelado,Centro-Oeste,937,231,2023
+Ciência Econômica,Privada,Bacharelado,Centro-Oeste,85,24,2023
+Ciência Econômica,Privada,Bacharelado,Nordeste,13,2,2023
+Ciência Econômica,Privada,Bacharelado,Norte,18,9,2023
+Ciência Econômica,Privada,Bacharelado,Sudeste,145,117,2023
+Ciência Econômica,Privada,Bacharelado,Sul,54,23,2023
+Ciência Política,Privada,Bacharelado,Centro-Oeste,18,3,2023
+Ciência Política,Privada,Bacharelado,Nordeste,7,5,2023
+Ciência Política,Privada,Bacharelado,Norte,1,0,2023
+Ciência Política,Privada,Bacharelado,Sudeste,425,197,2023
+Ciência Política,Privada,Bacharelado,Sul,984,363,2023
+Ciência Política,Privada,Tecnólogo,Centro-Oeste,62,9,2023
+Ciências Aeronáuticas,Privada,Bacharelado,Nordeste,291,158,2023
+Ciências Aeronáuticas,Privada,Bacharelado,Norte,13,5,2023
+Ciências Aeronáuticas,Privada,Bacharelado,Sudeste,50,31,2023
+Ciências Aeronáuticas,Privada,Bacharelado,Sul,288,107,2023
+Ciências Agrárias,Pública,Licenciatura,Nordeste,30,5,2023
+Ciências Biológicas,Privada,Bacharelado,Centro-Oeste,68,18,2023
+Ciências Biológicas,Privada,Bacharelado,Nordeste,12,5,2023
+Ciências Biológicas,Privada,Bacharelado,Sudeste,3257,1511,2023
+Ciências Biológicas,Privada,Bacharelado,Sul,1564,626,2023
+Ciências Biológicas,Privada,Licenciatura,Centro-Oeste,122,34,2023
+Ciências Biológicas,Privada,Licenciatura,Nordeste,147,43,2023
+Ciências Biológicas,Privada,Licenciatura,Norte,21,7,2023
+Ciências Biológicas,Privada,Licenciatura,Sudeste,4231,1821,2023
+Ciências Biológicas,Privada,Licenciatura,Sul,7230,3507,2023
+Ciências Biológicas,Pública,Licenciatura,Nordeste,1161,357,2023
+Ciências Biológicas,Pública,Licenciatura,Norte,420,10,2023
+Ciências Biológicas,Pública,Licenciatura,Sudeste,648,200,2023
+Ciências Biológicas,Pública,Licenciatura,Sul,182,32,2023
+Ciências Contábeis,Privada,Bacharelado,Centro-Oeste,3514,1722,2023
+Ciências Contábeis,Privada,Bacharelado,Nordeste,4102,1459,2023
+Ciências Contábeis,Privada,Bacharelado,Norte,400,150,2023
+Ciências Contábeis,Privada,Bacharelado,Sudeste,37035,18315,2023
+Ciências Contábeis,Privada,Bacharelado,Sul,54139,32347,2023
+Ciências Contábeis,Pública,Bacharelado,Nordeste,503,48,2023
+Ciências Contábeis,Pública,Bacharelado,Sudeste,772,144,2023
+Ciências Contábeis,Pública,Bacharelado,Sul,40,7,2023
+Ciências Da Computação,Privada,Bacharelado,Centro-Oeste,318,150,2023
+Ciências Da Computação,Privada,Bacharelado,Nordeste,102,78,2023
+Ciências Da Computação,Privada,Bacharelado,Sudeste,8524,2608,2023
+Ciências Da Computação,Privada,Bacharelado,Sul,2482,1017,2023
+Ciências Da Natureza,Privada,Bacharelado,Centro-Oeste,2,0,2023
+Ciências Da Natureza,Privada,Bacharelado,Sudeste,127,37,2023
+Ciências Da Natureza,Privada,Bacharelado,Sul,31,8,2023
+Ciências Da Religião,Privada,Licenciatura,Nordeste,5,0,2023
+Ciências Da Religião,Privada,Licenciatura,Sudeste,6,0,2023
+Ciências Da Religião,Privada,Licenciatura,Sul,815,196,2023
+Ciências Da Religião - Ensino Religioso,Privada,Licenciatura,Nordeste,6,6,2023
+Ciências De Dados,Privada,Tecnólogo,Centro-Oeste,70,14,2023
+Ciências De Dados,Privada,Tecnólogo,Nordeste,241,72,2023
+Ciências De Dados,Privada,Tecnólogo,Sudeste,4,0,2023
+Ciências De Dados,Privada,Tecnólogo,Sul,1217,774,2023
+Ciências De Dados E Análise De Comportamento,Privada,Tecnólogo,Sul,696,454,2023
+Ciências Econômicas,Privada,Bacharelado,Centro-Oeste,380,175,2023
+Ciências Econômicas,Privada,Bacharelado,Nordeste,168,80,2023
+Ciências Econômicas,Privada,Bacharelado,Norte,12,7,2023
+Ciências Econômicas,Privada,Bacharelado,Sudeste,5006,2429,2023
+Ciências Econômicas,Privada,Bacharelado,Sul,5764,2765,2023
+Ciências Econômicas,Pública,Bacharelado,Sudeste,28,13,2023
+Ciências Exatas,Privada,Bacharelado,Centro-Oeste,8,2,2023
+Ciências Exatas,Privada,Bacharelado,Sudeste,383,78,2023
+Ciências Exatas,Privada,Bacharelado,Sul,89,28,2023
+Ciências Humanas,Privada,Bacharelado,Centro-Oeste,6,3,2023
+Ciências Humanas,Privada,Bacharelado,Sudeste,99,21,2023
+Ciências Humanas,Privada,Bacharelado,Sul,39,8,2023
+Ciências Jurídicas E Sociais,Privada,Tecnólogo,Sul,132,24,2023
+Ciências Naturais E Matemática,Pública,Licenciatura,Centro-Oeste,64,34,2023
+Ciências Políticas,Privada,Bacharelado,Centro-Oeste,116,61,2023
+Ciências Políticas,Privada,Bacharelado,Nordeste,35,11,2023
+Ciências Políticas,Privada,Bacharelado,Norte,1,1,2023
+Ciências Políticas,Privada,Bacharelado,Sudeste,421,107,2023
+Ciências Políticas,Privada,Bacharelado,Sul,651,321,2023
+Ciências Sociais,Privada,Bacharelado,Centro-Oeste,10,4,2023
+Ciências Sociais,Privada,Bacharelado,Sudeste,292,63,2023
+Ciências Sociais,Privada,Bacharelado,Sul,101,20,2023
+Ciências Sociais,Privada,Licenciatura,Nordeste,9,4,2023
+Ciências Sociais,Privada,Licenciatura,Sudeste,656,294,2023
+Ciências Sociais,Privada,Licenciatura,Sul,60,19,2023
+"Ciências: Biologia, Física E Química",Pública,Licenciatura,Norte,152,2,2023
+Coach Digital,Privada,Tecnólogo,Nordeste,5,1,2023
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Centro-Oeste,242,149,2023
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Sudeste,204,101,2023
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Sul,1878,847,2023
+Coaching E Mentoring,Privada,Tecnólogo,Nordeste,47,23,2023
+Coaching E Mentoring,Privada,Tecnólogo,Norte,7,3,2023
+Coaching E Mentoring,Privada,Tecnólogo,Sudeste,228,94,2023
+Coaching E Mentoring,Privada,Tecnólogo,Sul,15,4,2023
+Coding,Privada,Tecnólogo,Nordeste,42,13,2023
+Coding,Privada,Tecnólogo,Sudeste,53,22,2023
+Coding,Privada,Tecnólogo,Sul,16,6,2023
+Computação,Privada,Licenciatura,Centro-Oeste,12,2,2023
+Computação,Privada,Licenciatura,Sudeste,320,130,2023
+Computação,Privada,Licenciatura,Sul,70,20,2023
+Computação,Pública,Licenciatura,Nordeste,393,108,2023
+Computação,Pública,Licenciatura,Sudeste,155,62,2023
+Computação,Pública,Licenciatura,Sul,142,24,2023
+Computação E Informática,Pública,Licenciatura,Nordeste,339,45,2023
+Computação E Informática,Pública,Licenciatura,Sul,141,4,2023
+Computação E Robótica Educativa,Pública,Licenciatura,Sul,116,37,2023
+Computação Em Nuvem,Privada,Tecnólogo,Centro-Oeste,107,46,2023
+Computação Em Nuvem,Privada,Tecnólogo,Nordeste,27,5,2023
+Computação Em Nuvem,Privada,Tecnólogo,Norte,7,1,2023
+Computação Em Nuvem,Privada,Tecnólogo,Sudeste,109,40,2023
+Computação Em Nuvem,Privada,Tecnólogo,Sul,444,216,2023
+Comunicação Assistiva,Privada,Tecnólogo,Sul,51,51,2023
+Comunicação Digital,Privada,Tecnólogo,Sudeste,25,0,2023
+Comunicação Digital,Privada,Tecnólogo,Sul,9,4,2023
+Comunicação Digital E Redes Sociais,Privada,Tecnólogo,Sudeste,14,2,2023
+Comunicação E Inteligência De Mercado,Privada,Bacharelado,Sul,2,2,2023
+Comunicação E Marketing,Privada,Bacharelado,Nordeste,3,1,2023
+Comunicação E Marketing,Privada,Bacharelado,Sudeste,293,152,2023
+Comunicação Institucional,Privada,Tecnólogo,Centro-Oeste,6,2,2023
+Comunicação Institucional,Privada,Tecnólogo,Nordeste,35,5,2023
+Comunicação Institucional,Privada,Tecnólogo,Sudeste,349,113,2023
+Comunicação Institucional,Privada,Tecnólogo,Sul,439,101,2023
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Centro-Oeste,18,0,2023
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Sudeste,505,197,2023
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Sul,1522,427,2023
+Comunicação Social - Publicidade E Propaganda E Mídias Digitais,Privada,Bacharelado,Sudeste,85,34,2023
+Comércio Exterior,Privada,Bacharelado,Sul,46,38,2023
+Comércio Exterior,Privada,Tecnólogo,Centro-Oeste,361,183,2023
+Comércio Exterior,Privada,Tecnólogo,Nordeste,263,76,2023
+Comércio Exterior,Privada,Tecnólogo,Sudeste,4635,1918,2023
+Comércio Exterior,Privada,Tecnólogo,Sul,5524,2492,2023
+Comércio Exterior,Pública,Tecnólogo,Sudeste,15,3,2023
+"Conciliação, Mediação E Arbitragem",Privada,Tecnólogo,Sudeste,75,28,2023
+"Conciliação, Mediação E Arbitragem",Privada,Tecnólogo,Sul,4,2,2023
+Construção De Edifícios,Privada,Tecnólogo,Sudeste,30,10,2023
+Construção De Edifícios,Privada,Tecnólogo,Sul,472,161,2023
+Controle De Obras,Privada,Tecnólogo,Sudeste,13,0,2023
+Controle De Obras,Privada,Tecnólogo,Sul,225,66,2023
+Cozinha Contemporânea,Privada,Tecnólogo,Centro-Oeste,17,3,2023
+Cozinha Contemporânea,Privada,Tecnólogo,Sudeste,472,199,2023
+Cozinha Contemporânea,Privada,Tecnólogo,Sul,136,36,2023
+Criminologia,Privada,Bacharelado,Centro-Oeste,1042,641,2023
+Criminologia,Privada,Bacharelado,Nordeste,8,6,2023
+Criminologia,Privada,Bacharelado,Sudeste,905,500,2023
+Criminologia,Privada,Bacharelado,Sul,7655,4649,2023
+Criminologia,Privada,Tecnólogo,Nordeste,14,10,2023
+Criminologia,Privada,Tecnólogo,Sudeste,1056,554,2023
+Criminologia,Privada,Tecnólogo,Sul,7969,2283,2023
+Dança,Privada,Licenciatura,Sul,1853,921,2023
+Dança,Pública,Licenciatura,Nordeste,113,31,2023
+Data Science,Privada,Tecnólogo,Centro-Oeste,40,9,2023
+Data Science,Privada,Tecnólogo,Nordeste,173,69,2023
+Data Science,Privada,Tecnólogo,Norte,15,5,2023
+Data Science,Privada,Tecnólogo,Sudeste,416,91,2023
+Defesa Cibernética,Privada,Tecnólogo,Centro-Oeste,39,2,2023
+Defesa Cibernética,Privada,Tecnólogo,Nordeste,141,14,2023
+Defesa Cibernética,Privada,Tecnólogo,Sudeste,2063,663,2023
+Defesa Cibernética,Privada,Tecnólogo,Sul,753,142,2023
+Defesa Médica Hospitalar,Privada,Tecnólogo,Sul,181,40,2023
+Desenvolvimento Back-End,Privada,Tecnólogo,Centro-Oeste,133,85,2023
+Desenvolvimento Back-End,Privada,Tecnólogo,Nordeste,2,1,2023
+Desenvolvimento Back-End,Privada,Tecnólogo,Sudeste,351,135,2023
+Desenvolvimento Back-End,Privada,Tecnólogo,Sul,553,340,2023
+Desenvolvimento De Aplicativos Móveis,Privada,Tecnólogo,Sul,388,92,2023
+Desenvolvimento De Aplicativos Para Dispositivos Móveis,Privada,Tecnólogo,Sudeste,1,1,2023
+Desenvolvimento De Software Multiplataforma,Privada,Tecnólogo,Sudeste,1,1,2023
+Desenvolvimento Full Stack,Privada,Tecnólogo,Centro-Oeste,42,9,2023
+Desenvolvimento Full Stack,Privada,Tecnólogo,Sudeste,1211,186,2023
+Desenvolvimento Full Stack,Privada,Tecnólogo,Sul,358,63,2023
+Desenvolvimento Mobile,Privada,Tecnólogo,Centro-Oeste,92,67,2023
+Desenvolvimento Mobile,Privada,Tecnólogo,Nordeste,5,1,2023
+Desenvolvimento Mobile,Privada,Tecnólogo,Sudeste,191,87,2023
+Desenvolvimento Mobile,Privada,Tecnólogo,Sul,688,358,2023
+Desenvolvimento Para Web,Privada,Tecnólogo,Centro-Oeste,6,5,2023
+Desenvolvimento Para Web,Privada,Tecnólogo,Sul,775,498,2023
+Desenvolvimento Web,Privada,Tecnólogo,Centro-Oeste,173,98,2023
+Desenvolvimento Web,Privada,Tecnólogo,Sudeste,212,96,2023
+Design,Privada,Bacharelado,Sudeste,419,164,2023
+Design,Privada,Tecnólogo,Nordeste,4,2,2023
+Design De Animação,Privada,Bacharelado,Nordeste,22,15,2023
+Design De Animação,Privada,Bacharelado,Sudeste,355,177,2023
+Design De Animação,Privada,Bacharelado,Sul,52,23,2023
+Design De Animação,Privada,Tecnólogo,Sudeste,174,144,2023
+Design De Animação,Privada,Tecnólogo,Sul,869,200,2023
+Design De Games,Privada,Bacharelado,Nordeste,12,5,2023
+Design De Games,Privada,Bacharelado,Sudeste,270,110,2023
+Design De Games,Privada,Bacharelado,Sul,60,18,2023
+Design De Games,Privada,Tecnólogo,Sul,227,78,2023
+Design De Interiores,Privada,Tecnólogo,Centro-Oeste,561,303,2023
+Design De Interiores,Privada,Tecnólogo,Nordeste,503,275,2023
+Design De Interiores,Privada,Tecnólogo,Norte,21,14,2023
+Design De Interiores,Privada,Tecnólogo,Sudeste,3656,1738,2023
+Design De Interiores,Privada,Tecnólogo,Sul,10181,5620,2023
+Design De Moda,Privada,Tecnólogo,Centro-Oeste,373,209,2023
+Design De Moda,Privada,Tecnólogo,Nordeste,91,35,2023
+Design De Moda,Privada,Tecnólogo,Sudeste,1872,759,2023
+Design De Moda,Privada,Tecnólogo,Sul,6515,3605,2023
+Design De Produto,Privada,Tecnólogo,Nordeste,4,3,2023
+Design De Produto,Privada,Tecnólogo,Sudeste,341,111,2023
+Design De Produto,Privada,Tecnólogo,Sul,719,263,2023
+Design Digital,Privada,Tecnólogo,Sul,94,8,2023
+Design Editorial,Privada,Tecnólogo,Sul,131,38,2023
+Design Educacional,Privada,Tecnólogo,Nordeste,4,3,2023
+Design Educacional,Pública,Tecnólogo,Sudeste,33,8,2023
+Design Gráfico,Privada,Tecnólogo,Centro-Oeste,698,408,2023
+Design Gráfico,Privada,Tecnólogo,Nordeste,157,57,2023
+Design Gráfico,Privada,Tecnólogo,Sudeste,4672,1990,2023
+Design Gráfico,Privada,Tecnólogo,Sul,10785,4195,2023
+Design Gráfico E Digital,Privada,Tecnólogo,Sudeste,368,172,2023
+Design Musical,Privada,Tecnólogo,Sul,637,372,2023
+Desing Experiência Do Usuário,Privada,Tecnólogo,Sudeste,26,0,2023
+Despachante Documentalista,Privada,Tecnólogo,Sudeste,58,0,2023
+Despachante Documentalista,Privada,Tecnólogo,Sul,2446,607,2023
+Devops,Privada,Tecnólogo,Centro-Oeste,95,55,2023
+Devops,Privada,Tecnólogo,Sudeste,149,62,2023
+Devops,Privada,Tecnólogo,Sul,291,170,2023
+Digital Security,Privada,Tecnólogo,Nordeste,106,36,2023
+Digital Security,Privada,Tecnólogo,Norte,6,2,2023
+Digital Security,Privada,Tecnólogo,Sudeste,2,0,2023
+E-Commerce,Privada,Tecnólogo,Nordeste,11,0,2023
+Economia Da Influência Digital,Privada,Tecnólogo,Sul,60,0,2023
+Educador Social,Privada,Tecnólogo,Sul,1003,288,2023
+Educação Do Campo,Pública,Licenciatura,Nordeste,243,37,2023
+Educação Especial,Privada,Licenciatura,Centro-Oeste,166,90,2023
+Educação Especial,Privada,Licenciatura,Nordeste,3,1,2023
+Educação Especial,Privada,Licenciatura,Sudeste,1722,501,2023
+Educação Especial,Privada,Licenciatura,Sul,9735,3287,2023
+Educação Especial,Pública,Licenciatura,Sudeste,316,56,2023
+Educação Financeira,Privada,Tecnólogo,Sudeste,37,0,2023
+Educação Física,Privada,Bacharelado,Centro-Oeste,3205,1610,2023
+Educação Física,Privada,Bacharelado,Nordeste,4363,905,2023
+Educação Física,Privada,Bacharelado,Norte,118,72,2023
+Educação Física,Privada,Bacharelado,Sudeste,26821,11263,2023
+Educação Física,Privada,Bacharelado,Sul,74713,41001,2023
+Educação Física,Privada,Licenciatura,Centro-Oeste,1289,667,2023
+Educação Física,Privada,Licenciatura,Nordeste,749,280,2023
+Educação Física,Privada,Licenciatura,Norte,305,33,2023
+Educação Física,Privada,Licenciatura,Sudeste,6323,2588,2023
+Educação Física,Privada,Licenciatura,Sul,36987,20753,2023
+Educação Física,Pública,Bacharelado,Sul,32,15,2023
+Educação Física,Pública,Licenciatura,Centro-Oeste,140,0,2023
+Educação Física,Pública,Licenciatura,Nordeste,1123,176,2023
+Educação Física,Pública,Licenciatura,Norte,240,4,2023
+Educação Física,Pública,Licenciatura,Sudeste,307,59,2023
+Educação Física,Pública,Licenciatura,Sul,12,7,2023
+Educação Profissional E Tecnológica,Pública,Licenciatura,Sul,43,0,2023
+Eletrotécnica Industrial,Privada,Tecnólogo,Sudeste,6,3,2023
+Eletrônica Industrial,Privada,Tecnólogo,Sudeste,9,0,2023
+Eletrônica Industrial,Privada,Tecnólogo,Sul,5,3,2023
+Embelezamento E Imagem Pessoal,Privada,Tecnólogo,Sul,207,126,2023
+Empreendedorismo,Privada,Tecnólogo,Centro-Oeste,145,74,2023
+Empreendedorismo,Privada,Tecnólogo,Nordeste,65,20,2023
+Empreendedorismo,Privada,Tecnólogo,Sudeste,1699,744,2023
+Empreendedorismo,Privada,Tecnólogo,Sul,1979,1179,2023
+Empreendedorismo Digital,Privada,Tecnólogo,Nordeste,66,26,2023
+Empreendedorismo Digital,Privada,Tecnólogo,Norte,10,7,2023
+Empreendedorismo Digital,Privada,Tecnólogo,Sudeste,4,1,2023
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Centro-Oeste,72,50,2023
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Sudeste,125,68,2023
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Sul,383,242,2023
+Empreendedorismo Educacional,Privada,Tecnólogo,Sul,23,9,2023
+Energias Renováveis,Privada,Tecnólogo,Sudeste,28,0,2023
+Energias Renováveis,Privada,Tecnólogo,Sul,1529,568,2023
+Energias Renováveis,Pública,Tecnólogo,Nordeste,89,11,2023
+Enfermagem,Privada,Bacharelado,Centro-Oeste,2806,2150,2023
+Enfermagem,Privada,Bacharelado,Nordeste,3038,1036,2023
+Enfermagem,Privada,Bacharelado,Norte,1251,51,2023
+Enfermagem,Privada,Bacharelado,Sudeste,18206,6576,2023
+Enfermagem,Privada,Bacharelado,Sul,70742,44442,2023
+Engenharia,Pública,Bacharelado,Sudeste,26,12,2023
+Engenharia Agronômica,Privada,Bacharelado,Centro-Oeste,142,40,2023
+Engenharia Agronômica,Privada,Bacharelado,Nordeste,6,0,2023
+Engenharia Agronômica,Privada,Bacharelado,Sudeste,148,68,2023
+Engenharia Agronômica,Privada,Bacharelado,Sul,3447,881,2023
+Engenharia Ambiental,Privada,Bacharelado,Centro-Oeste,12,3,2023
+Engenharia Ambiental,Privada,Bacharelado,Nordeste,80,31,2023
+Engenharia Ambiental,Privada,Bacharelado,Sudeste,2851,1092,2023
+Engenharia Ambiental,Privada,Bacharelado,Sul,1494,532,2023
+Engenharia Ambiental,Pública,Bacharelado,Sul,15,5,2023
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Centro-Oeste,226,97,2023
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Sudeste,983,194,2023
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Sul,2813,1024,2023
+Engenharia Biomédica,Privada,Bacharelado,Sudeste,11,11,2023
+Engenharia Biomédica,Privada,Bacharelado,Sul,463,139,2023
+Engenharia Civil,Privada,Bacharelado,Centro-Oeste,743,352,2023
+Engenharia Civil,Privada,Bacharelado,Nordeste,1219,503,2023
+Engenharia Civil,Privada,Bacharelado,Norte,102,60,2023
+Engenharia Civil,Privada,Bacharelado,Sudeste,16121,6558,2023
+Engenharia Civil,Privada,Bacharelado,Sul,13765,7468,2023
+Engenharia Civil,Pública,Bacharelado,Sul,30,19,2023
+Engenharia Da Computação,Privada,Bacharelado,Sudeste,217,55,2023
+Engenharia De Alimentos,Privada,Bacharelado,Nordeste,2,1,2023
+Engenharia De Alimentos,Privada,Bacharelado,Sudeste,164,94,2023
+Engenharia De Alimentos,Privada,Bacharelado,Sul,214,0,2023
+Engenharia De Aplicação,Privada,Bacharelado,Sul,8,5,2023
+Engenharia De Computação,Privada,Bacharelado,Centro-Oeste,95,50,2023
+Engenharia De Computação,Privada,Bacharelado,Nordeste,81,36,2023
+Engenharia De Computação,Privada,Bacharelado,Sudeste,2400,1159,2023
+Engenharia De Computação,Privada,Bacharelado,Sul,3489,1474,2023
+Engenharia De Computação,Pública,Bacharelado,Sudeste,4305,2273,2023
+Engenharia De Controle E Automação,Privada,Bacharelado,Centro-Oeste,116,63,2023
+Engenharia De Controle E Automação,Privada,Bacharelado,Nordeste,63,43,2023
+Engenharia De Controle E Automação,Privada,Bacharelado,Sudeste,1085,409,2023
+Engenharia De Controle E Automação,Privada,Bacharelado,Sul,1222,336,2023
+Engenharia De Dados,Privada,Bacharelado,Sul,23,4,2023
+Engenharia De Design Digital,Privada,Bacharelado,Sul,85,11,2023
+Engenharia De Manutenção E Diagnóstico Industrial,Privada,Bacharelado,Sul,117,19,2023
+Engenharia De Minas,Privada,Bacharelado,Centro-Oeste,271,120,2023
+Engenharia De Produção,Privada,Bacharelado,Centro-Oeste,490,221,2023
+Engenharia De Produção,Privada,Bacharelado,Nordeste,592,242,2023
+Engenharia De Produção,Privada,Bacharelado,Norte,36,28,2023
+Engenharia De Produção,Privada,Bacharelado,Sudeste,12746,5345,2023
+Engenharia De Produção,Privada,Bacharelado,Sul,13252,6393,2023
+Engenharia De Produção,Pública,Bacharelado,Sudeste,3101,1485,2023
+Engenharia De Sistemas,Privada,Bacharelado,Sul,10,5,2023
+Engenharia De Software,Privada,Bacharelado,Centro-Oeste,1169,491,2023
+Engenharia De Software,Privada,Bacharelado,Nordeste,949,77,2023
+Engenharia De Software,Privada,Bacharelado,Sudeste,8243,2372,2023
+Engenharia De Software,Privada,Bacharelado,Sul,15603,7247,2023
+Engenharia Eletrônica,Privada,Bacharelado,Sul,28,0,2023
+Engenharia Elétrica,Privada,Bacharelado,Centro-Oeste,529,259,2023
+Engenharia Elétrica,Privada,Bacharelado,Nordeste,1044,396,2023
+Engenharia Elétrica,Privada,Bacharelado,Norte,75,37,2023
+Engenharia Elétrica,Privada,Bacharelado,Sudeste,8864,3737,2023
+Engenharia Elétrica,Privada,Bacharelado,Sul,11699,5410,2023
+Engenharia Industrial Mecânica,Privada,Bacharelado,Sudeste,87,8,2023
+Engenharia Mecatrônica,Privada,Bacharelado,Nordeste,3,2,2023
+Engenharia Mecatrônica,Privada,Bacharelado,Sudeste,621,243,2023
+Engenharia Mecatrônica,Privada,Bacharelado,Sul,609,410,2023
+Engenharia Mecânica,Privada,Bacharelado,Centro-Oeste,573,305,2023
+Engenharia Mecânica,Privada,Bacharelado,Nordeste,593,215,2023
+Engenharia Mecânica,Privada,Bacharelado,Norte,45,30,2023
+Engenharia Mecânica,Privada,Bacharelado,Sudeste,8869,3165,2023
+Engenharia Mecânica,Privada,Bacharelado,Sul,11065,5965,2023
+Engenharia Mecânica Automotiva,Privada,Bacharelado,Sul,9,2,2023
+Engenharia Química,Privada,Bacharelado,Centro-Oeste,31,22,2023
+Engenharia Química,Privada,Bacharelado,Nordeste,2,1,2023
+Engenharia Química,Privada,Bacharelado,Sudeste,483,169,2023
+Engenharia Química,Privada,Bacharelado,Sul,63,19,2023
+Ensino Religioso,Privada,Licenciatura,Sudeste,51,10,2023
+Escrita Criativa,Privada,Tecnólogo,Nordeste,10,7,2023
+Escrita Criativa,Privada,Tecnólogo,Sul,2,0,2023
+Estatística,Privada,Bacharelado,Nordeste,21,7,2023
+Estatística,Privada,Bacharelado,Sudeste,348,154,2023
+Estatística,Privada,Bacharelado,Sul,39,15,2023
+Estética E Cosmetologia,Privada,Tecnólogo,Sudeste,2,2,2023
+Estética E Cosmética,Privada,Bacharelado,Sudeste,27,7,2023
+Estética E Cosmética,Privada,Tecnólogo,Centro-Oeste,492,229,2023
+Estética E Cosmética,Privada,Tecnólogo,Nordeste,2044,895,2023
+Estética E Cosmética,Privada,Tecnólogo,Norte,216,57,2023
+Estética E Cosmética,Privada,Tecnólogo,Sudeste,11468,5764,2023
+Estética E Cosmética,Privada,Tecnólogo,Sul,15006,8720,2023
+Estética E Imagem Pessoal,Privada,Tecnólogo,Sul,882,444,2023
+Eventos,Privada,Tecnólogo,Centro-Oeste,126,67,2023
+Eventos,Privada,Tecnólogo,Nordeste,14,3,2023
+Eventos,Privada,Tecnólogo,Sudeste,935,470,2023
+Eventos,Privada,Tecnólogo,Sul,1050,505,2023
+Experiência Do Usuário E Modelagem De Projetos Inovadores,Privada,Tecnólogo,Nordeste,63,21,2023
+Experiência Do Usuário E Modelagem De Projetos Inovadores,Privada,Tecnólogo,Sudeste,6,2,2023
+Fabricação Mecânica,Privada,Tecnólogo,Sudeste,40,0,2023
+Farmácia,Privada,Bacharelado,Centro-Oeste,3595,418,2023
+Farmácia,Privada,Bacharelado,Nordeste,3924,998,2023
+Farmácia,Privada,Bacharelado,Norte,574,175,2023
+Farmácia,Privada,Bacharelado,Sudeste,19044,6928,2023
+Farmácia,Privada,Bacharelado,Sul,29072,15606,2023
+Filmmaker,Privada,Tecnólogo,Nordeste,113,60,2023
+Filmmaker,Privada,Tecnólogo,Norte,16,11,2023
+Filmmaker,Privada,Tecnólogo,Sudeste,11,8,2023
+Filosofia,Privada,Bacharelado,Centro-Oeste,51,15,2023
+Filosofia,Privada,Bacharelado,Nordeste,3,3,2023
+Filosofia,Privada,Bacharelado,Norte,6,2,2023
+Filosofia,Privada,Bacharelado,Sudeste,587,250,2023
+Filosofia,Privada,Bacharelado,Sul,1209,632,2023
+Filosofia,Privada,Licenciatura,Centro-Oeste,182,84,2023
+Filosofia,Privada,Licenciatura,Nordeste,65,37,2023
+Filosofia,Privada,Licenciatura,Sudeste,2413,1181,2023
+Filosofia,Privada,Licenciatura,Sul,3876,1506,2023
+Filosofia,Pública,Licenciatura,Nordeste,557,19,2023
+Filosofia,Pública,Licenciatura,Norte,28,0,2023
+Filosofia,Pública,Licenciatura,Sul,128,2,2023
+Fisioterapia,Privada,Bacharelado,Centro-Oeste,4545,2183,2023
+Fisioterapia,Privada,Bacharelado,Nordeste,2735,483,2023
+Fisioterapia,Privada,Bacharelado,Norte,200,78,2023
+Fisioterapia,Privada,Bacharelado,Sudeste,14334,5891,2023
+Fisioterapia,Privada,Bacharelado,Sul,21454,11397,2023
+Fonoaudiologia,Privada,Bacharelado,Centro-Oeste,133,29,2023
+Fonoaudiologia,Privada,Bacharelado,Nordeste,87,12,2023
+Fonoaudiologia,Privada,Bacharelado,Sudeste,1620,346,2023
+Fonoaudiologia,Privada,Bacharelado,Sul,2127,563,2023
+Formação De Docentes Para A Educação Básica,Privada,Licenciatura,Sul,837,432,2023
+Formação Para Youtuber,Privada,Tecnólogo,Sudeste,41,27,2023
+Formação Pedagógica De Docentes Para A Educação Profissional De Nível Médio,Pública,Licenciatura,Sudeste,52,44,2023
+Formação Pedagógica Para Graduados Não Licenciados,Privada,Licenciatura,Sul,387,0,2023
+Fotografia,Privada,Tecnólogo,Centro-Oeste,251,141,2023
+Fotografia,Privada,Tecnólogo,Nordeste,8,2,2023
+Fotografia,Privada,Tecnólogo,Sudeste,1177,575,2023
+Fotografia,Privada,Tecnólogo,Sul,2186,896,2023
+Fotografia E Narrativas Visuais,Privada,Tecnólogo,Sudeste,2,0,2023
+Futebol,Privada,Tecnólogo,Sudeste,48,2,2023
+Física,Privada,Bacharelado,Nordeste,4,0,2023
+Física,Privada,Bacharelado,Sudeste,388,194,2023
+Física,Privada,Bacharelado,Sul,556,208,2023
+Física,Privada,Licenciatura,Centro-Oeste,20,2,2023
+Física,Privada,Licenciatura,Nordeste,11,4,2023
+Física,Privada,Licenciatura,Sudeste,989,368,2023
+Física,Privada,Licenciatura,Sul,2157,762,2023
+Física,Pública,Licenciatura,Nordeste,683,112,2023
+Física,Pública,Licenciatura,Norte,187,6,2023
+Física,Pública,Licenciatura,Sudeste,244,86,2023
+Física,Pública,Licenciatura,Sul,25,0,2023
+Game Design,Privada,Tecnólogo,Nordeste,51,14,2023
+Game Design,Privada,Tecnólogo,Norte,12,4,2023
+Game Design,Privada,Tecnólogo,Sudeste,4,1,2023
+Gastronomia,Privada,Tecnólogo,Centro-Oeste,532,325,2023
+Gastronomia,Privada,Tecnólogo,Nordeste,444,186,2023
+Gastronomia,Privada,Tecnólogo,Norte,69,43,2023
+Gastronomia,Privada,Tecnólogo,Sudeste,3648,1786,2023
+Gastronomia,Privada,Tecnólogo,Sul,11924,6797,2023
+Geografia,Privada,Bacharelado,Centro-Oeste,16,1,2023
+Geografia,Privada,Bacharelado,Nordeste,3,1,2023
+Geografia,Privada,Bacharelado,Sudeste,525,152,2023
+Geografia,Privada,Bacharelado,Sul,297,90,2023
+Geografia,Privada,Licenciatura,Centro-Oeste,228,123,2023
+Geografia,Privada,Licenciatura,Nordeste,85,13,2023
+Geografia,Privada,Licenciatura,Sudeste,3447,1611,2023
+Geografia,Privada,Licenciatura,Sul,6344,2586,2023
+Geografia,Pública,Licenciatura,Centro-Oeste,339,9,2023
+Geografia,Pública,Licenciatura,Nordeste,676,189,2023
+Geografia,Pública,Licenciatura,Norte,383,115,2023
+Geografia,Pública,Licenciatura,Sudeste,177,44,2023
+Geografia,Pública,Licenciatura,Sul,276,13,2023
+Geografia - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,1,1,2023
+Geoprocessamento,Privada,Tecnólogo,Sudeste,9,0,2023
+Geoprocessamento,Privada,Tecnólogo,Sul,251,77,2023
+Gerontologia,Privada,Bacharelado,Sudeste,17,10,2023
+Gerontologia,Privada,Bacharelado,Sul,296,109,2023
+Gerontologia,Privada,Tecnólogo,Centro-Oeste,250,130,2023
+Gerontologia,Privada,Tecnólogo,Sudeste,417,160,2023
+Gerontologia,Privada,Tecnólogo,Sul,2863,1303,2023
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Centro-Oeste,14,2,2023
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Sudeste,418,197,2023
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Sul,113,36,2023
+Gerontologia - Cuidado Ao Idoso,Privada,Tecnólogo,Sul,732,263,2023
+Gerontologia E Bem Estar,Privada,Tecnólogo,Nordeste,6,6,2023
+Gestão Ambiental,Privada,Tecnólogo,Centro-Oeste,493,206,2023
+Gestão Ambiental,Privada,Tecnólogo,Nordeste,566,235,2023
+Gestão Ambiental,Privada,Tecnólogo,Norte,97,28,2023
+Gestão Ambiental,Privada,Tecnólogo,Sudeste,5625,2206,2023
+Gestão Ambiental,Privada,Tecnólogo,Sul,8473,3609,2023
+Gestão Ambiental,Pública,Tecnólogo,Nordeste,295,138,2023
+Gestão Ambiental,Pública,Tecnólogo,Norte,555,17,2023
+Gestão Ambiental,Pública,Tecnólogo,Sudeste,9,0,2023
+Gestão Ambiental E Sustentabilidade,Pública,Bacharelado,Sudeste,94,28,2023
+Gestão Comercial,Privada,Tecnólogo,Centro-Oeste,2324,1221,2023
+Gestão Comercial,Privada,Tecnólogo,Nordeste,2321,1033,2023
+Gestão Comercial,Privada,Tecnólogo,Norte,73,3,2023
+Gestão Comercial,Privada,Tecnólogo,Sudeste,19628,9613,2023
+Gestão Comercial,Privada,Tecnólogo,Sul,25793,14105,2023
+Gestão Comercial,Pública,Tecnólogo,Centro-Oeste,210,16,2023
+Gestão Comercial,Pública,Tecnólogo,Nordeste,436,14,2023
+Gestão Comercial,Pública,Tecnólogo,Norte,166,79,2023
+Gestão Comercial,Pública,Tecnólogo,Sudeste,30,9,2023
+Gestão Da Comunicação Organizacional,Privada,Tecnólogo,Sul,211,84,2023
+Gestão Da Inovação,Privada,Tecnólogo,Centro-Oeste,41,14,2023
+Gestão Da Inovação,Privada,Tecnólogo,Sudeste,47,14,2023
+Gestão Da Inovação,Privada,Tecnólogo,Sul,290,91,2023
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Nordeste,13,6,2023
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Sudeste,313,167,2023
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Sul,65,22,2023
+Gestão Da Produção,Privada,Tecnólogo,Sudeste,102,26,2023
+Gestão Da Produção Industrial,Privada,Tecnólogo,Centro-Oeste,120,38,2023
+Gestão Da Produção Industrial,Privada,Tecnólogo,Nordeste,50,23,2023
+Gestão Da Produção Industrial,Privada,Tecnólogo,Sudeste,3979,1355,2023
+Gestão Da Produção Industrial,Privada,Tecnólogo,Sul,8077,3838,2023
+Gestão Da Produção Industrial,Pública,Tecnólogo,Sul,8,0,2023
+Gestão Da Qualidade,Privada,Tecnólogo,Centro-Oeste,721,280,2023
+Gestão Da Qualidade,Privada,Tecnólogo,Nordeste,718,232,2023
+Gestão Da Qualidade,Privada,Tecnólogo,Norte,103,14,2023
+Gestão Da Qualidade,Privada,Tecnólogo,Sudeste,7330,2840,2023
+Gestão Da Qualidade,Privada,Tecnólogo,Sul,13207,6207,2023
+Gestão Da Saúde Pública,Privada,Tecnólogo,Nordeste,6,4,2023
+Gestão Da Saúde Pública,Privada,Tecnólogo,Sudeste,170,73,2023
+Gestão Da Saúde Pública,Privada,Tecnólogo,Sul,15,3,2023
+Gestão Da Segurança E Defesa Cibernética,Privada,Tecnólogo,Sul,554,203,2023
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Centro-Oeste,1184,578,2023
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Nordeste,992,329,2023
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Norte,66,1,2023
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Sudeste,15164,6670,2023
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Sul,16034,7816,2023
+Gestão Da Tecnologia Educacional,Privada,Tecnólogo,Sul,67,11,2023
+Gestão Das Organizações Do Terceiro Setor,Privada,Tecnólogo,Sudeste,45,17,2023
+Gestão Das Organizações Do Terceiro Setor,Privada,Tecnólogo,Sul,273,117,2023
+Gestão Das Relações Eletrônicas,Privada,Tecnólogo,Sul,36,1,2023
+Gestão De Agronegócios,Privada,Tecnólogo,Centro-Oeste,11,1,2023
+Gestão De Agronegócios,Privada,Tecnólogo,Sudeste,41,7,2023
+Gestão De Agronegócios,Privada,Tecnólogo,Sul,37,21,2023
+Gestão De Atividade Policial,Privada,Tecnólogo,Sul,102,12,2023
+Gestão De Call Center,Privada,Tecnólogo,Sudeste,3,1,2023
+Gestão De Cidades Inteligentes E Sustentáveis,Privada,Tecnólogo,Sul,77,15,2023
+Gestão De Clínicas E Consultórios,Privada,Tecnólogo,Sul,121,22,2023
+Gestão De Compliance E Políticas Corporativas,Privada,Tecnólogo,Sul,29,24,2023
+Gestão De Cooperativas,Privada,Tecnólogo,Centro-Oeste,61,27,2023
+Gestão De Cooperativas,Privada,Tecnólogo,Sudeste,201,84,2023
+Gestão De Cooperativas,Privada,Tecnólogo,Sul,1231,525,2023
+Gestão De Cooperativas,Pública,Tecnólogo,Centro-Oeste,100,0,2023
+Gestão De Dados,Pública,Tecnólogo,Nordeste,116,7,2023
+Gestão De E-Commerce,Privada,Tecnólogo,Centro-Oeste,5,0,2023
+Gestão De E-Commerce,Privada,Tecnólogo,Sudeste,218,40,2023
+Gestão De E-Commerce,Privada,Tecnólogo,Sul,412,165,2023
+Gestão De Esporte E Alto Rendimento,Privada,Tecnólogo,Sul,213,116,2023
+Gestão De Farmácia,Privada,Tecnólogo,Sul,2041,740,2023
+Gestão De Inventário Extrajudicial,Privada,Tecnólogo,Sul,63,3,2023
+Gestão De Investimentos,Privada,Tecnólogo,Sul,68,18,2023
+Gestão De Investimentos E Mercado Financeiro,Privada,Tecnólogo,Sul,1369,337,2023
+Gestão De Lojas E Pontos De Vendas,Privada,Tecnólogo,Sul,294,159,2023
+Gestão De Marketing,Privada,Tecnólogo,Centro-Oeste,1,1,2023
+Gestão De Marketing Digital,Privada,Tecnólogo,Sul,6,3,2023
+Gestão De Marketing Em Mídias Digitais,Privada,Tecnólogo,Sudeste,12,1,2023
+Gestão De Marketing Em Mídias Digitais,Privada,Tecnólogo,Sul,496,264,2023
+Gestão De Micro E Pequenas Empresas,Privada,Tecnólogo,Sul,3,1,2023
+Gestão De Mídias Digitais,Privada,Tecnólogo,Centro-Oeste,13,0,2023
+Gestão De Mídias Digitais,Privada,Tecnólogo,Sudeste,248,71,2023
+Gestão De Mídias Digitais,Privada,Tecnólogo,Sul,85,16,2023
+Gestão De Mídias Sociais,Privada,Tecnólogo,Centro-Oeste,17,3,2023
+Gestão De Mídias Sociais,Privada,Tecnólogo,Sudeste,490,140,2023
+Gestão De Mídias Sociais,Privada,Tecnólogo,Sul,520,136,2023
+Gestão De Negócios,Privada,Tecnólogo,Sul,1341,61,2023
+Gestão De Negócios Digitais,Privada,Tecnólogo,Nordeste,10,4,2023
+Gestão De Negócios Digitais,Privada,Tecnólogo,Sudeste,265,105,2023
+Gestão De Negócios Digitais,Privada,Tecnólogo,Sul,38,21,2023
+Gestão De Negócios Digitais E E-Commerce,Privada,Tecnólogo,Sudeste,6,0,2023
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Centro-Oeste,21,17,2023
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Sudeste,102,27,2023
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Sul,1,1,2023
+Gestão De Partidos Políticos,Privada,Tecnólogo,Sul,83,19,2023
+Gestão De Pessoas E Equipes,Privada,Tecnólogo,Centro-Oeste,62,4,2023
+Gestão De Processos Educacionais,Privada,Tecnólogo,Sul,174,29,2023
+Gestão De Produto,Privada,Tecnólogo,Centro-Oeste,53,25,2023
+Gestão De Produto,Privada,Tecnólogo,Sudeste,62,18,2023
+Gestão De Produto,Privada,Tecnólogo,Sul,218,103,2023
+Gestão De Produção Industrial,Privada,Tecnólogo,Centro-Oeste,455,219,2023
+Gestão De Produção Industrial,Privada,Tecnólogo,Sudeste,402,152,2023
+Gestão De Produção Industrial,Privada,Tecnólogo,Sul,2625,1181,2023
+Gestão De Qualidade Na Saúde,Privada,Tecnólogo,Sudeste,9,0,2023
+Gestão De Recursos Humanos,Privada,Tecnólogo,Centro-Oeste,4799,2379,2023
+Gestão De Recursos Humanos,Privada,Tecnólogo,Nordeste,5607,1730,2023
+Gestão De Recursos Humanos,Privada,Tecnólogo,Norte,289,110,2023
+Gestão De Recursos Humanos,Privada,Tecnólogo,Sudeste,50263,22705,2023
+Gestão De Recursos Humanos,Privada,Tecnólogo,Sul,62405,35186,2023
+Gestão De Recursos Humanos,Pública,Tecnólogo,Centro-Oeste,377,16,2023
+Gestão De Recursos Humanos,Pública,Tecnólogo,Sudeste,111,45,2023
+Gestão De Recursos Humanos,Pública,Tecnólogo,Sul,7,4,2023
+Gestão De Redes Sociais,Privada,Tecnólogo,Centro-Oeste,1,0,2023
+Gestão De Resíduos De Serviços De Saúde,Privada,Tecnólogo,Sul,54,4,2023
+Gestão De Riscos Logísticos,Privada,Tecnólogo,Sudeste,35,12,2023
+Gestão De Saúde Pública,Privada,Tecnólogo,Centro-Oeste,215,105,2023
+Gestão De Saúde Pública,Privada,Tecnólogo,Sudeste,292,141,2023
+Gestão De Saúde Pública,Privada,Tecnólogo,Sul,4590,1960,2023
+Gestão De Segurança Privada,Privada,Tecnólogo,Centro-Oeste,471,165,2023
+Gestão De Segurança Privada,Privada,Tecnólogo,Nordeste,28,13,2023
+Gestão De Segurança Privada,Privada,Tecnólogo,Norte,29,0,2023
+Gestão De Segurança Privada,Privada,Tecnólogo,Sudeste,6383,2833,2023
+Gestão De Segurança Privada,Privada,Tecnólogo,Sul,9822,4497,2023
+Gestão De Segurança Pública,Privada,Tecnólogo,Centro-Oeste,52,20,2023
+Gestão De Segurança Pública,Privada,Tecnólogo,Sudeste,275,64,2023
+Gestão De Seguros,Privada,Tecnólogo,Sudeste,594,108,2023
+Gestão De Serviços Judiciais E Notariais,Privada,Tecnólogo,Sudeste,42,4,2023
+Gestão De Serviços Judiciários E Notariais,Privada,Tecnólogo,Norte,7,4,2023
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Centro-Oeste,16,12,2023
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Sudeste,273,119,2023
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Sul,1052,0,2023
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Centro-Oeste,11,9,2023
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Nordeste,499,164,2023
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Norte,70,48,2023
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sudeste,8,4,2023
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sul,2245,723,2023
+Gestão De Serviços Jurídicos E Notariais,Pública,Tecnólogo,Centro-Oeste,293,14,2023
+"Gestão De Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sudeste,137,76,2023
+"Gestão De Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sul,916,420,2023
+Gestão De Serviços Previdenciários,Privada,Tecnólogo,Sul,106,18,2023
+Gestão De Startups,Privada,Tecnólogo,Sul,33,2,2023
+Gestão De Turismo,Privada,Tecnólogo,Centro-Oeste,248,110,2023
+Gestão De Turismo,Privada,Tecnólogo,Nordeste,9,5,2023
+Gestão De Turismo,Privada,Tecnólogo,Norte,12,0,2023
+Gestão De Turismo,Privada,Tecnólogo,Sudeste,1615,658,2023
+Gestão De Turismo,Privada,Tecnólogo,Sul,2246,1010,2023
+Gestão De Turismo,Pública,Tecnólogo,Nordeste,175,1,2023
+Gestão De Turismo,Pública,Tecnólogo,Norte,37,0,2023
+"Gestão De Turismo, Eventos E Lazer",Privada,Tecnólogo,Sul,593,280,2023
+Gestão De Varejo,Privada,Tecnólogo,Sul,13,5,2023
+Gestão De Vendas,Privada,Tecnólogo,Sudeste,50,9,2023
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Centro-Oeste,4,0,2023
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Nordeste,1,0,2023
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Sudeste,342,89,2023
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Sul,83,12,2023
+Gestão Do Agronegócio,Privada,Tecnólogo,Centro-Oeste,581,286,2023
+Gestão Do Agronegócio,Privada,Tecnólogo,Nordeste,14,11,2023
+Gestão Do Agronegócio,Privada,Tecnólogo,Sudeste,1830,857,2023
+Gestão Do Agronegócio,Privada,Tecnólogo,Sul,5599,3057,2023
+Gestão Do Agronegócio,Pública,Tecnólogo,Centro-Oeste,144,32,2023
+Gestão Do Agronegócio,Pública,Tecnólogo,Norte,287,18,2023
+Gestão Do Agronegócio,Pública,Tecnólogo,Sudeste,6,0,2023
+Gestão Do E-Commerce E Sistemas Logísticos,Privada,Tecnólogo,Sul,164,44,2023
+Gestão Do Esporte,Privada,Tecnólogo,Sul,42,4,2023
+Gestão Do Setor Automotivo,Privada,Tecnólogo,Sudeste,134,43,2023
+Gestão Do Trânsito E Mobilidade Urbana,Privada,Tecnólogo,Sul,472,117,2023
+Gestão E Desenvolvimento Do Agronegócio,Privada,Tecnólogo,Sul,48,10,2023
+Gestão E Empreendedorismo,Privada,Licenciatura,Centro-Oeste,20,3,2023
+Gestão E Empreendedorismo,Privada,Licenciatura,Sudeste,416,146,2023
+Gestão E Empreendedorismo,Privada,Licenciatura,Sul,142,34,2023
+Gestão E Empreendedorismo,Privada,Tecnólogo,Sul,739,331,2023
+Gestão Em Logística,Privada,Tecnólogo,Sul,114,52,2023
+Gestão Em Postos De Combustíveis,Privada,Tecnólogo,Sudeste,581,11,2023
+Gestão Em Serviços Judiciais,Privada,Tecnólogo,Sul,39,3,2023
+Gestão Em Vigilância Em Saúde,Privada,Tecnólogo,Sul,115,26,2023
+Gestão Empresarial,Privada,Tecnólogo,Sudeste,1,1,2023
+Gestão Estratégica Empresarial,Privada,Tecnólogo,Centro-Oeste,7,3,2023
+Gestão Estratégica Empresarial,Privada,Tecnólogo,Sul,652,197,2023
+Gestão Financeira,Privada,Tecnólogo,Centro-Oeste,1879,893,2023
+Gestão Financeira,Privada,Tecnólogo,Nordeste,2069,788,2023
+Gestão Financeira,Privada,Tecnólogo,Norte,119,30,2023
+Gestão Financeira,Privada,Tecnólogo,Sudeste,19901,9176,2023
+Gestão Financeira,Privada,Tecnólogo,Sul,24066,12176,2023
+Gestão Financeira,Pública,Tecnólogo,Nordeste,164,10,2023
+Gestão Financeira,Pública,Tecnólogo,Sudeste,38,23,2023
+Gestão Financeira,Pública,Tecnólogo,Sul,15,2,2023
+Gestão Fiscal E Tributária,Privada,Tecnólogo,Sul,177,0,2023
+"Gestão Global Trading: Negócios, Logística E Finanças Globais",Privada,Tecnólogo,Sul,157,42,2023
+Gestão Hospitalar,Privada,Tecnólogo,Centro-Oeste,659,342,2023
+Gestão Hospitalar,Privada,Tecnólogo,Nordeste,470,165,2023
+Gestão Hospitalar,Privada,Tecnólogo,Norte,62,5,2023
+Gestão Hospitalar,Privada,Tecnólogo,Sudeste,5560,2878,2023
+Gestão Hospitalar,Privada,Tecnólogo,Sul,7101,3924,2023
+Gestão Hospitalar,Pública,Tecnólogo,Nordeste,82,15,2023
+Gestão Hospitalar,Pública,Tecnólogo,Sul,100,0,2023
+Gestão Integrada De Agronegócios,Privada,Bacharelado,Sul,3,3,2023
+Gestão Paroquial E De Projetos Sociais,Privada,Tecnólogo,Centro-Oeste,9,3,2023
+Gestão Portuária,Privada,Tecnólogo,Centro-Oeste,85,49,2023
+Gestão Portuária,Privada,Tecnólogo,Nordeste,2,1,2023
+Gestão Portuária,Privada,Tecnólogo,Norte,7,0,2023
+Gestão Portuária,Privada,Tecnólogo,Sudeste,115,48,2023
+Gestão Portuária,Privada,Tecnólogo,Sul,1091,541,2023
+Gestão Pública,Privada,Tecnólogo,Centro-Oeste,2683,1114,2023
+Gestão Pública,Privada,Tecnólogo,Nordeste,2183,893,2023
+Gestão Pública,Privada,Tecnólogo,Norte,190,99,2023
+Gestão Pública,Privada,Tecnólogo,Sudeste,12966,4646,2023
+Gestão Pública,Privada,Tecnólogo,Sul,24165,10155,2023
+Gestão Pública,Pública,Tecnólogo,Nordeste,167,1,2023
+Gestão Pública,Pública,Tecnólogo,Norte,844,109,2023
+Gestão Pública,Pública,Tecnólogo,Sudeste,13,0,2023
+Gestão Pública,Pública,Tecnólogo,Sul,640,31,2023
+Gestão Tributária,Privada,Tecnólogo,Sul,11,7,2023
+História,Privada,Bacharelado,Centro-Oeste,24,4,2023
+História,Privada,Bacharelado,Nordeste,11,8,2023
+História,Privada,Bacharelado,Sudeste,1409,608,2023
+História,Privada,Bacharelado,Sul,762,256,2023
+História,Privada,Licenciatura,Centro-Oeste,819,361,2023
+História,Privada,Licenciatura,Nordeste,523,153,2023
+História,Privada,Licenciatura,Norte,4,0,2023
+História,Privada,Licenciatura,Sudeste,9168,4458,2023
+História,Privada,Licenciatura,Sul,16631,8551,2023
+História,Pública,Licenciatura,Centro-Oeste,457,20,2023
+História,Pública,Licenciatura,Nordeste,793,180,2023
+História,Pública,Licenciatura,Norte,179,0,2023
+História,Pública,Licenciatura,Sudeste,266,168,2023
+História,Pública,Licenciatura,Sul,308,80,2023
+Hotelaria,Privada,Bacharelado,Sudeste,14,2,2023
+Hotelaria,Privada,Tecnólogo,Sudeste,328,195,2023
+Hotelaria,Privada,Tecnólogo,Sul,729,156,2023
+Informática,Privada,Licenciatura,Sul,1767,684,2023
+Instrumentação Cirúrgica,Privada,Tecnólogo,Sul,690,211,2023
+Inteligência Artificial,Privada,Tecnólogo,Centro-Oeste,11,8,2023
+Inteligência Artificial,Privada,Tecnólogo,Nordeste,70,26,2023
+Inteligência Artificial,Privada,Tecnólogo,Norte,2,0,2023
+Inteligência Artificial,Privada,Tecnólogo,Sudeste,295,96,2023
+Inteligência Artificial,Privada,Tecnólogo,Sul,29,11,2023
+Inteligência Artificial Aplicada,Privada,Tecnólogo,Sudeste,2,0,2023
+Inteligência Artificial Aplicada,Privada,Tecnólogo,Sul,206,94,2023
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Centro-Oeste,128,75,2023
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Sudeste,66,20,2023
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Sul,315,191,2023
+Inteligência De Negócios,Privada,Tecnólogo,Nordeste,161,45,2023
+Interdisciplinar Em Artes,Pública,Licenciatura,Nordeste,166,19,2023
+Interdisciplinar Em Ciência E Tecnologia,Pública,Bacharelado,Sul,27,21,2023
+Interdisciplinar Em Humanidades,Privada,Bacharelado,Sudeste,22,9,2023
+Interdisciplinar Em Negócios,Privada,Bacharelado,Sul,274,169,2023
+Interdisciplinar Em Saúde,Privada,Bacharelado,Sudeste,63,19,2023
+Interdisciplinar Em Saúde,Privada,Bacharelado,Sul,173,58,2023
+Internet Das Coisas,Privada,Tecnólogo,Nordeste,21,7,2023
+Internet Das Coisas,Privada,Tecnólogo,Norte,1,1,2023
+Internet Das Coisas,Privada,Tecnólogo,Sudeste,125,52,2023
+Internet Das Coisas,Privada,Tecnólogo,Sul,22,3,2023
+Internet Das Coisas E Computação Em Nuvem,Privada,Tecnólogo,Sudeste,87,49,2023
+Investigação E Perícia,Privada,Tecnólogo,Sul,1,1,2023
+Investigação E Perícia Criminal,Privada,Tecnólogo,Centro-Oeste,994,634,2023
+Investigação E Perícia Criminal,Privada,Tecnólogo,Sudeste,1239,711,2023
+Investigação E Perícia Criminal,Privada,Tecnólogo,Sul,7016,4828,2023
+Investigação E Perícia Judicial E Extrajudicial,Privada,Tecnólogo,Sul,153,25,2023
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Centro-Oeste,308,81,2023
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Nordeste,562,92,2023
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Sudeste,7555,4269,2023
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Sul,12761,7986,2023
+Investigação Forense E Perícia Judicial,Privada,Tecnólogo,Sul,290,51,2023
+Investigação Profissional,Privada,Tecnólogo,Sul,307,112,2023
+Jogos Digitais,Privada,Tecnólogo,Centro-Oeste,120,56,2023
+Jogos Digitais,Privada,Tecnólogo,Nordeste,77,17,2023
+Jogos Digitais,Privada,Tecnólogo,Sudeste,1519,646,2023
+Jogos Digitais,Privada,Tecnólogo,Sul,1834,791,2023
+Jornalismo,Privada,Bacharelado,Centro-Oeste,390,196,2023
+Jornalismo,Privada,Bacharelado,Nordeste,245,40,2023
+Jornalismo,Privada,Bacharelado,Sudeste,3341,1641,2023
+Jornalismo,Privada,Bacharelado,Sul,4342,2052,2023
+Jornalismo Digital,Privada,Bacharelado,Sul,540,219,2023
+Letras,Privada,Bacharelado,Sul,591,212,2023
+Letras,Privada,Licenciatura,Centro-Oeste,24,3,2023
+Letras,Privada,Licenciatura,Nordeste,182,48,2023
+Letras,Privada,Licenciatura,Norte,42,13,2023
+Letras,Privada,Licenciatura,Sudeste,1341,417,2023
+Letras,Privada,Licenciatura,Sul,67,52,2023
+Letras,Pública,Licenciatura,Nordeste,298,49,2023
+Letras,Pública,Licenciatura,Sudeste,1954,1356,2023
+Letras - Alemão,Privada,Licenciatura,Sul,149,63,2023
+Letras - Espanhol,Privada,Licenciatura,Centro-Oeste,17,2,2023
+Letras - Espanhol,Privada,Licenciatura,Nordeste,14,3,2023
+Letras - Espanhol,Privada,Licenciatura,Norte,4,1,2023
+Letras - Espanhol,Privada,Licenciatura,Sudeste,313,108,2023
+Letras - Espanhol,Privada,Licenciatura,Sul,917,332,2023
+Letras - Espanhol,Pública,Licenciatura,Nordeste,191,33,2023
+Letras - Espanhol,Pública,Licenciatura,Sul,129,6,2023
+Letras - Inglês,Privada,Licenciatura,Centro-Oeste,205,64,2023
+Letras - Inglês,Privada,Licenciatura,Nordeste,52,12,2023
+Letras - Inglês,Privada,Licenciatura,Norte,26,11,2023
+Letras - Inglês,Privada,Licenciatura,Sudeste,3308,1698,2023
+Letras - Inglês,Privada,Licenciatura,Sul,5384,2311,2023
+Letras - Inglês,Pública,Licenciatura,Centro-Oeste,154,0,2023
+Letras - Inglês,Pública,Licenciatura,Nordeste,153,27,2023
+Letras - Inglês,Pública,Licenciatura,Sudeste,138,11,2023
+Letras - Inglês,Pública,Licenciatura,Sul,164,9,2023
+Letras - Libras,Privada,Bacharelado,Sudeste,37,3,2023
+Letras - Libras,Privada,Bacharelado,Sul,785,259,2023
+Letras - Libras,Privada,Licenciatura,Nordeste,11,2,2023
+Letras - Libras,Privada,Licenciatura,Sudeste,558,222,2023
+Letras - Libras,Privada,Licenciatura,Sul,3453,1463,2023
+Letras - Libras,Pública,Licenciatura,Nordeste,1,1,2023
+Letras - Libras,Pública,Licenciatura,Sudeste,172,0,2023
+Letras - Libras - Língua Portuguesa,Privada,Licenciatura,Centro-Oeste,31,5,2023
+Letras - Libras - Língua Portuguesa,Privada,Licenciatura,Sudeste,494,199,2023
+Letras - Lingua Espanhola,Pública,Licenciatura,Nordeste,119,53,2023
+Letras - Língua Inglesa,Privada,Licenciatura,Nordeste,277,124,2023
+Letras - Língua Inglesa,Pública,Licenciatura,Centro-Oeste,191,20,2023
+Letras - Língua Inglesa,Pública,Licenciatura,Nordeste,240,31,2023
+Letras - Língua Inglesa,Pública,Licenciatura,Norte,185,44,2023
+Letras - Língua Portuguesa,Privada,Bacharelado,Centro-Oeste,33,9,2023
+Letras - Língua Portuguesa,Privada,Bacharelado,Sudeste,674,257,2023
+Letras - Língua Portuguesa,Privada,Bacharelado,Sul,201,72,2023
+Letras - Língua Portuguesa,Privada,Licenciatura,Centro-Oeste,131,24,2023
+Letras - Língua Portuguesa,Privada,Licenciatura,Nordeste,48,21,2023
+Letras - Língua Portuguesa,Privada,Licenciatura,Sudeste,1935,904,2023
+Letras - Língua Portuguesa,Privada,Licenciatura,Sul,3055,857,2023
+Letras - Língua Portuguesa,Pública,Licenciatura,Nordeste,1347,575,2023
+Letras - Língua Portuguesa,Pública,Licenciatura,Sudeste,633,109,2023
+Letras - Língua Portuguesa E Libras,Privada,Licenciatura,Sudeste,19,0,2023
+Letras - Língua Portuguesa E Libras,Privada,Licenciatura,Sul,839,159,2023
+Letras - Língua Portuguesa E Libras,Pública,Licenciatura,Nordeste,167,17,2023
+Letras - Língua Portuguesa E Língua Inglesa,Privada,Licenciatura,Centro-Oeste,53,30,2023
+Letras - Língua Portuguesa E Língua Inglesa,Privada,Licenciatura,Sudeste,61,26,2023
+Letras - Língua Portuguesa E Língua Inglesa,Pública,Licenciatura,Sul,307,52,2023
+Letras - Língua Portuguesa E Respectiva Literatura,Pública,Licenciatura,Centro-Oeste,151,6,2023
+"Letras - Língua Portuguesa, Língua Inglesa E Respectivas Literaturas",Pública,Licenciatura,Sudeste,35,4,2023
+Letras - Português,Privada,Licenciatura,Centro-Oeste,268,162,2023
+Letras - Português,Privada,Licenciatura,Nordeste,455,163,2023
+Letras - Português,Privada,Licenciatura,Sudeste,2430,1316,2023
+Letras - Português,Privada,Licenciatura,Sul,8282,3861,2023
+Letras - Português,Pública,Licenciatura,Nordeste,639,50,2023
+Letras - Português,Pública,Licenciatura,Norte,374,5,2023
+Letras - Português,Pública,Licenciatura,Sudeste,442,46,2023
+Letras - Português,Pública,Licenciatura,Sul,771,266,2023
+Letras - Português E Espanhol,Privada,Licenciatura,Centro-Oeste,103,57,2023
+Letras - Português E Espanhol,Privada,Licenciatura,Nordeste,10,3,2023
+Letras - Português E Espanhol,Privada,Licenciatura,Sudeste,854,392,2023
+Letras - Português E Espanhol,Privada,Licenciatura,Sul,752,367,2023
+Letras - Português E Espanhol,Pública,Licenciatura,Centro-Oeste,317,22,2023
+Letras - Português E Inglês,Privada,Licenciatura,Centro-Oeste,538,242,2023
+Letras - Português E Inglês,Privada,Licenciatura,Nordeste,120,52,2023
+Letras - Português E Inglês,Privada,Licenciatura,Sudeste,4877,2557,2023
+Letras - Português E Inglês,Privada,Licenciatura,Sul,8055,4801,2023
+Letras - Português E Inglês,Pública,Licenciatura,Sul,114,41,2023
+Letras - Português E Japonês,Privada,Licenciatura,Nordeste,1,1,2023
+Letras - Português E Japonês,Privada,Licenciatura,Sudeste,217,112,2023
+Letras - Português E Japonês,Privada,Licenciatura,Sul,10,3,2023
+Letras - Português E Literatura,Privada,Licenciatura,Nordeste,4,0,2023
+Letras - Português E Literatura,Privada,Licenciatura,Sudeste,8,1,2023
+Letras - Português E Literaturas,Privada,Licenciatura,Sudeste,5,1,2023
+Letras - Português-Inglês,Privada,Licenciatura,Sul,32,9,2023
+Letras Com Português E Espanhol,Privada,Licenciatura,Nordeste,2,0,2023
+Letras Libras - Tradutor/Intérprete Em Libras,Pública,Bacharelado,Centro-Oeste,33,28,2023
+Letras Português E Inglês,Privada,Licenciatura,Sudeste,10,5,2023
+Licenciatura Em Educação Especial,Privada,Licenciatura,Sul,140,0,2023
+"Licenciatura Integrada Em Ciências, Matemática E Linguagens",Pública,Licenciatura,Norte,216,6,2023
+Logística,Privada,Tecnólogo,Centro-Oeste,2872,1469,2023
+Logística,Privada,Tecnólogo,Nordeste,2239,958,2023
+Logística,Privada,Tecnólogo,Norte,239,43,2023
+Logística,Privada,Tecnólogo,Sudeste,30761,13034,2023
+Logística,Privada,Tecnólogo,Sul,42662,22650,2023
+Logística,Pública,Tecnólogo,Sudeste,78,28,2023
+Manutenção De Aeronaves,Privada,Tecnólogo,Sudeste,3,0,2023
+Manutenção Industrial,Privada,Tecnólogo,Sudeste,13,5,2023
+Manutenção Industrial,Privada,Tecnólogo,Sul,421,305,2023
+Marketing,Privada,Bacharelado,Sul,482,275,2023
+Marketing,Privada,Tecnólogo,Centro-Oeste,1162,648,2023
+Marketing,Privada,Tecnólogo,Nordeste,2223,679,2023
+Marketing,Privada,Tecnólogo,Norte,67,6,2023
+Marketing,Privada,Tecnólogo,Sudeste,16523,8082,2023
+Marketing,Privada,Tecnólogo,Sul,16324,8694,2023
+Marketing,Pública,Tecnólogo,Sudeste,62,15,2023
+Marketing Digital,Privada,Tecnólogo,Centro-Oeste,1182,673,2023
+Marketing Digital,Privada,Tecnólogo,Nordeste,1269,373,2023
+Marketing Digital,Privada,Tecnólogo,Sudeste,10695,3999,2023
+Marketing Digital,Privada,Tecnólogo,Sul,14590,7290,2023
+Marketing Digital E Data Science,Privada,Tecnólogo,Sudeste,212,144,2023
+Massoterapia,Privada,Tecnólogo,Sul,1335,311,2023
+Matemática,Privada,Bacharelado,Centro-Oeste,21,2,2023
+Matemática,Privada,Bacharelado,Nordeste,4,2,2023
+Matemática,Privada,Bacharelado,Sudeste,747,343,2023
+Matemática,Privada,Bacharelado,Sul,500,184,2023
+Matemática,Privada,Licenciatura,Centro-Oeste,542,242,2023
+Matemática,Privada,Licenciatura,Nordeste,356,82,2023
+Matemática,Privada,Licenciatura,Norte,36,0,2023
+Matemática,Privada,Licenciatura,Sudeste,6812,2893,2023
+Matemática,Privada,Licenciatura,Sul,12962,6241,2023
+Matemática,Pública,Licenciatura,Centro-Oeste,560,123,2023
+Matemática,Pública,Licenciatura,Nordeste,2002,491,2023
+Matemática,Pública,Licenciatura,Norte,295,34,2023
+Matemática,Pública,Licenciatura,Sudeste,1576,927,2023
+Matemática,Pública,Licenciatura,Sul,690,197,2023
+Mecatrônica Automotiva,Privada,Tecnólogo,Sul,961,240,2023
+Mecatrônica Industrial,Privada,Tecnólogo,Sudeste,91,19,2023
+Mediação,Privada,Tecnólogo,Centro-Oeste,44,26,2023
+Mediação,Privada,Tecnólogo,Nordeste,40,8,2023
+Mediação,Privada,Tecnólogo,Sudeste,598,266,2023
+Mediação,Privada,Tecnólogo,Sul,699,340,2023
+"Mediação, Conciliação E Arbitragem",Privada,Tecnólogo,Sul,291,74,2023
+Medicina Veterinária,Privada,Bacharelado,Centro-Oeste,20,0,2023
+Medicina Veterinária,Privada,Bacharelado,Nordeste,150,61,2023
+Medicina Veterinária,Privada,Bacharelado,Sudeste,1241,303,2023
+Medicina Veterinária,Privada,Bacharelado,Sul,1622,493,2023
+Mercado Financeiro E De Capitais,Privada,Tecnólogo,Centro-Oeste,36,8,2023
+Mercado Financeiro E De Capitais,Privada,Tecnólogo,Sudeste,17,3,2023
+Mineração,Privada,Tecnólogo,Sudeste,5,4,2023
+Mineração,Pública,Tecnólogo,Sul,68,0,2023
+Ministério Pastoral,Privada,Tecnólogo,Sul,194,63,2023
+Moda,Privada,Bacharelado,Sudeste,147,83,2023
+Museologia,Privada,Bacharelado,Sudeste,58,31,2023
+Museologia,Privada,Bacharelado,Sul,280,79,2023
+Mídias Digitais,Privada,Tecnólogo,Nordeste,17,14,2023
+Mídias Digitais,Privada,Tecnólogo,Sudeste,2,2,2023
+Mídias Digitais,Privada,Tecnólogo,Sul,1552,651,2023
+Mídias Sociais Digitais,Pública,Tecnólogo,Centro-Oeste,308,13,2023
+Mídias Sociais E Digitais,Privada,Tecnólogo,Sul,51,16,2023
+Música,Privada,Bacharelado,Sudeste,191,125,2023
+Música,Privada,Licenciatura,Sudeste,1028,579,2023
+Música,Privada,Licenciatura,Sul,5418,2420,2023
+Música,Pública,Licenciatura,Centro-Oeste,54,4,2023
+Música,Pública,Licenciatura,Nordeste,310,19,2023
+Música - Música Popular Brasileira,Pública,Licenciatura,Nordeste,142,14,2023
+Naturologia,Privada,Bacharelado,Nordeste,4,2,2023
+Naturologia,Privada,Bacharelado,Sudeste,342,104,2023
+Naturologia,Privada,Bacharelado,Sul,29,14,2023
+Naturopatia,Privada,Tecnólogo,Sul,45,4,2023
+Negócios Digitais,Privada,Tecnólogo,Sul,100,18,2023
+Negócios Imobiliários,Privada,Tecnólogo,Centro-Oeste,427,143,2023
+Negócios Imobiliários,Privada,Tecnólogo,Nordeste,81,38,2023
+Negócios Imobiliários,Privada,Tecnólogo,Sudeste,4114,2089,2023
+Negócios Imobiliários,Privada,Tecnólogo,Sul,5609,2581,2023
+Negócios Internacionais,Privada,Bacharelado,Sul,6,0,2023
+Nutrição,Privada,Bacharelado,Centro-Oeste,729,354,2023
+Nutrição,Privada,Bacharelado,Nordeste,2394,859,2023
+Nutrição,Privada,Bacharelado,Norte,341,128,2023
+Nutrição,Privada,Bacharelado,Sudeste,18482,7808,2023
+Nutrição,Privada,Bacharelado,Sul,31415,18279,2023
+Oftálmica,Privada,Tecnólogo,Sul,210,0,2023
+Optometria,Privada,Bacharelado,Sul,265,64,2023
+Paisagismo E Jardinagem,Privada,Tecnólogo,Sul,664,215,2023
+Pedagogia,Privada,Bacharelado,Norte,3,0,2023
+Pedagogia,Privada,Licenciatura,Centro-Oeste,14530,6778,2023
+Pedagogia,Privada,Licenciatura,Nordeste,18187,4525,2023
+Pedagogia,Privada,Licenciatura,Norte,1607,315,2023
+Pedagogia,Privada,Licenciatura,Sudeste,109714,42967,2023
+Pedagogia,Privada,Licenciatura,Sul,190618,106201,2023
+Pedagogia,Pública,Licenciatura,Centro-Oeste,764,25,2023
+Pedagogia,Pública,Licenciatura,Nordeste,2662,230,2023
+Pedagogia,Pública,Licenciatura,Norte,582,30,2023
+Pedagogia,Pública,Licenciatura,Sudeste,5977,3151,2023
+Pedagogia,Pública,Licenciatura,Sul,1440,362,2023
+Pedagogia - Docencia Da Educação Infantil/Administração Educacional,Privada,Licenciatura,Norte,117,0,2023
+Pedagogia E Educação Profissional E Tecnológica,Pública,Licenciatura,Sudeste,167,9,2023
+Pedagogia Em Educação Profissional E Tecnológica,Pública,Licenciatura,Centro-Oeste,635,144,2023
+Pedagogia Em Educação Profissional E Tecnológica,Pública,Licenciatura,Nordeste,175,0,2023
+Pedagogia Em Educação Profissional E Tecnológica,Pública,Licenciatura,Norte,275,25,2023
+Perícia Judicial E Extrajudicial,Privada,Tecnólogo,Sul,507,145,2023
+Pilotagem Profissional De Aeronaves,Privada,Tecnólogo,Sudeste,1,0,2023
+Podologia,Privada,Tecnólogo,Centro-Oeste,61,43,2023
+Podologia,Privada,Tecnólogo,Nordeste,342,137,2023
+Podologia,Privada,Tecnólogo,Norte,15,7,2023
+Podologia,Privada,Tecnólogo,Sudeste,798,328,2023
+Podologia,Privada,Tecnólogo,Sul,10453,5094,2023
+Processos Cervejeiros,Privada,Tecnólogo,Sul,33,0,2023
+Processos Escolares,Privada,Tecnólogo,Centro-Oeste,7,0,2023
+Processos Escolares,Privada,Tecnólogo,Sudeste,272,92,2023
+Processos Escolares,Privada,Tecnólogo,Sul,222,23,2023
+Processos Gerenciais,Privada,Tecnólogo,Centro-Oeste,1112,441,2023
+Processos Gerenciais,Privada,Tecnólogo,Nordeste,857,293,2023
+Processos Gerenciais,Privada,Tecnólogo,Norte,27,6,2023
+Processos Gerenciais,Privada,Tecnólogo,Sudeste,12848,5278,2023
+Processos Gerenciais,Privada,Tecnólogo,Sul,21784,11116,2023
+Processos Gerenciais,Pública,Tecnólogo,Centro-Oeste,326,140,2023
+Processos Gerenciais,Pública,Tecnólogo,Sudeste,5885,3111,2023
+Processos Gerenciais,Pública,Tecnólogo,Sul,7,2,2023
+Processos Metalúrgicos,Privada,Tecnólogo,Sudeste,51,24,2023
+Processos Químicos,Privada,Tecnólogo,Centro-Oeste,82,54,2023
+Processos Químicos,Privada,Tecnólogo,Sul,1147,273,2023
+Produção Audiovisual,Privada,Tecnólogo,Centro-Oeste,173,60,2023
+Produção Audiovisual,Privada,Tecnólogo,Sudeste,547,183,2023
+Produção Audiovisual,Privada,Tecnólogo,Sul,489,178,2023
+Produção Audiovisual,Pública,Tecnólogo,Sul,20,9,2023
+Produção Cervejeira,Privada,Tecnólogo,Centro-Oeste,36,21,2023
+Produção Cervejeira,Privada,Tecnólogo,Sudeste,35,15,2023
+Produção Cervejeira,Privada,Tecnólogo,Sul,503,288,2023
+Produção Cultural,Privada,Tecnólogo,Nordeste,3,0,2023
+Produção Cultural,Privada,Tecnólogo,Sudeste,301,160,2023
+Produção Cultural,Privada,Tecnólogo,Sul,438,123,2023
+Produção De Cerveja,Privada,Tecnólogo,Sul,137,75,2023
+Produção De Conteúdo Digital,Privada,Tecnólogo,Centro-Oeste,9,3,2023
+Produção De Conteúdo Digital,Privada,Tecnólogo,Sudeste,110,31,2023
+Produção De Conteúdo Digital,Privada,Tecnólogo,Sul,30,9,2023
+Produção De Conteúdos Digitais,Privada,Tecnólogo,Sudeste,13,7,2023
+Produção Multimídia,Privada,Tecnólogo,Sudeste,200,74,2023
+Produção Multimídia,Privada,Tecnólogo,Sul,58,7,2023
+Produção Multimídia,Pública,Tecnólogo,Nordeste,125,36,2023
+Produção Multimídia Em Realidade Aumentada,Privada,Tecnólogo,Sudeste,61,27,2023
+Produção Multimídia Em Realidade Aumentada,Privada,Tecnólogo,Sul,3,2,2023
+Produção Publicitária,Privada,Tecnólogo,Centro-Oeste,32,9,2023
+Produção Publicitária,Privada,Tecnólogo,Nordeste,15,6,2023
+Produção Publicitária,Privada,Tecnólogo,Sudeste,184,85,2023
+Produção Publicitária,Privada,Tecnólogo,Sul,177,0,2023
+Programa Especial De Formação Pedagógica,Privada,Licenciatura,Sul,25,9,2023
+Programa Especial De Graduação De Formação De Professores Para A Educação Profissional,Pública,Licenciatura,Sul,122,11,2023
+Práticas Integrativas E Complementares,Privada,Tecnólogo,Sul,1076,371,2023
+Psicanálise,Privada,Bacharelado,Nordeste,9,2,2023
+Psicanálise,Privada,Bacharelado,Sudeste,1085,408,2023
+Psicanálise,Privada,Bacharelado,Sul,6741,1984,2023
+Psicomotricidade,Privada,Bacharelado,Sul,10,2,2023
+Psicomotricidade,Privada,Tecnólogo,Sul,498,16,2023
+Psicomotricidade E Ludicidade Na Educação Infantil,Privada,Tecnólogo,Sul,253,53,2023
+Psicopedagogia,Privada,Bacharelado,Centro-Oeste,702,270,2023
+Psicopedagogia,Privada,Bacharelado,Nordeste,105,44,2023
+Psicopedagogia,Privada,Bacharelado,Sudeste,5115,1625,2023
+Psicopedagogia,Privada,Bacharelado,Sul,9657,4881,2023
+Psicopedagogia,Privada,Licenciatura,Nordeste,37,27,2023
+Psicopedagogia,Privada,Licenciatura,Sudeste,375,136,2023
+Psicopedagogia,Privada,Licenciatura,Sul,4155,1845,2023
+Publicidade E Propaganda,Privada,Bacharelado,Centro-Oeste,447,205,2023
+Publicidade E Propaganda,Privada,Bacharelado,Nordeste,351,38,2023
+Publicidade E Propaganda,Privada,Bacharelado,Sudeste,5041,2192,2023
+Publicidade E Propaganda,Privada,Bacharelado,Sul,6232,3067,2023
+Publicidade E Propaganda,Pública,Bacharelado,Sul,20,2,2023
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Centro-Oeste,223,125,2023
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Sudeste,114,36,2023
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Sul,1055,422,2023
+Qualidade De Vida Na Contemporaneidade,Privada,Tecnólogo,Sul,58,17,2023
+Quiropraxia,Privada,Bacharelado,Sul,55,7,2023
+Quiropraxia,Privada,Tecnólogo,Sul,211,32,2023
+Química,Privada,Bacharelado,Centro-Oeste,208,98,2023
+Química,Privada,Bacharelado,Nordeste,7,1,2023
+Química,Privada,Bacharelado,Sudeste,1511,634,2023
+Química,Privada,Bacharelado,Sul,2117,881,2023
+Química,Privada,Licenciatura,Centro-Oeste,18,6,2023
+Química,Privada,Licenciatura,Nordeste,11,4,2023
+Química,Privada,Licenciatura,Sudeste,1419,480,2023
+Química,Privada,Licenciatura,Sul,2227,945,2023
+Química,Pública,Licenciatura,Centro-Oeste,63,6,2023
+Química,Pública,Licenciatura,Nordeste,706,150,2023
+Química,Pública,Licenciatura,Norte,204,2,2023
+Química,Pública,Licenciatura,Sudeste,205,61,2023
+Radiologia,Privada,Tecnólogo,Centro-Oeste,396,193,2023
+Radiologia,Privada,Tecnólogo,Nordeste,193,49,2023
+Radiologia,Privada,Tecnólogo,Sudeste,7040,3498,2023
+Radiologia,Privada,Tecnólogo,Sul,11314,5636,2023
+"Recrutamento, Seleção E Desenvolvimento De Pessoas",Privada,Tecnólogo,Sul,41,15,2023
+Recursos Humanos,Privada,Tecnólogo,Centro-Oeste,36,6,2023
+Redes De Computadores,Privada,Tecnólogo,Centro-Oeste,418,178,2023
+Redes De Computadores,Privada,Tecnólogo,Nordeste,290,44,2023
+Redes De Computadores,Privada,Tecnólogo,Norte,14,0,2023
+Redes De Computadores,Privada,Tecnólogo,Sudeste,5066,1708,2023
+Redes De Computadores,Privada,Tecnólogo,Sul,4673,1778,2023
+Refrigeração E Climatização,Privada,Tecnólogo,Sul,155,14,2023
+Relações Internacionais,Privada,Bacharelado,Centro-Oeste,170,69,2023
+Relações Internacionais,Privada,Bacharelado,Nordeste,42,12,2023
+Relações Internacionais,Privada,Bacharelado,Sudeste,2314,927,2023
+Relações Internacionais,Privada,Bacharelado,Sul,3019,1281,2023
+Relações Públicas,Privada,Bacharelado,Nordeste,32,10,2023
+Relações Públicas,Privada,Bacharelado,Sudeste,1079,451,2023
+Relações Públicas,Privada,Bacharelado,Sul,1108,420,2023
+Rádio E Tv,Privada,Bacharelado,Sudeste,105,48,2023
+"Rádio, Tv E Internet",Privada,Bacharelado,Sudeste,1,0,2023
+Saneamento Ambiental,Privada,Tecnólogo,Sudeste,4,4,2023
+Saneamento Ambiental,Privada,Tecnólogo,Sul,848,128,2023
+Saúde Coletiva,Privada,Bacharelado,Sudeste,5,1,2023
+Saúde Coletiva,Privada,Tecnólogo,Sudeste,53,9,2023
+Secretariado,Privada,Tecnólogo,Centro-Oeste,245,141,2023
+Secretariado,Privada,Tecnólogo,Nordeste,3,1,2023
+Secretariado,Privada,Tecnólogo,Sudeste,1169,420,2023
+Secretariado,Privada,Tecnólogo,Sul,3657,1612,2023
+Secretariado Executivo,Privada,Bacharelado,Centro-Oeste,46,8,2023
+Secretariado Executivo,Privada,Bacharelado,Sudeste,780,352,2023
+Secretariado Executivo,Privada,Bacharelado,Sul,250,66,2023
+Secretariado Executivo,Privada,Tecnólogo,Sudeste,20,13,2023
+Secretariado Executivo,Privada,Tecnólogo,Sul,313,0,2023
+Secretariado Executivo - Bilíngue,Privada,Bacharelado,Centro-Oeste,70,29,2023
+Secretariado Executivo Trilíngue,Privada,Bacharelado,Sudeste,30,10,2023
+Segunda Licenciatura Em Pedagogia,Privada,Licenciatura,Centro-Oeste,32,5,2023
+Segunda Licenciatura Em Pedagogia,Privada,Licenciatura,Sul,15,3,2023
+Segurança Alimentar,Privada,Tecnólogo,Sul,643,364,2023
+Segurança Da Informação,Privada,Tecnólogo,Centro-Oeste,174,79,2023
+Segurança Da Informação,Privada,Tecnólogo,Nordeste,206,51,2023
+Segurança Da Informação,Privada,Tecnólogo,Sudeste,2094,855,2023
+Segurança Da Informação,Privada,Tecnólogo,Sul,661,273,2023
+Segurança No Trabalho,Privada,Tecnólogo,Centro-Oeste,169,40,2023
+Segurança No Trabalho,Privada,Tecnólogo,Nordeste,63,28,2023
+Segurança No Trabalho,Privada,Tecnólogo,Sudeste,6003,2362,2023
+Segurança No Trabalho,Privada,Tecnólogo,Sul,12350,6920,2023
+Segurança No Trânsito,Privada,Tecnólogo,Nordeste,59,17,2023
+Segurança No Trânsito,Privada,Tecnólogo,Sudeste,803,311,2023
+Segurança No Trânsito,Privada,Tecnólogo,Sul,500,73,2023
+Segurança Privada,Privada,Tecnólogo,Nordeste,29,11,2023
+Segurança Privada,Privada,Tecnólogo,Sudeste,254,135,2023
+Segurança Privada,Privada,Tecnólogo,Sul,41,19,2023
+Segurança Pública,Privada,Tecnólogo,Centro-Oeste,694,239,2023
+Segurança Pública,Privada,Tecnólogo,Nordeste,633,195,2023
+Segurança Pública,Privada,Tecnólogo,Norte,188,68,2023
+Segurança Pública,Privada,Tecnólogo,Sudeste,8634,2942,2023
+Segurança Pública,Privada,Tecnólogo,Sul,12687,4418,2023
+Segurança Pública,Pública,Tecnólogo,Sudeste,398,83,2023
+Segurança Pública,Pública,Tecnólogo,Sul,142,0,2023
+Service Design,Privada,Tecnólogo,Nordeste,30,11,2023
+Service Design,Privada,Tecnólogo,Sudeste,5,3,2023
+Serviço Social,Privada,Bacharelado,Centro-Oeste,1495,804,2023
+Serviço Social,Privada,Bacharelado,Nordeste,1122,544,2023
+Serviço Social,Privada,Bacharelado,Norte,184,3,2023
+Serviço Social,Privada,Bacharelado,Sudeste,16362,7740,2023
+Serviço Social,Privada,Bacharelado,Sul,26433,16542,2023
+Serviço Social,Pública,Bacharelado,Sudeste,27,2,2023
+Serviços Judiciais,Privada,Tecnólogo,Nordeste,14,8,2023
+Serviços Judiciais,Privada,Tecnólogo,Sudeste,322,161,2023
+Serviços Judiciais,Privada,Tecnólogo,Sul,52,20,2023
+Serviços Jurídicos,Privada,Tecnólogo,Centro-Oeste,125,38,2023
+Serviços Jurídicos,Privada,Tecnólogo,Sudeste,50,9,2023
+Serviços Jurídicos,Privada,Tecnólogo,Sul,194,67,2023
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Centro-Oeste,79,7,2023
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Nordeste,385,141,2023
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sudeste,2588,771,2023
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sul,2606,1225,2023
+"Serviços Jurídicos, Cartoriais E Notariais",Privada,Tecnólogo,Sudeste,50,30,2023
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Centro-Oeste,295,179,2023
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Nordeste,21,12,2023
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Sudeste,409,205,2023
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Sul,2387,1474,2023
+"Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Nordeste,52,21,2023
+"Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sudeste,178,52,2023
+"Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sul,13,7,2023
+Serviços Notariais E Registrais,Privada,Tecnólogo,Nordeste,13,3,2023
+Serviços Notariais E Registrais,Privada,Tecnólogo,Sudeste,108,67,2023
+Serviços Notariais E Registrais,Privada,Tecnólogo,Sul,7,3,2023
+Serviços Penais,Privada,Tecnólogo,Centro-Oeste,60,0,2023
+Serviços Penais,Privada,Tecnólogo,Nordeste,31,16,2023
+Serviços Penais,Privada,Tecnólogo,Sudeste,254,122,2023
+Serviços Penais,Privada,Tecnólogo,Sul,1104,399,2023
+Serviços Previdenciários,Privada,Tecnólogo,Sul,418,111,2023
+Serviços Registrais E Notariais,Privada,Tecnólogo,Nordeste,4,3,2023
+Serviços Registrais E Notariais,Privada,Tecnólogo,Sudeste,45,26,2023
+Serviços Registrais E Notariais,Privada,Tecnólogo,Sul,39,20,2023
+Sistema De Informação,Pública,Bacharelado,Nordeste,8,8,2023
+Sistemas Automotivos,Privada,Tecnólogo,Sudeste,2,1,2023
+Sistemas Automotivos,Privada,Tecnólogo,Sul,1,0,2023
+Sistemas Biomédicos,Privada,Tecnólogo,Nordeste,1,1,2023
+Sistemas Biomédicos,Privada,Tecnólogo,Sul,154,0,2023
+Sistemas Construtivos Sustentáveis,Privada,Tecnólogo,Sul,41,17,2023
+Sistemas De Computação,Pública,Tecnólogo,Sudeste,930,175,2023
+Sistemas De Informação,Privada,Bacharelado,Centro-Oeste,236,92,2023
+Sistemas De Informação,Privada,Bacharelado,Nordeste,404,115,2023
+Sistemas De Informação,Privada,Bacharelado,Norte,2,0,2023
+Sistemas De Informação,Privada,Bacharelado,Sudeste,5696,2567,2023
+Sistemas De Informação,Privada,Bacharelado,Sul,4491,1452,2023
+Sistemas De Informação,Privada,Tecnólogo,Centro-Oeste,53,8,2023
+Sistemas De Informação,Pública,Bacharelado,Nordeste,236,0,2023
+Sistemas De Informação,Pública,Bacharelado,Sudeste,35,1,2023
+Sistemas De Informação,Pública,Bacharelado,Sul,44,17,2023
+Sistemas De Telecomunicações,Privada,Tecnólogo,Sul,33,4,2023
+Sistemas Elétricos,Privada,Tecnólogo,Sul,48,21,2023
+Sistemas Para Internet,Privada,Tecnólogo,Centro-Oeste,110,44,2023
+Sistemas Para Internet,Privada,Tecnólogo,Nordeste,133,35,2023
+Sistemas Para Internet,Privada,Tecnólogo,Sudeste,1202,549,2023
+Sistemas Para Internet,Privada,Tecnólogo,Sul,1845,754,2023
+Sistemas Para Internet,Pública,Tecnólogo,Centro-Oeste,142,25,2023
+Sistemas Para Internet,Pública,Tecnólogo,Nordeste,260,110,2023
+Sistemas Para Internet,Pública,Tecnólogo,Sudeste,115,11,2023
+Sistemas Para Internet,Pública,Tecnólogo,Sul,47,19,2023
+Social Media,Privada,Tecnólogo,Nordeste,4,2,2023
+Social Media,Privada,Tecnólogo,Sudeste,292,60,2023
+Social Media,Privada,Tecnólogo,Sul,32,10,2023
+Sociologia,Privada,Bacharelado,Sul,172,60,2023
+Sociologia,Privada,Licenciatura,Centro-Oeste,65,31,2023
+Sociologia,Privada,Licenciatura,Sudeste,411,183,2023
+Sociologia,Privada,Licenciatura,Sul,2299,813,2023
+Streaming Profissional,Privada,Tecnólogo,Nordeste,9,4,2023
+Teatro,Privada,Licenciatura,Sul,953,430,2023
+Teatro,Pública,Licenciatura,Nordeste,140,9,2023
+Tecnologia Da Informação,Privada,Tecnólogo,Centro-Oeste,4,4,2023
+Tecnologia Da Informação,Privada,Tecnólogo,Norte,1,0,2023
+Tecnologia Da Informação,Privada,Tecnólogo,Sudeste,41,0,2023
+Tecnologia Da Informação,Pública,Tecnólogo,Centro-Oeste,542,128,2023
+Tecnologia Educacional,Pública,Licenciatura,Centro-Oeste,62,28,2023
+Tecnologias Educacionais,Privada,Tecnólogo,Centro-Oeste,3,0,2023
+Tecnologias Educacionais,Privada,Tecnólogo,Nordeste,30,9,2023
+Tecnologias Educacionais,Privada,Tecnólogo,Sudeste,136,37,2023
+Tecnologias Educacionais,Privada,Tecnólogo,Sul,47,13,2023
+Teologia,Privada,Bacharelado,Centro-Oeste,765,329,2023
+Teologia,Privada,Bacharelado,Nordeste,695,149,2023
+Teologia,Privada,Bacharelado,Norte,248,83,2023
+Teologia,Privada,Bacharelado,Sudeste,6185,2533,2023
+Teologia,Privada,Bacharelado,Sul,13263,6524,2023
+Teologia,Privada,Licenciatura,Centro-Oeste,7,5,2023
+Teologia,Privada,Licenciatura,Nordeste,10,0,2023
+Teologia: Doutrina Católica,Privada,Bacharelado,Sul,876,240,2023
+Terapia Ocupacional,Privada,Bacharelado,Centro-Oeste,120,38,2023
+Terapia Ocupacional,Privada,Bacharelado,Nordeste,544,29,2023
+Terapia Ocupacional,Privada,Bacharelado,Sudeste,3408,590,2023
+Terapia Ocupacional,Privada,Bacharelado,Sul,13744,3892,2023
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Centro-Oeste,565,302,2023
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Nordeste,2,1,2023
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Sudeste,1176,522,2023
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Sul,7865,4139,2023
+Trade De Investimentos,Privada,Tecnólogo,Nordeste,5,5,2023
+Tradutor E Intérprete,Privada,Bacharelado,Sudeste,194,57,2023
+Tradução,Privada,Bacharelado,Sul,337,121,2023
+Tradução E Interpretação - Português/Inglês,Privada,Bacharelado,Sudeste,87,44,2023
+Transporte Aéreo,Privada,Tecnólogo,Sul,15,5,2023
+Tricologia E Ciência Cosmética,Privada,Tecnólogo,Sul,34,9,2023
+Turismo,Privada,Bacharelado,Nordeste,3,2,2023
+Turismo,Privada,Bacharelado,Sudeste,104,37,2023
+Turismo,Privada,Bacharelado,Sul,1,1,2023
+Turismo,Privada,Licenciatura,Centro-Oeste,5,1,2023
+Turismo,Privada,Licenciatura,Sudeste,128,54,2023
+Turismo,Privada,Licenciatura,Sul,26,5,2023
+Turismo,Pública,Bacharelado,Nordeste,219,0,2023
+Turismo,Pública,Licenciatura,Sudeste,55,21,2023
+Tutoria Para Educação A Distância,Privada,Tecnólogo,Sudeste,1,0,2023
+Técnicas Para Acompanhamento Terapêutico,Privada,Tecnólogo,Sul,157,33,2023
+Técnicas Para Telemedicina,Privada,Tecnólogo,Sul,26,2,2023
+Varejo Digital,Privada,Tecnólogo,Sudeste,3,0,2023
+Varejo Digital,Privada,Tecnólogo,Sul,130,23,2023
+Viticultura E Enologia,Privada,Tecnólogo,Sudeste,115,3,2023
+Zootecnia,Privada,Bacharelado,Centro-Oeste,62,54,2023
+Zootecnia,Privada,Bacharelado,Sudeste,218,62,2023
+Zootecnia,Privada,Bacharelado,Sul,856,91,2023
+Óptica E Optometria,Privada,Bacharelado,Nordeste,44,12,2023
+Óptica E Optometria,Privada,Bacharelado,Sudeste,3509,1833,2023
+Óptica E Optometria,Privada,Bacharelado,Sul,149,70,2023
+Óptica E Optometria,Privada,Tecnólogo,Sudeste,22,13,2023
+Acompanhamento Do Transtorno Do Espectro Autista,Privada,Tecnólogo,Sul,5653,2003,2024
+Acupuntura,Privada,Tecnólogo,Sul,428,50,2024
+Administração,Privada,Bacharelado,Centro-Oeste,7035,3870,2024
+Administração,Privada,Bacharelado,Nordeste,9251,3763,2024
+Administração,Privada,Bacharelado,Norte,1095,212,2024
+Administração,Privada,Bacharelado,Sudeste,63828,32293,2024
+Administração,Privada,Bacharelado,Sul,112086,74385,2024
+Administração,Pública,Bacharelado,Nordeste,257,10,2024
+Administração,Pública,Bacharelado,Sudeste,4405,1326,2024
+Administração,Pública,Bacharelado,Sul,55,14,2024
+Administração Pública,Privada,Bacharelado,Centro-Oeste,192,82,2024
+Administração Pública,Privada,Bacharelado,Nordeste,198,4,2024
+Administração Pública,Privada,Bacharelado,Sudeste,1215,550,2024
+Administração Pública,Privada,Bacharelado,Sul,2080,950,2024
+Administração Pública,Pública,Bacharelado,Centro-Oeste,36,14,2024
+Administração Pública,Pública,Bacharelado,Nordeste,558,23,2024
+Administração Pública,Pública,Bacharelado,Sudeste,722,91,2024
+Administração Pública,Pública,Bacharelado,Sul,405,86,2024
+Administração Rural,Privada,Tecnólogo,Sul,118,33,2024
+Agente Comunitário,Privada,Tecnólogo,Sul,1307,4,2024
+Agente Comunitário De Saúde,Privada,Tecnólogo,Sul,186,53,2024
+Agente Comunitário De Saúde E Endemias,Privada,Tecnólogo,Sul,818,109,2024
+Agricultura,Privada,Tecnólogo,Sul,574,161,2024
+Agrimensura,Privada,Tecnólogo,Sul,147,51,2024
+Agrocomputação,Privada,Tecnólogo,Centro-Oeste,2,0,2024
+Agrocomputação,Privada,Tecnólogo,Sul,206,27,2024
+Agrocomputação,Pública,Tecnólogo,Centro-Oeste,141,0,2024
+Agrodigital,Privada,Tecnólogo,Sul,17,17,2024
+Agroecologia,Privada,Tecnólogo,Sudeste,48,13,2024
+Agronegócio,Privada,Bacharelado,Sul,19,13,2024
+Agronegócio,Privada,Tecnólogo,Centro-Oeste,409,221,2024
+Agronegócio,Privada,Tecnólogo,Nordeste,10,7,2024
+Agronegócio,Privada,Tecnólogo,Sudeste,27,5,2024
+Agronomia,Privada,Bacharelado,Centro-Oeste,737,399,2024
+Agronomia,Privada,Bacharelado,Nordeste,30,18,2024
+Agronomia,Privada,Bacharelado,Norte,26,0,2024
+Agronomia,Privada,Bacharelado,Sudeste,4521,2114,2024
+Agronomia,Privada,Bacharelado,Sul,20550,11306,2024
+Agronomia,Privada,Tecnólogo,Sul,1461,407,2024
+Agrotecnologia,Privada,Tecnólogo,Sul,930,522,2024
+Alimentos,Privada,Tecnólogo,Sul,1110,495,2024
+Andragogia,Privada,Licenciatura,Sul,33,4,2024
+Antropologia,Privada,Bacharelado,Sul,235,97,2024
+Análise De Dados,Privada,Tecnólogo,Sudeste,34,18,2024
+Análise De Dados De Alta Performance,Privada,Tecnólogo,Sudeste,96,13,2024
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Centro-Oeste,5586,2645,2024
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Nordeste,8389,2931,2024
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Norte,626,160,2024
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Sudeste,55507,30093,2024
+Análise E Desenvolvimento De Sistemas,Privada,Tecnólogo,Sul,68242,38312,2024
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Nordeste,110,0,2024
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Norte,288,32,2024
+Análise E Desenvolvimento De Sistemas,Pública,Tecnólogo,Sudeste,57,22,2024
+Análises Clínicas,Privada,Tecnólogo,Sul,317,26,2024
+Arqueologia,Privada,Bacharelado,Sudeste,83,21,2024
+Arquitetura De Dados,Privada,Tecnólogo,Centro-Oeste,30,18,2024
+Arquitetura De Dados,Privada,Tecnólogo,Sudeste,69,26,2024
+Arquitetura De Dados,Privada,Tecnólogo,Sul,179,117,2024
+Arquitetura E Urbanismo,Privada,Bacharelado,Centro-Oeste,331,174,2024
+Arquitetura E Urbanismo,Privada,Bacharelado,Nordeste,804,229,2024
+Arquitetura E Urbanismo,Privada,Bacharelado,Norte,94,14,2024
+Arquitetura E Urbanismo,Privada,Bacharelado,Sudeste,3006,1326,2024
+Arquitetura E Urbanismo,Privada,Bacharelado,Sul,5535,2780,2024
+Arquivologia,Privada,Bacharelado,Sul,843,327,2024
+Artes,Privada,Licenciatura,Sudeste,25,17,2024
+Artes,Privada,Licenciatura,Sul,2274,234,2024
+Artes Cênicas,Privada,Licenciatura,Sudeste,50,22,2024
+Artes Visuais,Privada,Bacharelado,Centro-Oeste,87,46,2024
+Artes Visuais,Privada,Bacharelado,Sudeste,117,51,2024
+Artes Visuais,Privada,Bacharelado,Sul,1615,657,2024
+Artes Visuais,Privada,Licenciatura,Centro-Oeste,221,105,2024
+Artes Visuais,Privada,Licenciatura,Nordeste,25,12,2024
+Artes Visuais,Privada,Licenciatura,Sudeste,3559,1728,2024
+Artes Visuais,Privada,Licenciatura,Sul,7196,3670,2024
+Artes Visuais,Privada,Tecnólogo,Nordeste,4,1,2024
+Artes Visuais,Privada,Tecnólogo,Sudeste,85,50,2024
+Artes Visuais,Pública,Licenciatura,Centro-Oeste,43,12,2024
+Artes Visuais,Pública,Licenciatura,Nordeste,117,44,2024
+Artes Visuais,Pública,Licenciatura,Norte,27,0,2024
+Artes Visuais,Pública,Licenciatura,Sudeste,2,0,2024
+Artes Visuais - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,1,0,2024
+Auditoria Em Saúde,Privada,Tecnólogo,Sul,102,41,2024
+Automação Industrial,Privada,Tecnólogo,Centro-Oeste,87,22,2024
+Automação Industrial,Privada,Tecnólogo,Sudeste,1834,884,2024
+Automação Industrial,Privada,Tecnólogo,Sul,3310,1043,2024
+Automação Residencial E Predial,Privada,Tecnólogo,Sul,566,306,2024
+Ayurveda,Privada,Bacharelado,Sul,33,0,2024
+Banco De Dados,Privada,Tecnólogo,Centro-Oeste,190,74,2024
+Banco De Dados,Privada,Tecnólogo,Nordeste,66,22,2024
+Banco De Dados,Privada,Tecnólogo,Sudeste,2081,957,2024
+Banco De Dados,Privada,Tecnólogo,Sul,1628,541,2024
+Banco De Dados E Armazenamento De Big Data,Privada,Tecnólogo,Centro-Oeste,60,54,2024
+Bem-Estar Animal,Privada,Tecnólogo,Sul,1109,694,2024
+Biblioteconomia,Privada,Bacharelado,Sudeste,1407,562,2024
+Biblioteconomia,Privada,Bacharelado,Sul,2721,1363,2024
+Biblioteconomia,Pública,Bacharelado,Nordeste,67,1,2024
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Centro-Oeste,45,34,2024
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Nordeste,28,7,2024
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Sudeste,700,276,2024
+Big Data E Inteligência Analítica,Privada,Tecnólogo,Sul,501,277,2024
+Big Data E Inteligência Artificial,Privada,Tecnólogo,Centro-Oeste,131,64,2024
+Big Data E Inteligência Artificial,Privada,Tecnólogo,Sudeste,2,0,2024
+Biologia,Privada,Bacharelado,Sul,92,37,2024
+Biologia,Privada,Licenciatura,Nordeste,57,29,2024
+Biologia,Privada,Licenciatura,Norte,10,0,2024
+Biologia,Privada,Licenciatura,Sudeste,254,110,2024
+Biologia,Privada,Licenciatura,Sul,2,1,2024
+Biologia,Pública,Licenciatura,Nordeste,223,78,2024
+Biomedicina,Privada,Bacharelado,Centro-Oeste,2098,1034,2024
+Biomedicina,Privada,Bacharelado,Nordeste,2295,632,2024
+Biomedicina,Privada,Bacharelado,Norte,330,24,2024
+Biomedicina,Privada,Bacharelado,Sudeste,17793,9055,2024
+Biomedicina,Privada,Bacharelado,Sul,32937,19380,2024
+Biomedicina,Pública,Bacharelado,Sul,2,1,2024
+Biotecnologia,Privada,Bacharelado,Sudeste,8,0,2024
+Blockchain E Criptografia Digital,Privada,Tecnólogo,Sudeste,53,13,2024
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Centro-Oeste,70,40,2024
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Sudeste,160,77,2024
+"Blockchain, Criptomoedas E Finanças Na Era Digital",Privada,Tecnólogo,Sul,502,303,2024
+Cibersegurança,Privada,Tecnólogo,Centro-Oeste,189,112,2024
+Cibersegurança,Privada,Tecnólogo,Sudeste,626,159,2024
+Cibersegurança,Privada,Tecnólogo,Sul,1399,778,2024
+Cinema E Audiovisual,Privada,Bacharelado,Sul,1394,700,2024
+Ciência  De Dados E Big Data,Privada,Tecnólogo,Sudeste,19,8,2024
+Ciência Da Computação,Privada,Bacharelado,Centro-Oeste,545,178,2024
+Ciência Da Computação,Privada,Bacharelado,Nordeste,1034,390,2024
+Ciência Da Computação,Privada,Bacharelado,Sudeste,6705,3149,2024
+Ciência Da Computação,Privada,Bacharelado,Sul,5239,2057,2024
+Ciência Da Computação,Privada,Licenciatura,Sul,207,17,2024
+Ciência Da Criatividade,Privada,Tecnólogo,Sul,276,133,2024
+Ciência Da Felicidade,Privada,Tecnólogo,Sul,1419,665,2024
+Ciência Da Religião,Privada,Licenciatura,Sudeste,39,13,2024
+Ciência De Dados,Privada,Bacharelado,Sul,1,0,2024
+Ciência De Dados,Privada,Tecnólogo,Centro-Oeste,213,122,2024
+Ciência De Dados,Privada,Tecnólogo,Nordeste,340,155,2024
+Ciência De Dados,Privada,Tecnólogo,Sudeste,4058,2223,2024
+Ciência De Dados,Privada,Tecnólogo,Sul,3722,1133,2024
+Ciência De Dados,Pública,Bacharelado,Sudeste,2281,876,2024
+Ciência De Dados E Bussiness Intelligence,Privada,Tecnólogo,Sudeste,17,2,2024
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Nordeste,81,52,2024
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Sudeste,28,16,2024
+Ciência De Dados E Inteligência Artificial,Privada,Bacharelado,Sul,236,73,2024
+Ciência De Dados E Inteligência Artificial,Privada,Tecnólogo,Sudeste,75,18,2024
+Ciência De Dados E Inteligência Artificial,Privada,Tecnólogo,Sul,28,6,2024
+Ciência Dos Dados,Pública,Tecnólogo,Centro-Oeste,697,240,2024
+Ciência E Tecnologia,Pública,Bacharelado,Centro-Oeste,764,69,2024
+Ciência E Tecnologia,Pública,Bacharelado,Sudeste,59,7,2024
+Ciência Econômica,Privada,Bacharelado,Centro-Oeste,108,37,2024
+Ciência Econômica,Privada,Bacharelado,Nordeste,60,2,2024
+Ciência Econômica,Privada,Bacharelado,Norte,40,2,2024
+Ciência Econômica,Privada,Bacharelado,Sudeste,381,178,2024
+Ciência Econômica,Privada,Bacharelado,Sul,53,8,2024
+Ciência Política,Privada,Bacharelado,Centro-Oeste,30,24,2024
+Ciência Política,Privada,Bacharelado,Nordeste,1,0,2024
+Ciência Política,Privada,Bacharelado,Norte,1,0,2024
+Ciência Política,Privada,Bacharelado,Sudeste,455,194,2024
+Ciência Política,Privada,Bacharelado,Sul,491,212,2024
+Ciência Política,Privada,Tecnólogo,Centro-Oeste,133,51,2024
+Ciências Aeronáuticas,Privada,Bacharelado,Nordeste,598,140,2024
+Ciências Aeronáuticas,Privada,Bacharelado,Norte,31,3,2024
+Ciências Aeronáuticas,Privada,Bacharelado,Sudeste,144,17,2024
+Ciências Aeronáuticas,Privada,Bacharelado,Sul,301,124,2024
+Ciências Agrárias,Pública,Licenciatura,Norte,72,2,2024
+Ciências Biológicas,Privada,Bacharelado,Centro-Oeste,88,27,2024
+Ciências Biológicas,Privada,Bacharelado,Nordeste,11,5,2024
+Ciências Biológicas,Privada,Bacharelado,Sudeste,2757,1599,2024
+Ciências Biológicas,Privada,Bacharelado,Sul,1481,520,2024
+Ciências Biológicas,Privada,Licenciatura,Centro-Oeste,134,43,2024
+Ciências Biológicas,Privada,Licenciatura,Nordeste,271,63,2024
+Ciências Biológicas,Privada,Licenciatura,Norte,31,8,2024
+Ciências Biológicas,Privada,Licenciatura,Sudeste,3650,1652,2024
+Ciências Biológicas,Privada,Licenciatura,Sul,6839,3299,2024
+Ciências Biológicas,Pública,Licenciatura,Centro-Oeste,129,43,2024
+Ciências Biológicas,Pública,Licenciatura,Nordeste,290,102,2024
+Ciências Biológicas,Pública,Licenciatura,Norte,504,19,2024
+Ciências Biológicas,Pública,Licenciatura,Sudeste,910,468,2024
+Ciências Biológicas,Pública,Licenciatura,Sul,310,136,2024
+Ciências Contábeis,Privada,Bacharelado,Centro-Oeste,3479,1895,2024
+Ciências Contábeis,Privada,Bacharelado,Nordeste,5246,2112,2024
+Ciências Contábeis,Privada,Bacharelado,Norte,583,82,2024
+Ciências Contábeis,Privada,Bacharelado,Sudeste,30170,14857,2024
+Ciências Contábeis,Privada,Bacharelado,Sul,54535,34621,2024
+Ciências Contábeis,Pública,Bacharelado,Nordeste,133,3,2024
+Ciências Contábeis,Pública,Bacharelado,Sudeste,783,183,2024
+Ciências Contábeis,Pública,Bacharelado,Sul,47,23,2024
+Ciências Da Computação,Privada,Bacharelado,Centro-Oeste,268,149,2024
+Ciências Da Computação,Privada,Bacharelado,Nordeste,68,41,2024
+Ciências Da Computação,Privada,Bacharelado,Sudeste,6260,3582,2024
+Ciências Da Computação,Privada,Bacharelado,Sul,3251,1855,2024
+Ciências Da Natureza,Privada,Bacharelado,Centro-Oeste,9,1,2024
+Ciências Da Natureza,Privada,Bacharelado,Sudeste,146,58,2024
+Ciências Da Natureza,Privada,Bacharelado,Sul,60,20,2024
+Ciências Da Natureza,Privada,Licenciatura,Sudeste,25,0,2024
+Ciências Da Religião,Privada,Licenciatura,Sul,967,292,2024
+Ciências Da Religião - Ensino Religioso,Privada,Licenciatura,Nordeste,2,2,2024
+Ciências Das Religiões,Privada,Licenciatura,Sudeste,255,49,2024
+Ciências De Dados,Privada,Tecnólogo,Sudeste,2,0,2024
+Ciências De Dados,Privada,Tecnólogo,Sul,1194,765,2024
+Ciências De Dados E Análise De Comportamento,Privada,Tecnólogo,Sul,674,441,2024
+Ciências Do Futuro,Privada,Tecnólogo,Sul,80,0,2024
+Ciências Econômicas,Privada,Bacharelado,Centro-Oeste,327,172,2024
+Ciências Econômicas,Privada,Bacharelado,Nordeste,245,46,2024
+Ciências Econômicas,Privada,Bacharelado,Sudeste,5038,2699,2024
+Ciências Econômicas,Privada,Bacharelado,Sul,5780,2669,2024
+Ciências Econômicas,Pública,Bacharelado,Sudeste,50,19,2024
+Ciências Exatas,Privada,Bacharelado,Centro-Oeste,17,3,2024
+Ciências Exatas,Privada,Bacharelado,Sudeste,321,123,2024
+Ciências Exatas,Privada,Bacharelado,Sul,137,64,2024
+Ciências Humanas,Privada,Bacharelado,Centro-Oeste,10,1,2024
+Ciências Humanas,Privada,Bacharelado,Sudeste,126,48,2024
+Ciências Humanas,Privada,Bacharelado,Sul,51,25,2024
+Ciências Humanas,Pública,Licenciatura,Norte,128,0,2024
+Ciências Imobiliárias,Privada,Bacharelado,Sul,13,4,2024
+Ciências Jurídicas E Sociais,Privada,Tecnólogo,Sul,392,47,2024
+Ciências Naturais E Matemática,Pública,Licenciatura,Centro-Oeste,101,9,2024
+Ciências Políticas,Privada,Bacharelado,Centro-Oeste,82,37,2024
+Ciências Políticas,Privada,Bacharelado,Nordeste,22,1,2024
+Ciências Políticas,Privada,Bacharelado,Sudeste,309,142,2024
+Ciências Políticas,Privada,Bacharelado,Sul,668,336,2024
+Ciências Sociais,Privada,Bacharelado,Centro-Oeste,16,3,2024
+Ciências Sociais,Privada,Bacharelado,Sudeste,282,117,2024
+Ciências Sociais,Privada,Bacharelado,Sul,139,63,2024
+Ciências Sociais,Privada,Licenciatura,Nordeste,9,2,2024
+Ciências Sociais,Privada,Licenciatura,Sudeste,557,198,2024
+Ciências Sociais,Privada,Licenciatura,Sul,147,28,2024
+Ciências Sociais,Pública,Licenciatura,Centro-Oeste,162,67,2024
+"Ciências: Biologia, Física E Química",Pública,Licenciatura,Norte,47,11,2024
+Coach Digital,Privada,Tecnólogo,Nordeste,5,0,2024
+Coach Digital,Privada,Tecnólogo,Sudeste,1,0,2024
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Centro-Oeste,87,45,2024
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Sudeste,163,77,2024
+Coaching E Desenvolvimento Humano,Privada,Tecnólogo,Sul,1529,505,2024
+Coaching E Mentoring,Privada,Tecnólogo,Nordeste,33,4,2024
+Coaching E Mentoring,Privada,Tecnólogo,Norte,2,0,2024
+Coaching E Mentoring,Privada,Tecnólogo,Sudeste,156,81,2024
+Coaching E Mentoring,Privada,Tecnólogo,Sul,20,4,2024
+Coding,Privada,Tecnólogo,Nordeste,14,3,2024
+Coding,Privada,Tecnólogo,Norte,1,0,2024
+Coding,Privada,Tecnólogo,Sudeste,65,16,2024
+Coding,Privada,Tecnólogo,Sul,8,2,2024
+Computação,Privada,Licenciatura,Centro-Oeste,9,1,2024
+Computação,Privada,Licenciatura,Sudeste,281,116,2024
+Computação,Privada,Licenciatura,Sul,51,15,2024
+Computação,Pública,Licenciatura,Nordeste,377,139,2024
+Computação,Pública,Licenciatura,Sudeste,79,7,2024
+Computação,Pública,Licenciatura,Sul,1147,393,2024
+Computação E Informática,Privada,Licenciatura,Sul,72,13,2024
+Computação E Informática,Pública,Licenciatura,Nordeste,182,12,2024
+Computação Em Nuvem,Privada,Tecnólogo,Centro-Oeste,31,18,2024
+Computação Em Nuvem,Privada,Tecnólogo,Nordeste,42,3,2024
+Computação Em Nuvem,Privada,Tecnólogo,Norte,8,2,2024
+Computação Em Nuvem,Privada,Tecnólogo,Sudeste,198,57,2024
+Computação Em Nuvem,Privada,Tecnólogo,Sul,288,177,2024
+Computação Imersiva,Privada,Tecnólogo,Sul,5,5,2024
+Comunicação Assistiva,Privada,Tecnólogo,Sul,42,19,2024
+Comunicação Digital,Privada,Tecnólogo,Sul,12,3,2024
+Comunicação Digital E Redes Sociais,Privada,Tecnólogo,Sudeste,8,1,2024
+Comunicação E Marketing,Privada,Bacharelado,Sudeste,57,24,2024
+Comunicação Institucional,Privada,Tecnólogo,Centro-Oeste,12,3,2024
+Comunicação Institucional,Privada,Tecnólogo,Nordeste,40,13,2024
+Comunicação Institucional,Privada,Tecnólogo,Sudeste,518,234,2024
+Comunicação Institucional,Privada,Tecnólogo,Sul,584,246,2024
+Comunicação Social - Jornalismo,Privada,Bacharelado,Sul,46,0,2024
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Centro-Oeste,46,24,2024
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Sudeste,650,229,2024
+Comunicação Social - Publicidade E Propaganda,Privada,Bacharelado,Sul,1581,716,2024
+Comunicação Social - Publicidade E Propaganda E Mídias Digitais,Privada,Bacharelado,Sudeste,810,556,2024
+Comércio Exterior,Privada,Bacharelado,Sul,7,3,2024
+Comércio Exterior,Privada,Tecnólogo,Centro-Oeste,236,106,2024
+Comércio Exterior,Privada,Tecnólogo,Nordeste,180,101,2024
+Comércio Exterior,Privada,Tecnólogo,Sudeste,5106,2597,2024
+Comércio Exterior,Privada,Tecnólogo,Sul,5989,2889,2024
+Comércio Exterior,Pública,Tecnólogo,Sudeste,21,6,2024
+"Conciliação, Mediação E Arbitragem",Privada,Tecnólogo,Nordeste,2,0,2024
+"Conciliação, Mediação E Arbitragem",Privada,Tecnólogo,Sudeste,81,28,2024
+"Conciliação, Mediação E Arbitragem",Privada,Tecnólogo,Sul,3,0,2024
+Conselheiro Tutelar,Privada,Tecnólogo,Sul,776,476,2024
+Construção De Edifícios,Privada,Tecnólogo,Sudeste,36,18,2024
+Construção De Edifícios,Privada,Tecnólogo,Sul,244,101,2024
+Controle De Obras,Privada,Tecnólogo,Sudeste,24,10,2024
+Controle De Obras,Privada,Tecnólogo,Sul,72,31,2024
+Cozinha Contemporânea,Privada,Tecnólogo,Centro-Oeste,20,8,2024
+Cozinha Contemporânea,Privada,Tecnólogo,Sudeste,184,86,2024
+Cozinha Contemporânea,Privada,Tecnólogo,Sul,59,27,2024
+Criminologia,Privada,Bacharelado,Centro-Oeste,593,369,2024
+Criminologia,Privada,Bacharelado,Nordeste,9,0,2024
+Criminologia,Privada,Bacharelado,Sudeste,962,422,2024
+Criminologia,Privada,Bacharelado,Sul,6458,3968,2024
+Criminologia,Privada,Tecnólogo,Nordeste,25,9,2024
+Criminologia,Privada,Tecnólogo,Sudeste,882,441,2024
+Criminologia,Privada,Tecnólogo,Sul,5627,3491,2024
+Dança,Privada,Licenciatura,Sul,1397,811,2024
+Data Science,Privada,Tecnólogo,Nordeste,191,31,2024
+Data Science,Privada,Tecnólogo,Norte,23,3,2024
+Data Science,Privada,Tecnólogo,Sudeste,463,83,2024
+Data Science,Privada,Tecnólogo,Sul,46,3,2024
+Defesa Cibernética,Privada,Tecnólogo,Centro-Oeste,49,13,2024
+Defesa Cibernética,Privada,Tecnólogo,Nordeste,133,29,2024
+Defesa Cibernética,Privada,Tecnólogo,Sudeste,1997,969,2024
+Defesa Cibernética,Privada,Tecnólogo,Sul,870,254,2024
+Defesa Médica Hospitalar,Privada,Tecnólogo,Sul,34,8,2024
+Desenvolvimento Back-End,Privada,Tecnólogo,Centro-Oeste,46,17,2024
+Desenvolvimento Back-End,Privada,Tecnólogo,Sudeste,269,97,2024
+Desenvolvimento Back-End,Privada,Tecnólogo,Sul,376,214,2024
+Desenvolvimento Comunitário,Privada,Tecnólogo,Sul,5,0,2024
+Desenvolvimento De Aplicativos Móveis,Privada,Tecnólogo,Sul,285,164,2024
+Desenvolvimento De Aplicativos Para Dispositivos Móveis,Privada,Tecnólogo,Sudeste,1,0,2024
+Desenvolvimento Full Stack,Privada,Tecnólogo,Centro-Oeste,16,4,2024
+Desenvolvimento Full Stack,Privada,Tecnólogo,Sudeste,566,249,2024
+Desenvolvimento Full Stack,Privada,Tecnólogo,Sul,130,75,2024
+Desenvolvimento Mobile,Privada,Tecnólogo,Centro-Oeste,20,10,2024
+Desenvolvimento Mobile,Privada,Tecnólogo,Sudeste,116,48,2024
+Desenvolvimento Mobile,Privada,Tecnólogo,Sul,214,129,2024
+Desenvolvimento Para Web,Privada,Tecnólogo,Sul,837,496,2024
+Desenvolvimento Rural,Pública,Bacharelado,Sul,57,12,2024
+Desenvolvimento Web,Privada,Tecnólogo,Centro-Oeste,84,53,2024
+Desenvolvimento Web,Privada,Tecnólogo,Sudeste,147,69,2024
+Design,Privada,Bacharelado,Sudeste,331,159,2024
+Design - Moda,Privada,Tecnólogo,Sul,4,1,2024
+Design De Animação,Privada,Bacharelado,Nordeste,38,21,2024
+Design De Animação,Privada,Bacharelado,Sudeste,358,138,2024
+Design De Animação,Privada,Bacharelado,Sul,64,28,2024
+Design De Animação,Privada,Tecnólogo,Sudeste,248,137,2024
+Design De Animação,Privada,Tecnólogo,Sul,1302,421,2024
+Design De Experiência,Privada,Tecnólogo,Sudeste,139,25,2024
+Design De Games,Privada,Bacharelado,Nordeste,18,6,2024
+Design De Games,Privada,Bacharelado,Sudeste,271,101,2024
+Design De Games,Privada,Bacharelado,Sul,37,14,2024
+Design De Games,Privada,Tecnólogo,Sul,169,43,2024
+Design De Interiores,Privada,Tecnólogo,Centro-Oeste,521,265,2024
+Design De Interiores,Privada,Tecnólogo,Nordeste,391,85,2024
+Design De Interiores,Privada,Tecnólogo,Norte,91,6,2024
+Design De Interiores,Privada,Tecnólogo,Sudeste,4085,1943,2024
+Design De Interiores,Privada,Tecnólogo,Sul,8321,4780,2024
+Design De Moda,Privada,Tecnólogo,Centro-Oeste,259,142,2024
+Design De Moda,Privada,Tecnólogo,Nordeste,65,41,2024
+Design De Moda,Privada,Tecnólogo,Sudeste,1388,616,2024
+Design De Moda,Privada,Tecnólogo,Sul,5705,3367,2024
+Design De Produto,Privada,Tecnólogo,Nordeste,5,0,2024
+Design De Produto,Privada,Tecnólogo,Sudeste,345,102,2024
+Design De Produto,Privada,Tecnólogo,Sul,864,292,2024
+Design Digital,Privada,Tecnólogo,Sudeste,104,13,2024
+Design Digital,Privada,Tecnólogo,Sul,28,9,2024
+Design Digital E User Experience,Privada,Tecnólogo,Sul,417,0,2024
+Design Educacional,Privada,Tecnólogo,Sul,38,5,2024
+Design Educacional,Pública,Tecnólogo,Sudeste,34,29,2024
+Design Gráfico,Privada,Tecnólogo,Centro-Oeste,651,337,2024
+Design Gráfico,Privada,Tecnólogo,Nordeste,125,64,2024
+Design Gráfico,Privada,Tecnólogo,Sudeste,4758,2048,2024
+Design Gráfico,Privada,Tecnólogo,Sul,12759,5729,2024
+Design Gráfico E Digital,Privada,Tecnólogo,Sudeste,426,168,2024
+Design Musical,Privada,Tecnólogo,Sul,872,512,2024
+Despachante Documentalista,Privada,Tecnólogo,Centro-Oeste,14,5,2024
+Despachante Documentalista,Privada,Tecnólogo,Sudeste,123,68,2024
+Despachante Documentalista,Privada,Tecnólogo,Sul,1460,485,2024
+Devops,Privada,Tecnólogo,Centro-Oeste,32,19,2024
+Devops,Privada,Tecnólogo,Sudeste,99,36,2024
+Devops,Privada,Tecnólogo,Sul,292,163,2024
+Digital Security,Privada,Tecnólogo,Nordeste,176,21,2024
+Digital Security,Privada,Tecnólogo,Norte,12,3,2024
+Digital Security,Privada,Tecnólogo,Sudeste,7,1,2024
+Digital Security,Privada,Tecnólogo,Sul,28,1,2024
+E-Commerce,Privada,Tecnólogo,Nordeste,16,1,2024
+E-Commerce,Privada,Tecnólogo,Norte,5,1,2024
+E-Commerce,Privada,Tecnólogo,Sul,12,2,2024
+Educador Social,Privada,Tecnólogo,Sul,353,87,2024
+Educação Do Campo,Pública,Licenciatura,Sul,84,10,2024
+Educação Especial,Privada,Licenciatura,Centro-Oeste,247,146,2024
+Educação Especial,Privada,Licenciatura,Nordeste,90,14,2024
+Educação Especial,Privada,Licenciatura,Norte,53,6,2024
+Educação Especial,Privada,Licenciatura,Sudeste,2049,675,2024
+Educação Especial,Privada,Licenciatura,Sul,8707,3641,2024
+Educação Especial,Pública,Licenciatura,Sudeste,383,76,2024
+Educação Especial,Pública,Licenciatura,Sul,192,2,2024
+Educação Especial E Inclusiva,Privada,Licenciatura,Sudeste,11,0,2024
+Educação Especial E Inclusiva,Pública,Licenciatura,Sul,46,6,2024
+Educação Especial Inclusiva,Pública,Licenciatura,Nordeste,62,2,2024
+Educação Financeira,Privada,Tecnólogo,Sudeste,15,2,2024
+Educação Física,Privada,Bacharelado,Centro-Oeste,2439,1148,2024
+Educação Física,Privada,Bacharelado,Nordeste,5378,1333,2024
+Educação Física,Privada,Bacharelado,Norte,46,0,2024
+Educação Física,Privada,Bacharelado,Sudeste,24456,10645,2024
+Educação Física,Privada,Bacharelado,Sul,77011,47557,2024
+Educação Física,Privada,Licenciatura,Centro-Oeste,1242,634,2024
+Educação Física,Privada,Licenciatura,Nordeste,1421,407,2024
+Educação Física,Privada,Licenciatura,Norte,206,66,2024
+Educação Física,Privada,Licenciatura,Sudeste,6896,2746,2024
+Educação Física,Privada,Licenciatura,Sul,35168,22257,2024
+Educação Física,Pública,Bacharelado,Sul,50,16,2024
+Educação Física,Pública,Licenciatura,Centro-Oeste,43,22,2024
+Educação Física,Pública,Licenciatura,Nordeste,61,1,2024
+Educação Física,Pública,Licenciatura,Norte,407,2,2024
+Educação Física,Pública,Licenciatura,Sudeste,123,16,2024
+Educação Física,Pública,Licenciatura,Sul,186,13,2024
+Educação Social,Privada,Tecnólogo,Sul,205,66,2024
+Eletrotécnica Industrial,Privada,Tecnólogo,Sudeste,61,58,2024
+Eletrônica Industrial,Privada,Tecnólogo,Sudeste,7,1,2024
+Eletrônica Industrial,Privada,Tecnólogo,Sul,11,3,2024
+Embelezamento E Imagem Pessoal,Privada,Tecnólogo,Sul,251,120,2024
+Empreendedorismo,Privada,Tecnólogo,Centro-Oeste,158,72,2024
+Empreendedorismo,Privada,Tecnólogo,Nordeste,113,44,2024
+Empreendedorismo,Privada,Tecnólogo,Sudeste,1719,842,2024
+Empreendedorismo,Privada,Tecnólogo,Sul,1924,1230,2024
+Empreendedorismo Digital,Privada,Tecnólogo,Nordeste,134,19,2024
+Empreendedorismo Digital,Privada,Tecnólogo,Norte,15,2,2024
+Empreendedorismo Digital,Privada,Tecnólogo,Sudeste,6,2,2024
+Empreendedorismo Digital,Privada,Tecnólogo,Sul,27,1,2024
+Empreendedorismo E Inovação,Privada,Tecnólogo,Sudeste,4,1,2024
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Centro-Oeste,62,33,2024
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Sudeste,120,52,2024
+Empreendedorismo E Novos Negócios,Privada,Tecnólogo,Sul,394,212,2024
+Empreendedorismo Educacional,Privada,Tecnólogo,Sul,30,3,2024
+Energias Renováveis,Privada,Tecnólogo,Sudeste,113,40,2024
+Energias Renováveis,Privada,Tecnólogo,Sul,671,301,2024
+Energias Renováveis,Pública,Tecnólogo,Nordeste,383,29,2024
+Enfermagem,Privada,Bacharelado,Centro-Oeste,1689,1342,2024
+Enfermagem,Privada,Bacharelado,Nordeste,1326,525,2024
+Enfermagem,Privada,Bacharelado,Norte,1588,201,2024
+Enfermagem,Privada,Bacharelado,Sudeste,18100,6436,2024
+Enfermagem,Privada,Bacharelado,Sul,62421,40912,2024
+Engenharia,Pública,Bacharelado,Sudeste,16,2,2024
+Engenharia Agronômica,Privada,Bacharelado,Centro-Oeste,231,88,2024
+Engenharia Agronômica,Privada,Bacharelado,Nordeste,3,1,2024
+Engenharia Agronômica,Privada,Bacharelado,Sudeste,90,52,2024
+Engenharia Agronômica,Privada,Bacharelado,Sul,3191,559,2024
+Engenharia Ambiental,Privada,Bacharelado,Centro-Oeste,109,52,2024
+Engenharia Ambiental,Privada,Bacharelado,Nordeste,46,31,2024
+Engenharia Ambiental,Privada,Bacharelado,Sudeste,2284,1054,2024
+Engenharia Ambiental,Privada,Bacharelado,Sul,1677,583,2024
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Centro-Oeste,235,113,2024
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Nordeste,3,0,2024
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Sudeste,777,234,2024
+Engenharia Ambiental E Sanitária,Privada,Bacharelado,Sul,3198,1309,2024
+Engenharia Biomédica,Privada,Bacharelado,Sudeste,25,18,2024
+Engenharia Biomédica,Privada,Bacharelado,Sul,360,62,2024
+Engenharia Civil,Privada,Bacharelado,Centro-Oeste,1124,522,2024
+Engenharia Civil,Privada,Bacharelado,Nordeste,1591,387,2024
+Engenharia Civil,Privada,Bacharelado,Norte,156,21,2024
+Engenharia Civil,Privada,Bacharelado,Sudeste,14146,6692,2024
+Engenharia Civil,Privada,Bacharelado,Sul,14601,7804,2024
+Engenharia Civil,Pública,Bacharelado,Sul,18,15,2024
+Engenharia Da Computação,Privada,Bacharelado,Sudeste,420,116,2024
+Engenharia Da Computação,Privada,Bacharelado,Sul,5,1,2024
+Engenharia De Alimentos,Privada,Bacharelado,Nordeste,1,0,2024
+Engenharia De Alimentos,Privada,Bacharelado,Sudeste,39,3,2024
+Engenharia De Alimentos,Privada,Bacharelado,Sul,168,64,2024
+Engenharia De Aplicação,Privada,Bacharelado,Sul,20,7,2024
+Engenharia De Bioprocessos E Biotecnologia,Privada,Bacharelado,Sudeste,9,0,2024
+Engenharia De Computação,Privada,Bacharelado,Centro-Oeste,127,76,2024
+Engenharia De Computação,Privada,Bacharelado,Nordeste,151,70,2024
+Engenharia De Computação,Privada,Bacharelado,Norte,7,0,2024
+Engenharia De Computação,Privada,Bacharelado,Sudeste,2218,972,2024
+Engenharia De Computação,Privada,Bacharelado,Sul,2527,1284,2024
+Engenharia De Computação,Pública,Bacharelado,Sudeste,2485,1129,2024
+Engenharia De Controle E Automação,Privada,Bacharelado,Centro-Oeste,139,68,2024
+Engenharia De Controle E Automação,Privada,Bacharelado,Nordeste,46,13,2024
+Engenharia De Controle E Automação,Privada,Bacharelado,Sudeste,1330,384,2024
+Engenharia De Controle E Automação,Privada,Bacharelado,Sul,1615,685,2024
+Engenharia De Dados,Privada,Bacharelado,Sul,64,20,2024
+Engenharia De Design Digital,Privada,Bacharelado,Sul,98,15,2024
+Engenharia De Manutenção E Diagnóstico Industrial,Privada,Bacharelado,Sul,80,24,2024
+Engenharia De Materiais,Privada,Bacharelado,Sudeste,13,0,2024
+Engenharia De Minas,Privada,Bacharelado,Centro-Oeste,197,34,2024
+Engenharia De Produção,Privada,Bacharelado,Centro-Oeste,678,316,2024
+Engenharia De Produção,Privada,Bacharelado,Nordeste,795,224,2024
+Engenharia De Produção,Privada,Bacharelado,Norte,88,5,2024
+Engenharia De Produção,Privada,Bacharelado,Sudeste,14312,6081,2024
+Engenharia De Produção,Privada,Bacharelado,Sul,13791,7661,2024
+Engenharia De Produção,Pública,Bacharelado,Sudeste,3469,1229,2024
+Engenharia De Segurança Cibernética,Privada,Bacharelado,Sul,79,16,2024
+Engenharia De Sistemas,Privada,Bacharelado,Sul,20,2,2024
+Engenharia De Software,Privada,Bacharelado,Centro-Oeste,1451,670,2024
+Engenharia De Software,Privada,Bacharelado,Nordeste,761,272,2024
+Engenharia De Software,Privada,Bacharelado,Sudeste,9099,4660,2024
+Engenharia De Software,Privada,Bacharelado,Sul,19457,9321,2024
+Engenharia Devops,Privada,Bacharelado,Sul,23,7,2024
+Engenharia Eletrônica,Privada,Bacharelado,Sul,12,0,2024
+Engenharia Elétrica,Privada,Bacharelado,Centro-Oeste,761,395,2024
+Engenharia Elétrica,Privada,Bacharelado,Nordeste,1309,309,2024
+Engenharia Elétrica,Privada,Bacharelado,Norte,164,20,2024
+Engenharia Elétrica,Privada,Bacharelado,Sudeste,9463,4364,2024
+Engenharia Elétrica,Privada,Bacharelado,Sul,11402,6283,2024
+Engenharia Industrial Mecânica,Privada,Bacharelado,Sudeste,70,12,2024
+Engenharia Mecatrônica,Privada,Bacharelado,Sudeste,743,318,2024
+Engenharia Mecatrônica,Privada,Bacharelado,Sul,599,400,2024
+Engenharia Mecânica,Privada,Bacharelado,Centro-Oeste,648,298,2024
+Engenharia Mecânica,Privada,Bacharelado,Nordeste,1147,288,2024
+Engenharia Mecânica,Privada,Bacharelado,Norte,116,15,2024
+Engenharia Mecânica,Privada,Bacharelado,Sudeste,10354,4277,2024
+Engenharia Mecânica,Privada,Bacharelado,Sul,12395,6538,2024
+Engenharia Química,Privada,Bacharelado,Centro-Oeste,19,2,2024
+Engenharia Química,Privada,Bacharelado,Nordeste,1,0,2024
+Engenharia Química,Privada,Bacharelado,Sudeste,598,185,2024
+Engenharia Química,Privada,Bacharelado,Sul,227,26,2024
+Ensino Religioso,Privada,Licenciatura,Sudeste,13,2,2024
+Escrita Criativa,Privada,Tecnólogo,Sul,340,3,2024
+Estatística,Privada,Bacharelado,Nordeste,24,4,2024
+Estatística,Privada,Bacharelado,Sudeste,506,194,2024
+Estatística,Privada,Bacharelado,Sul,31,11,2024
+Estética,Privada,Tecnólogo,Centro-Oeste,8,0,2024
+Estética E Cosmética,Privada,Bacharelado,Sudeste,24,10,2024
+Estética E Cosmética,Privada,Tecnólogo,Centro-Oeste,603,244,2024
+Estética E Cosmética,Privada,Tecnólogo,Nordeste,2210,493,2024
+Estética E Cosmética,Privada,Tecnólogo,Norte,347,93,2024
+Estética E Cosmética,Privada,Tecnólogo,Sudeste,9490,5122,2024
+Estética E Cosmética,Privada,Tecnólogo,Sul,18658,11058,2024
+Eventos,Privada,Tecnólogo,Centro-Oeste,60,32,2024
+Eventos,Privada,Tecnólogo,Nordeste,27,17,2024
+Eventos,Privada,Tecnólogo,Sudeste,747,302,2024
+Eventos,Privada,Tecnólogo,Sul,396,259,2024
+Experiência Do Usuário,Privada,Tecnólogo,Sul,25,8,2024
+Experiência Do Usuário E Modelagem De Projetos Inovadores,Privada,Tecnólogo,Nordeste,40,8,2024
+Experiência Do Usuário E Modelagem De Projetos Inovadores,Privada,Tecnólogo,Sudeste,4,2,2024
+Fabricação Mecânica,Privada,Tecnólogo,Sudeste,84,22,2024
+Fabricação Mecânica,Privada,Tecnólogo,Sul,86,85,2024
+Farmácia,Privada,Bacharelado,Centro-Oeste,1845,721,2024
+Farmácia,Privada,Bacharelado,Nordeste,6876,946,2024
+Farmácia,Privada,Bacharelado,Norte,579,91,2024
+Farmácia,Privada,Bacharelado,Sudeste,13609,6335,2024
+Farmácia,Privada,Bacharelado,Sul,26720,15168,2024
+Farmácia,Pública,Bacharelado,Sul,2,2,2024
+Filmmaker,Privada,Tecnólogo,Nordeste,151,20,2024
+Filmmaker,Privada,Tecnólogo,Norte,22,8,2024
+Filmmaker,Privada,Tecnólogo,Sudeste,1,0,2024
+Filmmaker,Privada,Tecnólogo,Sul,21,3,2024
+Filosofia,Privada,Bacharelado,Centro-Oeste,105,33,2024
+Filosofia,Privada,Bacharelado,Nordeste,11,4,2024
+Filosofia,Privada,Bacharelado,Sudeste,546,211,2024
+Filosofia,Privada,Bacharelado,Sul,1151,670,2024
+Filosofia,Privada,Licenciatura,Centro-Oeste,168,80,2024
+Filosofia,Privada,Licenciatura,Nordeste,50,34,2024
+Filosofia,Privada,Licenciatura,Sudeste,1788,840,2024
+Filosofia,Privada,Licenciatura,Sul,3369,1676,2024
+Filosofia,Pública,Licenciatura,Nordeste,52,5,2024
+Filosofia,Pública,Licenciatura,Sudeste,393,32,2024
+Filosofia,Pública,Licenciatura,Sul,128,50,2024
+Filosofia - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,1,0,2024
+Fisioterapia,Privada,Bacharelado,Centro-Oeste,1461,798,2024
+Fisioterapia,Privada,Bacharelado,Nordeste,7672,1182,2024
+Fisioterapia,Privada,Bacharelado,Norte,467,12,2024
+Fisioterapia,Privada,Bacharelado,Sudeste,12144,5791,2024
+Fisioterapia,Privada,Bacharelado,Sul,21724,12429,2024
+Fisioterapia,Pública,Bacharelado,Sul,3,1,2024
+Fonoaudiologia,Privada,Bacharelado,Centro-Oeste,253,42,2024
+Fonoaudiologia,Privada,Bacharelado,Nordeste,406,80,2024
+Fonoaudiologia,Privada,Bacharelado,Norte,14,0,2024
+Fonoaudiologia,Privada,Bacharelado,Sudeste,2691,836,2024
+Fonoaudiologia,Privada,Bacharelado,Sul,2127,709,2024
+Formação De Docentes Para A Educação Básica,Privada,Licenciatura,Norte,2,2,2024
+Formação Pedagógica De Docentes Para A Educação Profissional De Nível Médio,Pública,Licenciatura,Sudeste,50,30,2024
+Formação Pedagógica Para Graduados Não Licenciados,Privada,Licenciatura,Sul,452,3,2024
+Fotografia,Privada,Tecnólogo,Centro-Oeste,178,99,2024
+Fotografia,Privada,Tecnólogo,Nordeste,8,5,2024
+Fotografia,Privada,Tecnólogo,Sudeste,705,353,2024
+Fotografia,Privada,Tecnólogo,Sul,3266,1776,2024
+Física,Privada,Bacharelado,Nordeste,2,2,2024
+Física,Privada,Bacharelado,Sudeste,307,157,2024
+Física,Privada,Bacharelado,Sul,485,142,2024
+Física,Privada,Licenciatura,Centro-Oeste,9,2,2024
+Física,Privada,Licenciatura,Nordeste,3,0,2024
+Física,Privada,Licenciatura,Sudeste,705,238,2024
+Física,Privada,Licenciatura,Sul,2184,829,2024
+Física,Pública,Licenciatura,Nordeste,319,81,2024
+Física,Pública,Licenciatura,Sudeste,64,14,2024
+Física,Pública,Licenciatura,Sul,122,39,2024
+Game Design,Privada,Tecnólogo,Nordeste,72,15,2024
+Game Design,Privada,Tecnólogo,Norte,16,5,2024
+Game Design,Privada,Tecnólogo,Sudeste,5,3,2024
+Game Design,Privada,Tecnólogo,Sul,16,1,2024
+Game Development,Privada,Tecnólogo,Sudeste,85,12,2024
+Gastronomia,Privada,Tecnólogo,Centro-Oeste,437,219,2024
+Gastronomia,Privada,Tecnólogo,Nordeste,668,218,2024
+Gastronomia,Privada,Tecnólogo,Norte,93,10,2024
+Gastronomia,Privada,Tecnólogo,Sudeste,3324,1553,2024
+Gastronomia,Privada,Tecnólogo,Sul,8285,5408,2024
+Geografia,Privada,Bacharelado,Centro-Oeste,12,2,2024
+Geografia,Privada,Bacharelado,Nordeste,2,1,2024
+Geografia,Privada,Bacharelado,Sudeste,500,195,2024
+Geografia,Privada,Bacharelado,Sul,238,79,2024
+Geografia,Privada,Licenciatura,Centro-Oeste,165,65,2024
+Geografia,Privada,Licenciatura,Nordeste,141,21,2024
+Geografia,Privada,Licenciatura,Norte,25,0,2024
+Geografia,Privada,Licenciatura,Sudeste,2554,1094,2024
+Geografia,Privada,Licenciatura,Sul,5661,2632,2024
+Geografia,Pública,Licenciatura,Centro-Oeste,190,24,2024
+Geografia,Pública,Licenciatura,Nordeste,380,121,2024
+Geografia,Pública,Licenciatura,Norte,84,12,2024
+Geografia,Pública,Licenciatura,Sudeste,189,9,2024
+Geografia,Pública,Licenciatura,Sul,1,1,2024
+Geografia - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,1,0,2024
+Geoprocessamento,Privada,Tecnólogo,Sul,178,60,2024
+Gerontologia,Privada,Bacharelado,Sudeste,2,1,2024
+Gerontologia,Privada,Bacharelado,Sul,217,37,2024
+Gerontologia,Privada,Tecnólogo,Centro-Oeste,173,100,2024
+Gerontologia,Privada,Tecnólogo,Sudeste,339,119,2024
+Gerontologia,Privada,Tecnólogo,Sul,3208,1523,2024
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Centro-Oeste,21,6,2024
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Sudeste,377,184,2024
+Gerontologia - Bem-Estar E Educação,Privada,Tecnólogo,Sul,126,65,2024
+Gerontologia - Cuidado Ao Idoso,Privada,Tecnólogo,Centro-Oeste,1,0,2024
+Gerontologia - Cuidado Ao Idoso,Privada,Tecnólogo,Sul,339,75,2024
+Gerência Em Saúde,Privada,Tecnólogo,Sul,54,4,2024
+Gestão Ambiental,Privada,Tecnólogo,Centro-Oeste,525,240,2024
+Gestão Ambiental,Privada,Tecnólogo,Nordeste,716,169,2024
+Gestão Ambiental,Privada,Tecnólogo,Norte,127,13,2024
+Gestão Ambiental,Privada,Tecnólogo,Sudeste,4485,1895,2024
+Gestão Ambiental,Privada,Tecnólogo,Sul,8117,3963,2024
+Gestão Ambiental,Pública,Tecnólogo,Sudeste,8,1,2024
+Gestão Ambiental E Sustentabilidade,Pública,Bacharelado,Sudeste,142,63,2024
+Gestão Comercial,Privada,Tecnólogo,Centro-Oeste,2126,994,2024
+Gestão Comercial,Privada,Tecnólogo,Nordeste,2931,878,2024
+Gestão Comercial,Privada,Tecnólogo,Norte,233,72,2024
+Gestão Comercial,Privada,Tecnólogo,Sudeste,18142,9315,2024
+Gestão Comercial,Privada,Tecnólogo,Sul,24866,15470,2024
+Gestão Comercial,Pública,Tecnólogo,Centro-Oeste,513,92,2024
+Gestão Comercial,Pública,Tecnólogo,Norte,66,51,2024
+Gestão Comercial,Pública,Tecnólogo,Sudeste,35,9,2024
+Gestão Cultural,Pública,Tecnólogo,Sul,113,7,2024
+Gestão Da Experiência Do Cliente,Privada,Tecnólogo,Sul,91,25,2024
+Gestão Da Felicidade E Projeto De Vida,Privada,Tecnólogo,Sul,7,7,2024
+Gestão Da Inovação,Privada,Tecnólogo,Centro-Oeste,25,14,2024
+Gestão Da Inovação,Privada,Tecnólogo,Sudeste,51,6,2024
+Gestão Da Inovação,Privada,Tecnólogo,Sul,241,93,2024
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Nordeste,19,5,2024
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Sudeste,204,74,2024
+Gestão Da Inovação E Empreendedorismo Digital,Privada,Tecnólogo,Sul,25,13,2024
+Gestão Da Produção,Privada,Tecnólogo,Sudeste,764,491,2024
+Gestão Da Produção Industrial,Privada,Tecnólogo,Centro-Oeste,113,33,2024
+Gestão Da Produção Industrial,Privada,Tecnólogo,Nordeste,68,30,2024
+Gestão Da Produção Industrial,Privada,Tecnólogo,Sudeste,3062,1447,2024
+Gestão Da Produção Industrial,Privada,Tecnólogo,Sul,7000,3988,2024
+Gestão Da Qualidade,Privada,Tecnólogo,Centro-Oeste,609,285,2024
+Gestão Da Qualidade,Privada,Tecnólogo,Nordeste,755,173,2024
+Gestão Da Qualidade,Privada,Tecnólogo,Norte,130,34,2024
+Gestão Da Qualidade,Privada,Tecnólogo,Sudeste,7084,3371,2024
+Gestão Da Qualidade,Privada,Tecnólogo,Sul,11327,5652,2024
+Gestão Da Qualidade,Pública,Tecnólogo,Nordeste,144,3,2024
+Gestão Da Saúde Pública,Privada,Tecnólogo,Sudeste,142,46,2024
+Gestão Da Saúde Pública,Privada,Tecnólogo,Sul,18,10,2024
+Gestão Da Segurança E Defesa Cibernética,Privada,Tecnólogo,Sul,499,103,2024
+Gestão Da Segurança Pública E Patrimonial,Privada,Tecnólogo,Centro-Oeste,2,0,2024
+Gestão Da Segurança Pública E Patrimonial,Privada,Tecnólogo,Sudeste,4,0,2024
+Gestão Da Sustentabilidade,Privada,Tecnólogo,Sul,5,0,2024
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Centro-Oeste,761,388,2024
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Nordeste,1681,669,2024
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Norte,105,9,2024
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Sudeste,13023,7133,2024
+Gestão Da Tecnologia Da Informação,Privada,Tecnólogo,Sul,14060,7894,2024
+Gestão Da Tecnologia Educacional,Privada,Tecnólogo,Sul,18,6,2024
+Gestão Das Organizações Do Terceiro Setor,Privada,Tecnólogo,Nordeste,3,0,2024
+Gestão Das Organizações Do Terceiro Setor,Privada,Tecnólogo,Sudeste,59,18,2024
+Gestão Das Organizações Do Terceiro Setor,Privada,Tecnólogo,Sul,299,146,2024
+Gestão Das Relações Eletrônicas,Privada,Tecnólogo,Sul,10,0,2024
+Gestão De Agronegócios,Privada,Tecnólogo,Nordeste,1,0,2024
+Gestão De Agronegócios,Privada,Tecnólogo,Sudeste,96,96,2024
+Gestão De Agronegócios,Privada,Tecnólogo,Sul,65,33,2024
+Gestão De Atividade Policial,Privada,Tecnólogo,Sul,357,37,2024
+Gestão De Cidades Inteligentes,Privada,Tecnólogo,Sudeste,2,0,2024
+Gestão De Cidades Inteligentes E Sustentáveis,Privada,Tecnólogo,Sul,55,9,2024
+Gestão De Clínicas E Consultórios,Privada,Tecnólogo,Sul,244,45,2024
+Gestão De Compliance E Políticas Corporativas,Privada,Tecnólogo,Sul,12,7,2024
+Gestão De Cooperativas,Privada,Tecnólogo,Centro-Oeste,40,14,2024
+Gestão De Cooperativas,Privada,Tecnólogo,Sudeste,238,89,2024
+Gestão De Cooperativas,Privada,Tecnólogo,Sul,848,334,2024
+Gestão De Cooperativas,Pública,Tecnólogo,Centro-Oeste,9,1,2024
+Gestão De Dados,Pública,Tecnólogo,Nordeste,138,18,2024
+Gestão De E-Commerce,Privada,Tecnólogo,Centro-Oeste,12,2,2024
+Gestão De E-Commerce,Privada,Tecnólogo,Sudeste,358,107,2024
+Gestão De E-Commerce,Privada,Tecnólogo,Sul,761,429,2024
+Gestão De Esporte E Alto Rendimento,Privada,Tecnólogo,Sul,308,175,2024
+Gestão De Eventos,Privada,Tecnólogo,Sudeste,6,6,2024
+Gestão De Eventos,Privada,Tecnólogo,Sul,131,54,2024
+Gestão De Farmácia,Privada,Tecnólogo,Sul,1054,689,2024
+Gestão De Inventário Extrajudicial,Privada,Tecnólogo,Sul,15,4,2024
+Gestão De Investimentos,Privada,Tecnólogo,Sul,122,31,2024
+Gestão De Investimentos E Mercado Financeiro,Privada,Tecnólogo,Sul,1482,804,2024
+Gestão De Lojas E Pontos De Vendas,Privada,Tecnólogo,Sul,346,199,2024
+Gestão De Marketing,Privada,Tecnólogo,Centro-Oeste,60,47,2024
+Gestão De Marketing,Privada,Tecnólogo,Sudeste,98,0,2024
+Gestão De Marketing Digital,Privada,Tecnólogo,Sul,26,9,2024
+Gestão De Marketing Em Mídias Digitais,Privada,Tecnólogo,Sudeste,21,0,2024
+Gestão De Marketing Em Mídias Digitais,Privada,Tecnólogo,Sul,437,334,2024
+Gestão De Micro E Pequenas Empresas,Privada,Tecnólogo,Sul,1,1,2024
+Gestão De Mídias Digitais,Privada,Tecnólogo,Centro-Oeste,11,1,2024
+Gestão De Mídias Digitais,Privada,Tecnólogo,Sudeste,218,102,2024
+Gestão De Mídias Digitais,Privada,Tecnólogo,Sul,96,38,2024
+Gestão De Mídias Sociais,Privada,Tecnólogo,Centro-Oeste,20,10,2024
+Gestão De Mídias Sociais,Privada,Tecnólogo,Sudeste,565,287,2024
+Gestão De Mídias Sociais,Privada,Tecnólogo,Sul,466,151,2024
+Gestão De Negócios,Privada,Tecnólogo,Sul,658,343,2024
+Gestão De Negócios Digitais,Privada,Tecnólogo,Nordeste,11,2,2024
+Gestão De Negócios Digitais,Privada,Tecnólogo,Sudeste,182,72,2024
+Gestão De Negócios Digitais,Privada,Tecnólogo,Sul,15,4,2024
+Gestão De Negócios Digitais E E-Commerce,Privada,Tecnólogo,Sudeste,4,1,2024
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Centro-Oeste,45,27,2024
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Sudeste,128,52,2024
+Gestão De Negócios E Inovação,Privada,Tecnólogo,Sul,61,7,2024
+Gestão De Negócios Imobiliários,Privada,Tecnólogo,Centro-Oeste,308,160,2024
+Gestão De Negócios Imobiliários,Privada,Tecnólogo,Nordeste,164,36,2024
+Gestão De Negócios Imobiliários,Privada,Tecnólogo,Norte,22,3,2024
+Gestão De Negócios Imobiliários,Privada,Tecnólogo,Sudeste,1914,1046,2024
+Gestão De Negócios Imobiliários,Privada,Tecnólogo,Sul,4442,2386,2024
+Gestão De Negócios No Varejo,Privada,Tecnólogo,Sul,1,0,2024
+Gestão De Partidos Políticos,Privada,Tecnólogo,Sul,52,9,2024
+Gestão De Patrimônio Cultural,Privada,Tecnólogo,Sudeste,9,0,2024
+Gestão De Pessoas,Privada,Tecnólogo,Sul,12,0,2024
+Gestão De Pessoas E Equipes,Privada,Tecnólogo,Centro-Oeste,137,49,2024
+Gestão De Processos Educacionais,Privada,Tecnólogo,Sul,100,32,2024
+Gestão De Produto,Privada,Tecnólogo,Centro-Oeste,23,7,2024
+Gestão De Produto,Privada,Tecnólogo,Sudeste,59,21,2024
+Gestão De Produto,Privada,Tecnólogo,Sul,177,95,2024
+Gestão De Produção Industrial,Privada,Tecnólogo,Centro-Oeste,383,186,2024
+Gestão De Produção Industrial,Privada,Tecnólogo,Nordeste,38,0,2024
+Gestão De Produção Industrial,Privada,Tecnólogo,Sudeste,376,114,2024
+Gestão De Produção Industrial,Privada,Tecnólogo,Sul,1102,615,2024
+Gestão De Qualidade Na Saúde,Privada,Tecnólogo,Sudeste,77,29,2024
+Gestão De Recursos Humanos,Privada,Tecnólogo,Centro-Oeste,4254,2138,2024
+Gestão De Recursos Humanos,Privada,Tecnólogo,Nordeste,7029,2076,2024
+Gestão De Recursos Humanos,Privada,Tecnólogo,Norte,354,67,2024
+Gestão De Recursos Humanos,Privada,Tecnólogo,Sudeste,43759,22086,2024
+Gestão De Recursos Humanos,Privada,Tecnólogo,Sul,55742,35577,2024
+Gestão De Recursos Humanos,Pública,Tecnólogo,Centro-Oeste,497,128,2024
+Gestão De Recursos Humanos,Pública,Tecnólogo,Sudeste,69,34,2024
+Gestão De Recursos Humanos,Pública,Tecnólogo,Sul,8,2,2024
+Gestão De Redes Sociais,Privada,Tecnólogo,Centro-Oeste,22,15,2024
+Gestão De Resíduos De Serviços De Saúde,Privada,Tecnólogo,Sul,13,3,2024
+Gestão De Resíduos Sólidos,Privada,Tecnólogo,Sul,16,3,2024
+Gestão De Saúde Pública,Privada,Tecnólogo,Centro-Oeste,167,87,2024
+Gestão De Saúde Pública,Privada,Tecnólogo,Sudeste,339,120,2024
+Gestão De Saúde Pública,Privada,Tecnólogo,Sul,3821,1743,2024
+Gestão De Segurança Privada,Privada,Tecnólogo,Centro-Oeste,386,214,2024
+Gestão De Segurança Privada,Privada,Tecnólogo,Nordeste,17,5,2024
+Gestão De Segurança Privada,Privada,Tecnólogo,Norte,19,12,2024
+Gestão De Segurança Privada,Privada,Tecnólogo,Sudeste,3755,1919,2024
+Gestão De Segurança Privada,Privada,Tecnólogo,Sul,7420,4201,2024
+Gestão De Segurança Pública,Privada,Tecnólogo,Centro-Oeste,43,26,2024
+Gestão De Segurança Pública,Privada,Tecnólogo,Sudeste,540,139,2024
+Gestão De Seguros,Privada,Tecnólogo,Sudeste,871,415,2024
+Gestão De Serviços Judiciais E Notariais,Privada,Tecnólogo,Centro-Oeste,98,33,2024
+Gestão De Serviços Judiciais E Notariais,Privada,Tecnólogo,Sudeste,92,36,2024
+Gestão De Serviços Judiciais E Notariais,Privada,Tecnólogo,Sul,2161,1271,2024
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Centro-Oeste,31,18,2024
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Sudeste,158,51,2024
+Gestão De Serviços Jurídicos,Privada,Tecnólogo,Sul,389,175,2024
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Centro-Oeste,38,10,2024
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Nordeste,959,118,2024
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Norte,95,17,2024
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sudeste,21,9,2024
+Gestão De Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sul,647,330,2024
+Gestão De Serviços Jurídicos E Notariais,Pública,Tecnólogo,Centro-Oeste,326,91,2024
+"Gestão De Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sudeste,567,308,2024
+"Gestão De Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sul,107,0,2024
+Gestão De Serviços Penais,Privada,Tecnólogo,Sul,65,10,2024
+Gestão De Serviços Previdenciários,Privada,Tecnólogo,Sul,203,19,2024
+Gestão De Startups,Privada,Tecnólogo,Sul,15,2,2024
+Gestão De Trânsito,Privada,Tecnólogo,Nordeste,278,16,2024
+Gestão De Trânsito,Privada,Tecnólogo,Norte,36,11,2024
+Gestão De Trânsito,Privada,Tecnólogo,Sudeste,3,0,2024
+Gestão De Trânsito,Privada,Tecnólogo,Sul,181,42,2024
+Gestão De Turismo,Privada,Tecnólogo,Centro-Oeste,105,54,2024
+Gestão De Turismo,Privada,Tecnólogo,Nordeste,24,4,2024
+Gestão De Turismo,Privada,Tecnólogo,Norte,2,1,2024
+Gestão De Turismo,Privada,Tecnólogo,Sudeste,1609,784,2024
+Gestão De Turismo,Privada,Tecnólogo,Sul,2118,1140,2024
+Gestão De Turismo,Pública,Tecnólogo,Sudeste,278,75,2024
+Gestão De Varejo,Privada,Tecnólogo,Sul,20,5,2024
+Gestão De Vendas,Privada,Tecnólogo,Sudeste,544,351,2024
+"Gestão De Vendas, Logística E Distribuição",Privada,Tecnólogo,Nordeste,2,0,2024
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Centro-Oeste,8,0,2024
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Nordeste,2,0,2024
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Sudeste,356,112,2024
+Gestão Desportiva E De Lazer,Privada,Tecnólogo,Sul,79,17,2024
+Gestão Do Agronegócio,Privada,Tecnólogo,Centro-Oeste,381,256,2024
+Gestão Do Agronegócio,Privada,Tecnólogo,Nordeste,32,13,2024
+Gestão Do Agronegócio,Privada,Tecnólogo,Norte,14,0,2024
+Gestão Do Agronegócio,Privada,Tecnólogo,Sudeste,1665,811,2024
+Gestão Do Agronegócio,Privada,Tecnólogo,Sul,6702,4422,2024
+Gestão Do Agronegócio,Pública,Tecnólogo,Norte,237,30,2024
+Gestão Do Agronegócio,Pública,Tecnólogo,Sudeste,6,2,2024
+Gestão Do E-Commerce E Sistemas Logísticos,Privada,Tecnólogo,Sul,157,45,2024
+Gestão Do Esporte,Privada,Tecnólogo,Sul,68,4,2024
+Gestão Do Setor Automotivo,Privada,Tecnólogo,Sudeste,203,146,2024
+Gestão Do Trânsito E Mobilidade Urbana,Privada,Tecnólogo,Sul,393,78,2024
+Gestão E Desenvolvimento Do Agronegócio,Privada,Tecnólogo,Sul,20,9,2024
+Gestão E Empreendedorismo,Privada,Licenciatura,Centro-Oeste,17,5,2024
+Gestão E Empreendedorismo,Privada,Licenciatura,Sudeste,257,133,2024
+Gestão E Empreendedorismo,Privada,Licenciatura,Sul,92,45,2024
+Gestão E Empreendedorismo,Privada,Tecnólogo,Sul,419,215,2024
+Gestão Em Farmácia,Privada,Tecnólogo,Sul,92,19,2024
+Gestão Em Logística,Privada,Tecnólogo,Sul,109,65,2024
+Gestão Em Serviços Judiciais,Privada,Tecnólogo,Sul,627,52,2024
+Gestão Em Vigilância Em Saúde,Privada,Tecnólogo,Sul,95,20,2024
+Gestão Empresarial,Privada,Tecnólogo,Sudeste,47,20,2024
+Gestão Estratégica Empresarial,Privada,Tecnólogo,Centro-Oeste,6,3,2024
+Gestão Estratégica Empresarial,Privada,Tecnólogo,Sul,622,145,2024
+Gestão Financeira,Privada,Tecnólogo,Centro-Oeste,1540,708,2024
+Gestão Financeira,Privada,Tecnólogo,Nordeste,2079,599,2024
+Gestão Financeira,Privada,Tecnólogo,Norte,211,47,2024
+Gestão Financeira,Privada,Tecnólogo,Sudeste,18788,9781,2024
+Gestão Financeira,Privada,Tecnólogo,Sul,22880,12712,2024
+Gestão Financeira,Pública,Tecnólogo,Sudeste,61,31,2024
+Gestão Fiscal E Tributária,Privada,Tecnólogo,Sul,242,2,2024
+"Gestão Global Trading: Negócios, Logística E Finanças Globais",Privada,Tecnólogo,Sul,137,31,2024
+Gestão Hospitalar,Privada,Tecnólogo,Centro-Oeste,390,211,2024
+Gestão Hospitalar,Privada,Tecnólogo,Nordeste,775,180,2024
+Gestão Hospitalar,Privada,Tecnólogo,Norte,42,7,2024
+Gestão Hospitalar,Privada,Tecnólogo,Sudeste,4151,2168,2024
+Gestão Hospitalar,Privada,Tecnólogo,Sul,5360,3202,2024
+Gestão Hospitalar,Pública,Tecnólogo,Nordeste,9,5,2024
+Gestão Hospitalar,Pública,Tecnólogo,Sul,50,2,2024
+Gestão Integrada De Agronegócios,Privada,Bacharelado,Sul,282,182,2024
+Gestão Internacional,Privada,Tecnólogo,Sul,10,9,2024
+Gestão Jurídica De Imigração,Privada,Tecnólogo,Sul,19,2,2024
+Gestão Paroquial E De Projetos Sociais,Privada,Tecnólogo,Centro-Oeste,4,0,2024
+Gestão Portuária,Privada,Tecnólogo,Centro-Oeste,94,59,2024
+Gestão Portuária,Privada,Tecnólogo,Norte,13,3,2024
+Gestão Portuária,Privada,Tecnólogo,Sudeste,480,222,2024
+Gestão Portuária,Privada,Tecnólogo,Sul,682,377,2024
+Gestão Pública,Privada,Tecnólogo,Centro-Oeste,2713,911,2024
+Gestão Pública,Privada,Tecnólogo,Nordeste,2172,440,2024
+Gestão Pública,Privada,Tecnólogo,Norte,381,56,2024
+Gestão Pública,Privada,Tecnólogo,Sudeste,11866,5416,2024
+Gestão Pública,Privada,Tecnólogo,Sul,20020,9073,2024
+Gestão Pública,Pública,Tecnólogo,Centro-Oeste,114,0,2024
+Gestão Pública,Pública,Tecnólogo,Norte,796,212,2024
+Gestão Pública,Pública,Tecnólogo,Sudeste,15,5,2024
+Gestão Tributária,Privada,Tecnólogo,Sul,52,25,2024
+Governança Ambiental E Sustentabilidade,Privada,Tecnólogo,Sudeste,33,5,2024
+História,Privada,Bacharelado,Centro-Oeste,32,9,2024
+História,Privada,Bacharelado,Nordeste,10,2,2024
+História,Privada,Bacharelado,Sudeste,1032,481,2024
+História,Privada,Bacharelado,Sul,633,296,2024
+História,Privada,Licenciatura,Centro-Oeste,592,310,2024
+História,Privada,Licenciatura,Nordeste,662,227,2024
+História,Privada,Licenciatura,Norte,76,3,2024
+História,Privada,Licenciatura,Sudeste,7310,3552,2024
+História,Privada,Licenciatura,Sul,11891,6928,2024
+História,Pública,Licenciatura,Centro-Oeste,603,105,2024
+História,Pública,Licenciatura,Nordeste,388,106,2024
+História,Pública,Licenciatura,Norte,72,2,2024
+História,Pública,Licenciatura,Sudeste,698,176,2024
+História,Pública,Licenciatura,Sul,574,151,2024
+História - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,9,1,2024
+Hotelaria,Privada,Bacharelado,Sudeste,28,17,2024
+Hotelaria,Privada,Tecnólogo,Sudeste,480,162,2024
+Hotelaria,Privada,Tecnólogo,Sul,497,122,2024
+Influenciador Digital,Privada,Tecnólogo,Sudeste,56,23,2024
+Informática,Privada,Licenciatura,Sul,537,244,2024
+Informática Em Saúde,Privada,Tecnólogo,Nordeste,45,15,2024
+Instrumentação Cirúrgica,Privada,Tecnólogo,Sul,1767,302,2024
+Inteligência Artificial,Privada,Tecnólogo,Nordeste,349,20,2024
+Inteligência Artificial,Privada,Tecnólogo,Norte,32,3,2024
+Inteligência Artificial,Privada,Tecnólogo,Sudeste,676,208,2024
+Inteligência Artificial,Privada,Tecnólogo,Sul,419,38,2024
+Inteligência Artificial Aplicada,Privada,Tecnólogo,Sudeste,2,0,2024
+Inteligência Artificial Aplicada,Privada,Tecnólogo,Sul,457,164,2024
+Inteligência Artificial E Machine Learning,Privada,Tecnólogo,Sul,1605,545,2024
+Inteligência Artificial: Sistemas De Dados Inteligentes,Privada,Tecnólogo,Sul,21,21,2024
+Inteligência De Mercado,Privada,Tecnólogo,Sul,168,92,2024
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Centro-Oeste,71,40,2024
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Sudeste,112,45,2024
+Inteligência De Mercado E Análise De Dados,Privada,Tecnólogo,Sul,536,295,2024
+Inteligência De Negócios,Privada,Tecnólogo,Nordeste,92,89,2024
+Interdisciplinar Em Ciência E Tecnologia,Pública,Bacharelado,Sul,84,49,2024
+Interdisciplinar Em Humanidades,Privada,Bacharelado,Sudeste,30,10,2024
+Interdisciplinar Em Negócios,Privada,Bacharelado,Sul,340,239,2024
+Interdisciplinar Em Saúde,Privada,Bacharelado,Sudeste,69,48,2024
+Interdisciplinar Em Saúde,Privada,Bacharelado,Sul,105,12,2024
+Internet Das Coisas,Privada,Tecnólogo,Centro-Oeste,2,1,2024
+Internet Das Coisas,Privada,Tecnólogo,Nordeste,26,3,2024
+Internet Das Coisas,Privada,Tecnólogo,Norte,1,0,2024
+Internet Das Coisas,Privada,Tecnólogo,Sudeste,77,22,2024
+Internet Das Coisas,Privada,Tecnólogo,Sul,47,10,2024
+Internet Das Coisas E Computação Em Nuvem,Privada,Tecnólogo,Sudeste,82,45,2024
+Investigação E Perícia Criminal,Privada,Tecnólogo,Centro-Oeste,686,448,2024
+Investigação E Perícia Criminal,Privada,Tecnólogo,Sudeste,1115,486,2024
+Investigação E Perícia Criminal,Privada,Tecnólogo,Sul,7879,5375,2024
+Investigação E Perícia Judicial,Privada,Tecnólogo,Sudeste,103,64,2024
+Investigação E Perícia Judicial,Privada,Tecnólogo,Sul,2,0,2024
+Investigação E Perícia Judicial E Extrajudicial,Privada,Tecnólogo,Sul,453,44,2024
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Centro-Oeste,280,146,2024
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Nordeste,486,188,2024
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Sudeste,1721,1122,2024
+Investigação Forense E Perícia Criminal,Privada,Tecnólogo,Sul,6698,4246,2024
+Investigação Forense E Perícia Judicial,Privada,Tecnólogo,Sul,263,64,2024
+Investigação Profissional,Privada,Tecnólogo,Sul,193,72,2024
+Jogos Digitais,Privada,Tecnólogo,Centro-Oeste,67,32,2024
+Jogos Digitais,Privada,Tecnólogo,Nordeste,60,30,2024
+Jogos Digitais,Privada,Tecnólogo,Norte,5,0,2024
+Jogos Digitais,Privada,Tecnólogo,Sudeste,1001,448,2024
+Jogos Digitais,Privada,Tecnólogo,Sul,1464,676,2024
+Jornalismo,Privada,Bacharelado,Centro-Oeste,309,155,2024
+Jornalismo,Privada,Bacharelado,Nordeste,179,65,2024
+Jornalismo,Privada,Bacharelado,Sudeste,2697,1363,2024
+Jornalismo,Privada,Bacharelado,Sul,3833,2154,2024
+Jornalismo Digital,Privada,Bacharelado,Sul,289,141,2024
+Laticínios,Pública,Tecnólogo,Sudeste,38,1,2024
+Letras,Privada,Bacharelado,Sul,484,192,2024
+Letras,Privada,Licenciatura,Centro-Oeste,21,5,2024
+Letras,Privada,Licenciatura,Nordeste,151,83,2024
+Letras,Privada,Licenciatura,Norte,115,16,2024
+Letras,Privada,Licenciatura,Sudeste,1552,855,2024
+Letras,Privada,Licenciatura,Sul,119,39,2024
+Letras,Pública,Licenciatura,Nordeste,73,1,2024
+Letras,Pública,Licenciatura,Sudeste,1991,1069,2024
+Letras - Alemão,Privada,Licenciatura,Sul,110,34,2024
+Letras - Espanhol,Privada,Licenciatura,Centro-Oeste,13,2,2024
+Letras - Espanhol,Privada,Licenciatura,Nordeste,44,0,2024
+Letras - Espanhol,Privada,Licenciatura,Norte,14,2,2024
+Letras - Espanhol,Privada,Licenciatura,Sudeste,303,149,2024
+Letras - Espanhol,Privada,Licenciatura,Sul,615,261,2024
+Letras - Espanhol,Pública,Licenciatura,Nordeste,53,14,2024
+Letras - Espanhol,Pública,Licenciatura,Sul,377,62,2024
+Letras - Espanhol E Literatura Hispânica,Pública,Licenciatura,Norte,86,1,2024
+Letras - Inglês,Privada,Licenciatura,Centro-Oeste,188,98,2024
+Letras - Inglês,Privada,Licenciatura,Nordeste,122,13,2024
+Letras - Inglês,Privada,Licenciatura,Norte,98,14,2024
+Letras - Inglês,Privada,Licenciatura,Sudeste,2307,1106,2024
+Letras - Inglês,Privada,Licenciatura,Sul,3555,1504,2024
+Letras - Inglês,Pública,Licenciatura,Centro-Oeste,36,13,2024
+Letras - Inglês,Pública,Licenciatura,Nordeste,104,14,2024
+Letras - Libras,Privada,Bacharelado,Sudeste,42,1,2024
+Letras - Libras,Privada,Bacharelado,Sul,920,336,2024
+Letras - Libras,Privada,Licenciatura,Nordeste,7,3,2024
+Letras - Libras,Privada,Licenciatura,Sudeste,483,201,2024
+Letras - Libras,Privada,Licenciatura,Sul,3130,1705,2024
+Letras - Libras,Pública,Bacharelado,Sul,532,231,2024
+Letras - Libras,Pública,Licenciatura,Nordeste,320,56,2024
+Letras - Libras,Pública,Licenciatura,Sudeste,175,2,2024
+Letras - Libras,Pública,Licenciatura,Sul,788,546,2024
+Letras - Libras - Língua Portuguesa,Privada,Licenciatura,Centro-Oeste,22,6,2024
+Letras - Libras - Língua Portuguesa,Privada,Licenciatura,Sudeste,401,193,2024
+Letras - Libras - Língua Portuguesa,Privada,Licenciatura,Sul,40,8,2024
+Letras - Língua Inglesa,Privada,Licenciatura,Nordeste,318,79,2024
+Letras - Língua Portuguesa,Privada,Bacharelado,Centro-Oeste,31,10,2024
+Letras - Língua Portuguesa,Privada,Bacharelado,Nordeste,1,0,2024
+Letras - Língua Portuguesa,Privada,Bacharelado,Sudeste,519,250,2024
+Letras - Língua Portuguesa,Privada,Bacharelado,Sul,211,98,2024
+Letras - Língua Portuguesa,Privada,Licenciatura,Centro-Oeste,159,63,2024
+Letras - Língua Portuguesa,Privada,Licenciatura,Nordeste,170,29,2024
+Letras - Língua Portuguesa,Privada,Licenciatura,Sudeste,1282,646,2024
+Letras - Língua Portuguesa,Privada,Licenciatura,Sul,3672,1477,2024
+Letras - Língua Portuguesa,Pública,Licenciatura,Nordeste,710,309,2024
+Letras - Língua Portuguesa,Pública,Licenciatura,Sudeste,7,0,2024
+Letras - Língua Portuguesa E Libras,Privada,Licenciatura,Sudeste,173,67,2024
+Letras - Língua Portuguesa E Libras,Privada,Licenciatura,Sul,995,148,2024
+Letras - Língua Portuguesa E Língua Inglesa,Privada,Licenciatura,Centro-Oeste,27,20,2024
+Letras - Língua Portuguesa E Língua Inglesa,Privada,Licenciatura,Sudeste,282,85,2024
+Letras - Língua Portuguesa E Língua Inglesa,Pública,Licenciatura,Sudeste,17,6,2024
+Letras - Língua Portuguesa E Língua Inglesa E Respectivas Literaturas,Pública,Licenciatura,Sudeste,33,12,2024
+"Letras - Língua Portuguesa, Língua Estrangeira (Inglesa Ou Espanhola) E Literatura Brasileira",Privada,Licenciatura,Sudeste,3,0,2024
+Letras - Português,Privada,Licenciatura,Centro-Oeste,254,147,2024
+Letras - Português,Privada,Licenciatura,Nordeste,553,134,2024
+Letras - Português,Privada,Licenciatura,Sudeste,1849,822,2024
+Letras - Português,Privada,Licenciatura,Sul,5849,2867,2024
+Letras - Português,Pública,Licenciatura,Nordeste,490,89,2024
+Letras - Português,Pública,Licenciatura,Norte,29,1,2024
+Letras - Português,Pública,Licenciatura,Sul,729,266,2024
+Letras - Português E Espanhol,Privada,Licenciatura,Centro-Oeste,98,41,2024
+Letras - Português E Espanhol,Privada,Licenciatura,Sudeste,854,364,2024
+Letras - Português E Espanhol,Privada,Licenciatura,Sul,823,442,2024
+Letras - Português E Espanhol,Pública,Licenciatura,Centro-Oeste,357,44,2024
+Letras - Português E Espanhol,Pública,Licenciatura,Norte,100,18,2024
+Letras - Português E Francês,Privada,Licenciatura,Sul,107,21,2024
+Letras - Português E Inglês,Privada,Licenciatura,Centro-Oeste,372,168,2024
+Letras - Português E Inglês,Privada,Licenciatura,Nordeste,101,54,2024
+Letras - Português E Inglês,Privada,Licenciatura,Sudeste,4738,2461,2024
+Letras - Português E Inglês,Privada,Licenciatura,Sul,7718,5049,2024
+Letras - Português E Inglês,Pública,Licenciatura,Sul,79,54,2024
+Letras - Português E Japonês,Privada,Licenciatura,Sudeste,218,106,2024
+Letras - Português E Japonês,Privada,Licenciatura,Sul,20,12,2024
+Letras - Português E Literatura,Privada,Licenciatura,Sudeste,37,15,2024
+Letras - Português E Literaturas,Privada,Licenciatura,Sudeste,10,2,2024
+Letras - Português-Inglês,Privada,Licenciatura,Norte,1,0,2024
+Letras - Português-Inglês,Privada,Licenciatura,Sudeste,80,14,2024
+Letras - Português-Inglês,Privada,Licenciatura,Sul,27,12,2024
+Letras Libras - Tradutor/Intérprete Em Libras,Pública,Bacharelado,Centro-Oeste,64,61,2024
+Licenciatura Em Educação Especial,Privada,Licenciatura,Sul,628,17,2024
+Logística,Privada,Tecnólogo,Centro-Oeste,2275,1130,2024
+Logística,Privada,Tecnólogo,Nordeste,3753,734,2024
+Logística,Privada,Tecnólogo,Norte,326,65,2024
+Logística,Privada,Tecnólogo,Sudeste,26270,13789,2024
+Logística,Privada,Tecnólogo,Sul,38081,23383,2024
+Logística,Pública,Tecnólogo,Sudeste,46,22,2024
+Manutenção Industrial,Privada,Tecnólogo,Sudeste,48,1,2024
+Manutenção Industrial,Privada,Tecnólogo,Sul,679,450,2024
+Marketing,Privada,Bacharelado,Sul,601,324,2024
+Marketing,Privada,Tecnólogo,Centro-Oeste,932,442,2024
+Marketing,Privada,Tecnólogo,Nordeste,2459,803,2024
+Marketing,Privada,Tecnólogo,Norte,193,21,2024
+Marketing,Privada,Tecnólogo,Sudeste,15343,8190,2024
+Marketing,Privada,Tecnólogo,Sul,16055,9482,2024
+Marketing,Pública,Tecnólogo,Sudeste,63,35,2024
+Marketing Digital,Privada,Tecnólogo,Centro-Oeste,717,406,2024
+Marketing Digital,Privada,Tecnólogo,Nordeste,843,518,2024
+Marketing Digital,Privada,Tecnólogo,Sudeste,10825,5864,2024
+Marketing Digital,Privada,Tecnólogo,Sul,11560,6703,2024
+Marketing Digital E Data Science,Privada,Tecnólogo,Sudeste,401,161,2024
+Massoterapia,Privada,Tecnólogo,Sul,1140,194,2024
+Matemática,Privada,Bacharelado,Centro-Oeste,11,6,2024
+Matemática,Privada,Bacharelado,Nordeste,15,5,2024
+Matemática,Privada,Bacharelado,Sudeste,731,372,2024
+Matemática,Privada,Bacharelado,Sul,476,205,2024
+Matemática,Privada,Licenciatura,Centro-Oeste,349,152,2024
+Matemática,Privada,Licenciatura,Nordeste,529,128,2024
+Matemática,Privada,Licenciatura,Norte,91,6,2024
+Matemática,Privada,Licenciatura,Sudeste,5369,2535,2024
+Matemática,Privada,Licenciatura,Sul,10020,5696,2024
+Matemática,Pública,Licenciatura,Centro-Oeste,160,53,2024
+Matemática,Pública,Licenciatura,Nordeste,1281,423,2024
+Matemática,Pública,Licenciatura,Sudeste,937,393,2024
+Matemática,Pública,Licenciatura,Sul,414,224,2024
+Mecatrônica Automotiva,Privada,Tecnólogo,Sul,799,150,2024
+Mecatrônica Industrial,Privada,Tecnólogo,Sudeste,46,19,2024
+Mediação,Privada,Tecnólogo,Centro-Oeste,32,13,2024
+Mediação,Privada,Tecnólogo,Nordeste,51,19,2024
+Mediação,Privada,Tecnólogo,Sudeste,339,145,2024
+Mediação,Privada,Tecnólogo,Sul,357,151,2024
+"Mediação, Conciliação E Arbitragem",Privada,Tecnólogo,Sul,202,44,2024
+Medicina Veterinária,Privada,Bacharelado,Centro-Oeste,173,11,2024
+Medicina Veterinária,Privada,Bacharelado,Nordeste,178,62,2024
+Medicina Veterinária,Privada,Bacharelado,Sudeste,1486,582,2024
+Medicina Veterinária,Privada,Bacharelado,Sul,1100,372,2024
+Mercado Financeiro E De Capitais,Privada,Tecnólogo,Centro-Oeste,60,23,2024
+Mineração,Privada,Tecnólogo,Sudeste,25,3,2024
+Mineração,Pública,Tecnólogo,Sul,62,6,2024
+Ministério Pastoral,Privada,Tecnólogo,Sul,232,61,2024
+Moda,Privada,Bacharelado,Sudeste,175,77,2024
+Museologia,Privada,Bacharelado,Sudeste,76,36,2024
+Museologia,Privada,Bacharelado,Sul,180,52,2024
+Mídias Digitais,Privada,Tecnólogo,Sul,6,3,2024
+Mídias Sociais Digitais,Privada,Tecnólogo,Nordeste,4,2,2024
+Mídias Sociais Digitais,Privada,Tecnólogo,Sudeste,9,0,2024
+Mídias Sociais Digitais,Privada,Tecnólogo,Sul,1073,703,2024
+Mídias Sociais Digitais,Pública,Tecnólogo,Centro-Oeste,334,121,2024
+Mídias Sociais E Digitais,Privada,Tecnólogo,Sul,86,21,2024
+Música,Privada,Bacharelado,Sudeste,224,114,2024
+Música,Privada,Licenciatura,Sudeste,570,322,2024
+Música,Privada,Licenciatura,Sul,5491,2235,2024
+Música,Pública,Licenciatura,Nordeste,34,1,2024
+Música,Pública,Licenciatura,Norte,25,1,2024
+Música,Pública,Licenciatura,Sudeste,1,1,2024
+Naturologia,Privada,Bacharelado,Nordeste,4,3,2024
+Naturologia,Privada,Bacharelado,Sudeste,423,170,2024
+Naturologia,Privada,Bacharelado,Sul,35,14,2024
+Negócios Digitais,Privada,Tecnólogo,Sul,30,7,2024
+Negócios E Customer Experience,Privada,Tecnólogo,Sul,286,152,2024
+Negócios Internacionais,Privada,Bacharelado,Sul,7,2,2024
+Negócios Sustentáveis E Esg,Privada,Tecnólogo,Sul,101,60,2024
+Nutrição,Privada,Bacharelado,Centro-Oeste,1192,574,2024
+Nutrição,Privada,Bacharelado,Nordeste,3547,945,2024
+Nutrição,Privada,Bacharelado,Norte,508,43,2024
+Nutrição,Privada,Bacharelado,Sudeste,16433,7559,2024
+Nutrição,Privada,Bacharelado,Sul,32648,19924,2024
+Nutrição Escolar,Privada,Tecnólogo,Sul,108,16,2024
+Oftálmica,Privada,Tecnólogo,Sul,211,102,2024
+Optometria,Privada,Bacharelado,Nordeste,28,2,2024
+Optometria,Privada,Bacharelado,Sudeste,20,0,2024
+Optometria,Privada,Bacharelado,Sul,308,95,2024
+Paisagismo E Jardinagem,Privada,Tecnólogo,Sul,478,117,2024
+Panificação,Privada,Tecnólogo,Sudeste,41,5,2024
+Pecuária,Privada,Tecnólogo,Sul,196,36,2024
+Pedagogia,Privada,Bacharelado,Nordeste,9639,0,2024
+Pedagogia,Privada,Bacharelado,Sudeste,103,87,2024
+Pedagogia,Privada,Bacharelado,Sul,8,1,2024
+Pedagogia,Privada,Licenciatura,Centro-Oeste,10187,4868,2024
+Pedagogia,Privada,Licenciatura,Nordeste,17886,4202,2024
+Pedagogia,Privada,Licenciatura,Norte,1731,260,2024
+Pedagogia,Privada,Licenciatura,Sudeste,103124,49172,2024
+Pedagogia,Privada,Licenciatura,Sul,174398,104858,2024
+Pedagogia,Pública,Licenciatura,Centro-Oeste,1564,184,2024
+Pedagogia,Pública,Licenciatura,Nordeste,1198,194,2024
+Pedagogia,Pública,Licenciatura,Norte,294,56,2024
+Pedagogia,Pública,Licenciatura,Sudeste,9318,3325,2024
+Pedagogia,Pública,Licenciatura,Sul,1736,509,2024
+Pedagogia - Docencia Da Educação Infantil/Administração Educacional,Privada,Licenciatura,Norte,149,2,2024
+Pedagogia Bilíngue,Pública,Licenciatura,Sudeste,317,86,2024
+Pedagogia E Educação Profissional E Tecnológica,Pública,Licenciatura,Sudeste,144,24,2024
+Pedagogia Em Educação Profissional E Tecnológica,Pública,Licenciatura,Norte,420,152,2024
+Pedagogia Em Educação Profissional E Tecnológica,Pública,Licenciatura,Sudeste,720,233,2024
+Perícia Judicial E Extrajudicial,Privada,Tecnólogo,Sudeste,153,40,2024
+Perícia Judicial E Extrajudicial,Privada,Tecnólogo,Sul,224,52,2024
+Pilotagem Profissional De Aeronaves,Privada,Tecnólogo,Sudeste,17,0,2024
+Pilotagem Profissional De Aeronaves,Privada,Tecnólogo,Sul,13,2,2024
+Podologia,Privada,Tecnólogo,Centro-Oeste,28,12,2024
+Podologia,Privada,Tecnólogo,Nordeste,662,77,2024
+Podologia,Privada,Tecnólogo,Norte,41,5,2024
+Podologia,Privada,Tecnólogo,Sudeste,759,358,2024
+Podologia,Privada,Tecnólogo,Sul,9087,5831,2024
+Processos Cervejeiros,Privada,Tecnólogo,Sul,56,1,2024
+Processos Escolares,Privada,Tecnólogo,Centro-Oeste,15,1,2024
+Processos Escolares,Privada,Tecnólogo,Sudeste,300,116,2024
+Processos Escolares,Privada,Tecnólogo,Sul,238,26,2024
+Processos Gerenciais,Privada,Tecnólogo,Centro-Oeste,1053,445,2024
+Processos Gerenciais,Privada,Tecnólogo,Nordeste,1264,392,2024
+Processos Gerenciais,Privada,Tecnólogo,Norte,51,15,2024
+Processos Gerenciais,Privada,Tecnólogo,Sudeste,12564,5917,2024
+Processos Gerenciais,Privada,Tecnólogo,Sul,22715,12874,2024
+Processos Gerenciais,Pública,Tecnólogo,Centro-Oeste,362,233,2024
+Processos Gerenciais,Pública,Tecnólogo,Sudeste,5676,2797,2024
+Processos Gerenciais,Pública,Tecnólogo,Sul,9,6,2024
+Processos Metalúrgicos,Privada,Tecnólogo,Sudeste,41,25,2024
+Processos Químicos,Privada,Tecnólogo,Centro-Oeste,35,34,2024
+Processos Químicos,Privada,Tecnólogo,Sul,763,153,2024
+Produção Audiovisual,Privada,Tecnólogo,Centro-Oeste,187,80,2024
+Produção Audiovisual,Privada,Tecnólogo,Nordeste,3,0,2024
+Produção Audiovisual,Privada,Tecnólogo,Sudeste,907,303,2024
+Produção Audiovisual,Privada,Tecnólogo,Sul,784,397,2024
+Produção Cervejeira,Privada,Tecnólogo,Centro-Oeste,27,12,2024
+Produção Cervejeira,Privada,Tecnólogo,Sudeste,34,9,2024
+Produção Cervejeira,Privada,Tecnólogo,Sul,170,83,2024
+Produção Cultural,Privada,Tecnólogo,Nordeste,1,0,2024
+Produção Cultural,Privada,Tecnólogo,Sudeste,273,155,2024
+Produção Cultural,Privada,Tecnólogo,Sul,256,110,2024
+Produção Cultural,Pública,Tecnólogo,Sul,127,0,2024
+Produção De Cerveja,Privada,Tecnólogo,Sul,404,231,2024
+Produção De Conteúdo Digital,Privada,Tecnólogo,Centro-Oeste,3,1,2024
+Produção De Conteúdo Digital,Privada,Tecnólogo,Sudeste,176,63,2024
+Produção De Conteúdo Digital,Privada,Tecnólogo,Sul,39,14,2024
+Produção De Conteúdos Digitais,Privada,Tecnólogo,Sul,15,2,2024
+Produção Industrial,Privada,Tecnólogo,Sul,3,2,2024
+Produção Midiática,Privada,Tecnólogo,Sudeste,25,10,2024
+Produção Multimídia,Privada,Tecnólogo,Sudeste,79,31,2024
+Produção Multimídia,Privada,Tecnólogo,Sul,23,7,2024
+Produção Multimídia Em Realidade Aumentada,Privada,Tecnólogo,Nordeste,2,1,2024
+Produção Multimídia Em Realidade Aumentada,Privada,Tecnólogo,Sudeste,37,12,2024
+Produção Multimídia Em Realidade Aumentada,Privada,Tecnólogo,Sul,8,0,2024
+Produção Publicitária,Privada,Tecnólogo,Centro-Oeste,52,17,2024
+Produção Publicitária,Privada,Tecnólogo,Sudeste,162,60,2024
+Produção Publicitária,Privada,Tecnólogo,Sul,101,4,2024
+Programa Especial De Graduação De Formação De Professores Para A Educação Profissional,Pública,Licenciatura,Sul,258,22,2024
+Práticas Integrativas E Complementares Em Saúde,Privada,Tecnólogo,Sul,675,174,2024
+Prótese Dental,Privada,Tecnólogo,Centro-Oeste,6,0,2024
+Psicanálise,Privada,Bacharelado,Nordeste,28,9,2024
+Psicanálise,Privada,Bacharelado,Sudeste,1481,661,2024
+Psicanálise,Privada,Bacharelado,Sul,6368,1521,2024
+Psicomotricidade,Privada,Bacharelado,Sul,4,0,2024
+Psicomotricidade,Privada,Tecnólogo,Sul,862,93,2024
+Psicomotricidade E Ludicidade Na Educação Infantil,Privada,Tecnólogo,Sul,426,84,2024
+Psicopedagogia,Privada,Bacharelado,Centro-Oeste,709,331,2024
+Psicopedagogia,Privada,Bacharelado,Nordeste,88,42,2024
+Psicopedagogia,Privada,Bacharelado,Sudeste,5892,2715,2024
+Psicopedagogia,Privada,Bacharelado,Sul,13235,7558,2024
+Psicopedagogia,Privada,Licenciatura,Centro-Oeste,1,0,2024
+Psicopedagogia,Privada,Licenciatura,Nordeste,59,33,2024
+Psicopedagogia,Privada,Licenciatura,Sudeste,878,315,2024
+Psicopedagogia,Privada,Licenciatura,Sul,3049,1230,2024
+Publicidade E Propaganda,Privada,Bacharelado,Centro-Oeste,471,213,2024
+Publicidade E Propaganda,Privada,Bacharelado,Nordeste,500,146,2024
+Publicidade E Propaganda,Privada,Bacharelado,Sudeste,3239,1672,2024
+Publicidade E Propaganda,Privada,Bacharelado,Sul,6202,3515,2024
+Publicidade E Propaganda,Pública,Bacharelado,Sul,34,6,2024
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Centro-Oeste,212,116,2024
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Sudeste,284,99,2024
+Publicidade E Propaganda - Marketing,Privada,Bacharelado,Sul,1656,876,2024
+Qualidade De Vida Na Contemporaneidade,Privada,Tecnólogo,Sul,16,2,2024
+Quiropraxia,Privada,Bacharelado,Sul,46,5,2024
+Quiropraxia,Privada,Tecnólogo,Sul,582,67,2024
+Química,Privada,Bacharelado,Centro-Oeste,268,157,2024
+Química,Privada,Bacharelado,Nordeste,2,2,2024
+Química,Privada,Bacharelado,Sudeste,1538,669,2024
+Química,Privada,Bacharelado,Sul,2780,1174,2024
+Química,Privada,Licenciatura,Centro-Oeste,15,1,2024
+Química,Privada,Licenciatura,Nordeste,7,3,2024
+Química,Privada,Licenciatura,Sudeste,1030,401,2024
+Química,Privada,Licenciatura,Sul,2286,822,2024
+Química,Pública,Licenciatura,Centro-Oeste,116,13,2024
+Química,Pública,Licenciatura,Nordeste,116,34,2024
+Química,Pública,Licenciatura,Norte,25,0,2024
+Química,Pública,Licenciatura,Sudeste,252,89,2024
+Química - Programa Segunda Licenciatura,Pública,Licenciatura,Sudeste,1,0,2024
+Radiologia,Privada,Tecnólogo,Centro-Oeste,544,243,2024
+Radiologia,Privada,Tecnólogo,Nordeste,35,19,2024
+Radiologia,Privada,Tecnólogo,Sudeste,4435,2286,2024
+Radiologia,Privada,Tecnólogo,Sul,7284,4002,2024
+"Recrutamento, Seleção E Desenvolvimento De Pessoas",Privada,Tecnólogo,Sul,62,19,2024
+Recursos Humanos,Privada,Tecnólogo,Centro-Oeste,107,4,2024
+Redes De Computadores,Privada,Bacharelado,Sul,13,0,2024
+Redes De Computadores,Privada,Tecnólogo,Centro-Oeste,289,140,2024
+Redes De Computadores,Privada,Tecnólogo,Nordeste,297,93,2024
+Redes De Computadores,Privada,Tecnólogo,Sudeste,4237,2007,2024
+Redes De Computadores,Privada,Tecnólogo,Sul,4027,1929,2024
+Relações Internacionais,Privada,Bacharelado,Centro-Oeste,125,63,2024
+Relações Internacionais,Privada,Bacharelado,Nordeste,23,11,2024
+Relações Internacionais,Privada,Bacharelado,Sudeste,2505,1396,2024
+Relações Internacionais,Privada,Bacharelado,Sul,2685,1339,2024
+Relações Públicas,Privada,Bacharelado,Nordeste,11,8,2024
+Relações Públicas,Privada,Bacharelado,Sudeste,855,375,2024
+Relações Públicas,Privada,Bacharelado,Sul,1048,584,2024
+Ressocialização De Toxicômanos,Privada,Tecnólogo,Sul,9,2,2024
+Rádio E Tv,Privada,Bacharelado,Sudeste,138,53,2024
+Saneamento Ambiental,Privada,Tecnólogo,Sudeste,32,7,2024
+Saneamento Ambiental,Privada,Tecnólogo,Sul,528,71,2024
+Saúde Coletiva,Privada,Bacharelado,Sudeste,2,1,2024
+Saúde Coletiva,Privada,Tecnólogo,Sudeste,45,6,2024
+Saúde E Bem-Estar Integral,Privada,Tecnólogo,Sul,5,3,2024
+Secretariado,Privada,Tecnólogo,Centro-Oeste,262,89,2024
+Secretariado,Privada,Tecnólogo,Nordeste,4,1,2024
+Secretariado,Privada,Tecnólogo,Sudeste,891,337,2024
+Secretariado,Privada,Tecnólogo,Sul,3367,1604,2024
+Secretariado Executivo,Privada,Bacharelado,Centro-Oeste,36,11,2024
+Secretariado Executivo,Privada,Bacharelado,Sudeste,547,293,2024
+Secretariado Executivo,Privada,Bacharelado,Sul,83,37,2024
+Secretariado Executivo,Privada,Tecnólogo,Sudeste,27,17,2024
+Secretariado Executivo - Bilíngue,Privada,Bacharelado,Centro-Oeste,68,49,2024
+Secretariado Executivo E Assistência Virtual,Privada,Tecnólogo,Sudeste,9,0,2024
+Secretariado Executivo Trilíngue,Privada,Bacharelado,Sudeste,34,5,2024
+Segunda Licenciatura Em Pedagogia,Privada,Licenciatura,Sul,13,1,2024
+Segunda Licenciatura Em Pedagogia Para Professores Em Exercício Na Educação Básica Pública,Pública,Licenciatura,Sudeste,37,9,2024
+Segurança Alimentar,Privada,Tecnólogo,Sul,608,412,2024
+Segurança Cibernética,Privada,Tecnólogo,Centro-Oeste,87,22,2024
+Segurança Cibernética,Privada,Tecnólogo,Sudeste,283,151,2024
+Segurança Cibernética,Privada,Tecnólogo,Sul,1530,757,2024
+Segurança Da Informação,Privada,Tecnólogo,Centro-Oeste,290,119,2024
+Segurança Da Informação,Privada,Tecnólogo,Nordeste,142,61,2024
+Segurança Da Informação,Privada,Tecnólogo,Sudeste,2570,1096,2024
+Segurança Da Informação,Privada,Tecnólogo,Sul,1821,546,2024
+Segurança Da Informação E Defesa Cibernética,Privada,Tecnólogo,Sudeste,25,0,2024
+Segurança Digital,Privada,Tecnólogo,Sudeste,13,0,2024
+Segurança Do Trabalho,Privada,Tecnólogo,Sudeste,106,75,2024
+Segurança Do Trabalho,Privada,Tecnólogo,Sul,4694,3465,2024
+Segurança No Trabalho,Privada,Tecnólogo,Centro-Oeste,144,44,2024
+Segurança No Trabalho,Privada,Tecnólogo,Nordeste,56,29,2024
+Segurança No Trabalho,Privada,Tecnólogo,Sudeste,4648,2529,2024
+Segurança No Trabalho,Privada,Tecnólogo,Sul,2872,1403,2024
+Segurança No Trânsito,Privada,Tecnólogo,Nordeste,31,9,2024
+Segurança No Trânsito,Privada,Tecnólogo,Sudeste,538,247,2024
+Segurança No Trânsito,Privada,Tecnólogo,Sul,399,52,2024
+Segurança Privada,Privada,Tecnólogo,Nordeste,10,0,2024
+Segurança Privada,Privada,Tecnólogo,Sudeste,282,113,2024
+Segurança Privada,Privada,Tecnólogo,Sul,17,5,2024
+Segurança Pública,Privada,Tecnólogo,Centro-Oeste,865,345,2024
+Segurança Pública,Privada,Tecnólogo,Nordeste,708,141,2024
+Segurança Pública,Privada,Tecnólogo,Norte,79,19,2024
+Segurança Pública,Privada,Tecnólogo,Sudeste,6803,3621,2024
+Segurança Pública,Privada,Tecnólogo,Sul,10353,4147,2024
+Segurança Pública,Pública,Tecnólogo,Sudeste,205,144,2024
+Service Design,Privada,Tecnólogo,Nordeste,19,6,2024
+Service Design,Privada,Tecnólogo,Norte,1,0,2024
+Service Design,Privada,Tecnólogo,Sudeste,1,0,2024
+Service Design,Privada,Tecnólogo,Sul,4,0,2024
+Serviço Social,Privada,Bacharelado,Centro-Oeste,1120,594,2024
+Serviço Social,Privada,Bacharelado,Nordeste,1381,464,2024
+Serviço Social,Privada,Bacharelado,Norte,166,37,2024
+Serviço Social,Privada,Bacharelado,Sudeste,12443,5611,2024
+Serviço Social,Privada,Bacharelado,Sul,19455,13293,2024
+Serviço Social,Pública,Bacharelado,Sudeste,10,5,2024
+Serviços Judiciais,Privada,Tecnólogo,Nordeste,91,67,2024
+Serviços Judiciais,Privada,Tecnólogo,Sudeste,433,222,2024
+Serviços Judiciais,Privada,Tecnólogo,Sul,103,56,2024
+Serviços Jurídicos,Privada,Tecnólogo,Centro-Oeste,93,0,2024
+Serviços Jurídicos,Privada,Tecnólogo,Sudeste,3,1,2024
+Serviços Jurídicos,Privada,Tecnólogo,Sul,527,94,2024
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Centro-Oeste,90,33,2024
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Nordeste,99,33,2024
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sudeste,2147,1081,2024
+Serviços Jurídicos E Notariais,Privada,Tecnólogo,Sul,751,294,2024
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Centro-Oeste,155,95,2024
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Nordeste,19,9,2024
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Sudeste,394,150,2024
+"Serviços Jurídicos, Cartorários E Notariais",Privada,Tecnólogo,Sul,1819,1055,2024
+"Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Nordeste,37,16,2024
+"Serviços Jurídicos, Notariais E De Registro",Privada,Tecnólogo,Sudeste,98,82,2024
+Serviços Notariais E Registrais,Privada,Tecnólogo,Nordeste,5,2,2024
+Serviços Notariais E Registrais,Privada,Tecnólogo,Sudeste,77,34,2024
+Serviços Notariais E Registrais,Privada,Tecnólogo,Sul,14,2,2024
+Serviços Penais,Privada,Tecnólogo,Centro-Oeste,4,0,2024
+Serviços Penais,Privada,Tecnólogo,Nordeste,53,28,2024
+Serviços Penais,Privada,Tecnólogo,Sudeste,266,94,2024
+Serviços Penais,Privada,Tecnólogo,Sul,395,121,2024
+Serviços Previdenciários,Privada,Tecnólogo,Sul,158,50,2024
+Serviços Registrais E Notariais,Privada,Tecnólogo,Nordeste,9,5,2024
+Serviços Registrais E Notariais,Privada,Tecnólogo,Sudeste,88,39,2024
+Serviços Registrais E Notariais,Privada,Tecnólogo,Sul,9,4,2024
+Sistema De Informação,Pública,Bacharelado,Nordeste,182,24,2024
+Sistemas Biomédicos,Privada,Tecnólogo,Sul,329,4,2024
+Sistemas Construtivos Sustentáveis,Privada,Tecnólogo,Sul,12,11,2024
+Sistemas De Informação,Privada,Bacharelado,Centro-Oeste,217,110,2024
+Sistemas De Informação,Privada,Bacharelado,Nordeste,303,127,2024
+Sistemas De Informação,Privada,Bacharelado,Norte,12,0,2024
+Sistemas De Informação,Privada,Bacharelado,Sudeste,5341,1986,2024
+Sistemas De Informação,Privada,Bacharelado,Sul,4621,1781,2024
+Sistemas De Informação,Privada,Tecnólogo,Centro-Oeste,100,41,2024
+Sistemas De Informação,Privada,Tecnólogo,Nordeste,10,0,2024
+Sistemas De Informação,Privada,Tecnólogo,Sul,1,0,2024
+Sistemas De Informação,Pública,Bacharelado,Norte,283,19,2024
+Sistemas De Informação,Pública,Bacharelado,Sul,34,9,2024
+Sistemas De Telecomunicações,Privada,Tecnólogo,Sudeste,42,0,2024
+Sistemas De Telecomunicações,Privada,Tecnólogo,Sul,11,5,2024
+Sistemas Elétricos,Privada,Tecnólogo,Sul,57,9,2024
+Sistemas Para Internet,Privada,Tecnólogo,Centro-Oeste,34,15,2024
+Sistemas Para Internet,Privada,Tecnólogo,Nordeste,119,55,2024
+Sistemas Para Internet,Privada,Tecnólogo,Norte,2,1,2024
+Sistemas Para Internet,Privada,Tecnólogo,Sudeste,673,292,2024
+Sistemas Para Internet,Privada,Tecnólogo,Sul,1065,480,2024
+Sistemas Para Internet,Pública,Tecnólogo,Centro-Oeste,132,23,2024
+Sistemas Para Internet,Pública,Tecnólogo,Nordeste,2272,761,2024
+Sistemas Para Internet,Pública,Tecnólogo,Sudeste,160,41,2024
+Sistemas Para Internet,Pública,Tecnólogo,Sul,57,19,2024
+Social Media,Privada,Tecnólogo,Nordeste,2,0,2024
+Social Media,Privada,Tecnólogo,Sudeste,121,41,2024
+Social Media,Privada,Tecnólogo,Sul,5,3,2024
+Sociologia,Privada,Bacharelado,Sul,122,57,2024
+Sociologia,Privada,Licenciatura,Centro-Oeste,38,17,2024
+Sociologia,Privada,Licenciatura,Sudeste,248,89,2024
+Sociologia,Privada,Licenciatura,Sul,2146,892,2024
+Streaming Profissional,Privada,Tecnólogo,Nordeste,9,3,2024
+Streaming Profissional,Privada,Tecnólogo,Sul,3,1,2024
+Teatro,Privada,Licenciatura,Sudeste,86,12,2024
+Teatro,Privada,Licenciatura,Sul,795,450,2024
+Tecnologia Da Informação,Privada,Tecnólogo,Centro-Oeste,5,2,2024
+Tecnologia Da Informação,Privada,Tecnólogo,Norte,3,0,2024
+Tecnologia Da Informação,Pública,Bacharelado,Sudeste,12285,1201,2024
+Tecnologia Da Informação,Pública,Tecnólogo,Centro-Oeste,497,271,2024
+Tecnologia Em Agrotecnologia,Privada,Tecnólogo,Sul,358,1,2024
+Tecnologia Em Inteligência Artificial,Privada,Tecnólogo,Sudeste,128,0,2024
+Tecnologias Educacionais,Privada,Tecnólogo,Centro-Oeste,7,2,2024
+Tecnologias Educacionais,Privada,Tecnólogo,Nordeste,27,13,2024
+Tecnologias Educacionais,Privada,Tecnólogo,Sudeste,96,33,2024
+Tecnologias Educacionais,Privada,Tecnólogo,Sul,23,7,2024
+Teologia,Privada,Bacharelado,Centro-Oeste,781,385,2024
+Teologia,Privada,Bacharelado,Nordeste,1462,224,2024
+Teologia,Privada,Bacharelado,Norte,631,87,2024
+Teologia,Privada,Bacharelado,Sudeste,7098,3474,2024
+Teologia,Privada,Bacharelado,Sul,10247,6281,2024
+Teologia,Privada,Licenciatura,Centro-Oeste,5,2,2024
+Teologia,Privada,Licenciatura,Nordeste,8,0,2024
+Teologia: Doutrina Católica,Privada,Bacharelado,Sul,1105,397,2024
+Terapia Ocupacional,Privada,Bacharelado,Centro-Oeste,440,49,2024
+Terapia Ocupacional,Privada,Bacharelado,Nordeste,1884,238,2024
+Terapia Ocupacional,Privada,Bacharelado,Norte,200,0,2024
+Terapia Ocupacional,Privada,Bacharelado,Sudeste,6488,1662,2024
+Terapia Ocupacional,Privada,Bacharelado,Sul,12010,7105,2024
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Centro-Oeste,385,201,2024
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Sudeste,1257,517,2024
+Terapias Integrativas E Complementares,Privada,Tecnólogo,Sul,6954,4383,2024
+Trade De Investimentos,Privada,Tecnólogo,Nordeste,8,8,2024
+Tradutor E Intérprete,Privada,Bacharelado,Sudeste,184,75,2024
+Tradução,Privada,Bacharelado,Sul,237,80,2024
+Tradução E Interpretação - Português/Inglês,Privada,Bacharelado,Sudeste,38,9,2024
+Tradução E Interpretação De Libras,Pública,Tecnólogo,Sul,349,0,2024
+Transporte Aéreo,Privada,Tecnólogo,Sul,28,24,2024
+Tricologia E Ciência Cosmética,Privada,Tecnólogo,Sul,525,25,2024
+Turismo,Privada,Bacharelado,Sudeste,123,31,2024
+Turismo,Privada,Bacharelado,Sul,1,0,2024
+Turismo,Privada,Licenciatura,Centro-Oeste,2,0,2024
+Turismo,Privada,Licenciatura,Sudeste,73,30,2024
+Turismo,Privada,Licenciatura,Sul,24,8,2024
+Turismo,Pública,Licenciatura,Sudeste,6,0,2024
+Tutoria Para Educação A Distância,Privada,Tecnólogo,Sudeste,26,2,2024
+Técnicas Para Acompanhamento Terapêutico,Privada,Tecnólogo,Sul,105,16,2024
+Técnicas Para Telemedicina,Privada,Tecnólogo,Sul,5,5,2024
+Varejo Digital,Privada,Tecnólogo,Sul,25,5,2024
+Vigilância Em Saúde,Privada,Tecnólogo,Sul,57,9,2024
+Viticultura E Enologia,Privada,Tecnólogo,Sudeste,2,0,2024
+Web Design,Privada,Tecnólogo,Sudeste,80,17,2024
+Web Design,Privada,Tecnólogo,Sul,4,3,2024
+Zootecnia,Privada,Bacharelado,Sudeste,351,83,2024
+Zootecnia,Privada,Bacharelado,Sul,1140,127,2024
+Óptica E Optometria,Privada,Bacharelado,Nordeste,29,19,2024
+Óptica E Optometria,Privada,Bacharelado,Sudeste,2403,1499,2024
+Óptica E Optometria,Privada,Bacharelado,Sul,134,69,2024
+Óptica E Optometria,Privada,Tecnólogo,Sudeste,52,7,2024
+"Órteses, Próteses E Reabilitação",Privada,Tecnólogo,Sul,46,46,2024
