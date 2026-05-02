@@ -477,8 +477,10 @@ with tabs[7]:
     else:
         ano_sel = st.radio("Ano:", [2023, 2024], horizontal=True)
         df_t = top_cursos[top_cursos["ano"] == ano_sel].copy()
-        df_t["Taxa"] = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
-        df_t["QT_ING"] = df_t["QT_ING"].astype(int)
+        df_t["Taxa"]        = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+        df_t["QT_ING_TOTAL"]  = df_t["QT_ING_TOTAL"].astype(int)
+        df_t["QT_DESV_TOTAL"] = df_t["QT_DESV_TOTAL"].astype(int)
+        df_t["N_POLOS"]       = df_t["N_POLOS"].astype(int)
 
         fig = px.bar(
             df_t, x="TAXA_EVASAO", y="NO_CURSO",
@@ -486,16 +488,27 @@ with tabs[7]:
             color="TAXA_EVASAO",
             color_continuous_scale=[[0, COR_2023], [1, COR_2024]],
             text="Taxa",
-            hover_data={"NO_IES": True, "Rede": True, "Grau": True,
-                        "NO_REGIAO_IES": True, "QT_ING": True,
-                        "TAXA_EVASAO": False},
+            custom_data=["NO_IES", "Rede", "Grau", "NO_REGIAO_IES",
+                         "QT_ING_TOTAL", "QT_DESV_TOTAL", "N_POLOS"],
             title=f"Top 15 Cursos EaD com Maior Taxa de Evasão — {ano_sel}",
-            labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": "",
-                    "NO_IES": "Instituição", "NO_REGIAO_IES": "Região",
-                    "QT_ING": "Ingressantes"},
+            labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": ""},
         )
-        fig.update_traces(textposition="outside",
-                          textfont=dict(size=12, color="#dddddd"))
+        fig.update_traces(
+            textposition="outside",
+            textfont=dict(size=12, color="#dddddd"),
+            hovertemplate=(
+                "<b>%{y}</b><br>"
+                "Instituição: %{customdata[0]}<br>"
+                "Rede: %{customdata[1]} · Grau: %{customdata[2]}<br>"
+                "Região: %{customdata[3]}<br>"
+                "──────────────────────<br>"
+                "Taxa de Evasão: <b>%{x:.1%}</b><br>"
+                "Ingressantes: %{customdata[4]:,}<br>"
+                "Desvinculados: %{customdata[5]:,}<br>"
+                "Polos (municípios): %{customdata[6]:,}<br>"
+                "<extra></extra>"
+            ),
+        )
         fig.update_layout(
             height=520,
             plot_bgcolor=BG_GRAF,
@@ -506,7 +519,7 @@ with tabs[7]:
             yaxis=dict(autorange="reversed",
                        tickfont=dict(color=TEXTO_EIXO, size=11),
                        gridcolor=GRID),
-            xaxis=dict(tickformat=".0%", range=[0, 1.15],
+            xaxis=dict(tickformat=".0%", range=[0, 1.05],
                        tickfont=dict(color=TEXTO_EIXO, size=11),
                        gridcolor=GRID, showgrid=True),
             margin=dict(t=60, b=40, l=280, r=80),
@@ -516,16 +529,20 @@ with tabs[7]:
         with st.expander("Ver tabela detalhada"):
             st.dataframe(
                 df_t[["NO_CURSO", "NO_IES", "Rede", "Grau",
-                       "NO_REGIAO_IES", "Taxa", "QT_ING"]]
-                .rename(columns={"NO_CURSO": "Curso", "NO_IES": "Instituição",
-                                  "NO_REGIAO_IES": "Região", "Taxa": "Taxa de Evasão",
-                                  "QT_ING": "Ingressantes"}),
+                       "NO_REGIAO_IES", "Taxa", "QT_ING_TOTAL", "QT_DESV_TOTAL", "N_POLOS"]]
+                .rename(columns={
+                    "NO_CURSO": "Curso", "NO_IES": "Instituição",
+                    "NO_REGIAO_IES": "Região", "Taxa": "Taxa de Evasão",
+                    "QT_ING_TOTAL": "Ingressantes", "QT_DESV_TOTAL": "Desvinculados",
+                    "N_POLOS": "Polos",
+                }),
                 use_container_width=True, hide_index=True,
             )
-        st.caption("Nota: todos os cursos listados apresentaram taxa de evasão de 100%, "
-                   "indicando que todos os ingressantes se desvincularam no mesmo ano de ingresso. "
-                   "Esse padrão pode refletir descontinuação de oferta, migração de turma ou "
-                   "registro incorreto nos microdados.")
+        st.caption(
+            f"Dados agregados por IES × curso, somando todos os polos (municípios) de cada instituição. "
+            f"Mínimo de 500 ingressantes por IES para compor o ranking. "
+            f"Passe o mouse sobre as barras para ver ingressantes, desvinculados e número de polos."
+        )
 
 # ── Autores ───────────────────────────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)

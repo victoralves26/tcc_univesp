@@ -1,31 +1,31 @@
-NO_CURSO,NO_IES,Rede,Grau,NO_REGIAO_IES,TAXA_EVASAO,QT_ING,ano
-Pedagogia,Universidade Pitágoras Unopar Anhanguera,Privada,Licenciatura,Sul,1.0,45,2023
-Óptica E Optometria,UNIVERSIDADE CIDADE DE SÃO PAULO,Privada,Bacharelado,Sudeste,1.0,83,2023
-Ciências Contábeis,Universidade Pitágoras Unopar Anhanguera,Privada,Bacharelado,Sul,1.0,32,2023
-Análise E Desenvolvimento De Sistemas,CENTRO UNIVERSITÁRIO LEONARDO DA VINCI,Privada,Tecnólogo,Sul,1.0,51,2023
-Ciências Contábeis,Universidade Pitágoras Unopar Anhanguera,Privada,Bacharelado,Sul,1.0,34,2023
-Nutrição,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,1.0,30,2023
-Estética E Cosmética,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,39,2023
-Podologia,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,42,2023
-Serviço Social,UNIVERSIDADE ESTÁCIO DE SÁ,Privada,Bacharelado,Sudeste,1.0,72,2023
-Engenharia De Produção,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,1.0,32,2023
-Manutenção Industrial,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,31,2023
-Gestão Comercial,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,34,2023
-Investigação E Perícia Criminal,Universidade Pitágoras Unopar Anhanguera,Privada,Tecnólogo,Sul,1.0,31,2023
-Gestão Do Agronegócio,Universidade Pitágoras Unopar Anhanguera,Privada,Tecnólogo,Sul,1.0,30,2023
-Logística,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,42,2023
-Gestão De Recursos Humanos,CENTRO UNIVERSITÁRIO UNIVEL,Privada,Tecnólogo,Sul,1.0,63,2024
-Fisioterapia,CENTRO UNIVERSITÁRIO LEONARDO DA VINCI,Privada,Bacharelado,Sul,1.0,34,2024
-Farmácia,CENTRO UNIVERSITÁRIO DE JOÃO PESSOA,Privada,Bacharelado,Nordeste,1.0,32,2024
-Administração,Universidade Pitágoras Unopar Anhanguera,Privada,Bacharelado,Sul,1.0,31,2024
-Pedagogia,UNIVERSIDADE CESUMAR,Privada,Licenciatura,Sul,1.0,31,2024
-Gestão Pública,UNIVERSIDADE SALVADOR,Privada,Tecnólogo,Nordeste,1.0,37,2024
-Ciências Contábeis,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,1.0,60,2024
-Análise E Desenvolvimento De Sistemas,Universidade Pitágoras Unopar Anhanguera,Privada,Tecnólogo,Sul,1.0,35,2024
-Pedagogia,CENTRO UNIVERSITÁRIO INTERNACIONAL,Privada,Licenciatura,Sul,1.0,43,2024
-Análise E Desenvolvimento De Sistemas,UNIVERSIDADE ESTÁCIO DE SÁ,Privada,Tecnólogo,Sudeste,1.0,40,2024
-Análise E Desenvolvimento De Sistemas,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,1.0,62,2024
-Educação Física,UNIVERSIDADE CESUMAR,Privada,Licenciatura,Sul,1.0,30,2024
-Biomedicina,CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO,Privada,Bacharelado,Sudeste,1.0,30,2024
-Administração,Universidade Pitágoras Unopar Anhanguera,Privada,Bacharelado,Sul,1.0,40,2024
-Ciências Contábeis,Universidade Pitágoras Unopar Anhanguera,Privada,Bacharelado,Sul,1.0,42,2024
+NO_CURSO,NO_IES,Rede,Grau,NO_REGIAO_IES,TAXA_EVASAO,QT_ING_TOTAL,QT_DESV_TOTAL,N_POLOS,ano
+Marketing,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8546845124282982,523,447,50,2023
+Gestão Comercial,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8425253991291727,1378,1161,85,2023
+Gestão De Recursos Humanos,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.8404411764705882,1360,1143,69,2023
+Análise E Desenvolvimento De Sistemas,CENTRO UNIVERSITÁRIO IBMR,Privada,Tecnólogo,Sudeste,0.8190298507462687,536,439,18,2023
+Administração,UNIVERSIDADE VEIGA DE ALMEIDA,Privada,Bacharelado,Sudeste,0.8023715415019763,759,609,6,2023
+Enfermagem,CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN,Privada,Bacharelado,Centro-Oeste,0.7815573770491804,2440,1907,22,2023
+Engenharia Civil,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7796526054590571,2015,1571,126,2023
+Administração,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Bacharelado,Sudeste,0.7768803634528016,1981,1539,73,2023
+Marketing,Centro Universitário União das Américas Descomplica,Privada,Tecnólogo,Sul,0.7703984819734345,527,406,20,2023
+Arquitetura E Urbanismo,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7693023255813953,1075,827,52,2023
+Gestão Da Tecnologia Da Informação,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.763302752293578,545,416,39,2023
+Ciências Contábeis,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Bacharelado,Sudeste,0.7616136919315404,818,623,53,2023
+Engenharia Mecânica,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7597911227154047,1915,1455,127,2023
+Administração,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.749236766708938,21291,15952,770,2023
+Gestão Financeira,CENTRO UNIVERSITÁRIO DAS FACULDADES METROPOLITANAS UNIDAS,Privada,Tecnólogo,Sudeste,0.7485549132947977,692,518,50,2023
+Teologia,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.9078242229367631,933,847,111,2024
+Pedagogia,Faculdade ALFAUNIPAC de Almenara,Privada,Licenciatura,Sudeste,0.8741845293569431,1073,938,1,2024
+Enfermagem,CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN,Privada,Bacharelado,Centro-Oeste,0.8547008547008547,1170,1000,19,2024
+Ciências Econômicas,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.8379942140790743,1037,869,79,2024
+Biomedicina,UNIVERSIDADE PAULISTA,Privada,Bacharelado,Sudeste,0.832089552238806,1072,892,43,2024
+Relações Internacionais,Faculdade Multivix Serra,Privada,Bacharelado,Sudeste,0.8315629742033384,659,548,90,2024
+Administração,Centro Universitário Doctum de Teófilo Otoni,Privada,Bacharelado,Sudeste,0.8273273273273273,666,551,1,2024
+Enfermagem,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.8256181159978433,12983,10719,258,2024
+Podologia,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.8056552962298025,4456,3590,257,2024
+Administração,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.8050215936997206,23618,19013,739,2024
+Gastronomia,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7980337078651686,3560,2841,560,2024
+Gestão Do Agronegócio,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7970049916805324,2404,1916,496,2024
+Estética E Cosmética,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7965245978630974,8517,6784,288,2024
+Engenharia Civil,UNIVERSIDADE CESUMAR,Privada,Bacharelado,Sul,0.7963963963963964,1665,1326,163,2024
+Investigação Forense E Perícia Criminal,UNIVERSIDADE CESUMAR,Privada,Tecnólogo,Sul,0.7940298507462686,4020,3192,573,2024
