@@ -477,7 +477,16 @@ with tabs[7]:
     else:
         ano_sel = st.radio("Ano:", [2023, 2024], horizontal=True)
         df_t = top_cursos[top_cursos["ano"] == ano_sel].copy()
-        df_t["Taxa"]        = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+        df_t["Taxa"] = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+
+        # Compatibilidade com versão antiga do CSV (coluna QT_ING) e nova (QT_ING_TOTAL)
+        if "QT_ING_TOTAL" not in df_t.columns and "QT_ING" in df_t.columns:
+            df_t = df_t.rename(columns={"QT_ING": "QT_ING_TOTAL"})
+        if "QT_DESV_TOTAL" not in df_t.columns:
+            df_t["QT_DESV_TOTAL"] = 0
+        if "N_POLOS" not in df_t.columns:
+            df_t["N_POLOS"] = 0
+
         df_t["QT_ING_TOTAL"]  = df_t["QT_ING_TOTAL"].astype(int)
         df_t["QT_DESV_TOTAL"] = df_t["QT_DESV_TOTAL"].astype(int)
         df_t["N_POLOS"]       = df_t["N_POLOS"].astype(int)
