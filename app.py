@@ -1,4 +1,4 @@
-# app.py — TCC Evasão EaD | Univesp 2026 — v4
+# app.py — TCC Evasão EaD | Univesp 2026 — v5
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -44,6 +44,7 @@ st.markdown("""
     text-transform: uppercase; letter-spacing: .4px; margin-bottom: 3px;
   }
   .kpi-value { font-size: 24px; font-weight: 700; color: #e8e8e8; line-height: 1.1; }
+  .kpi-value-sm { font-size: 18px; font-weight: 600; color: #c0c0c0; line-height: 1.1; }
   .kpi-desc  { font-size: 11px; color: #666; margin-top: 5px; line-height: 1.45; }
   .delta-box {
     border-radius: 10px; padding: 16px 22px;
@@ -75,6 +76,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ── Carregamento de dados ──────────────────────────────────────────────────────
 @st.cache_data
 def load(nome):
     return pd.read_csv(f"streamlit_data/{nome}.csv")
@@ -88,15 +90,28 @@ rede  = load("rede")
 reg   = load("regiao")
 org   = load("org")
 apoio = load("apoio")
+
 try:
     dist_faixas = load("dist_faixas"); tem_dist = True
 except Exception:
     tem_dist = False
-try:
-    sexo = load("sexo"); tem_sexo = True
-except Exception:
-    tem_sexo = False
 
+try:
+    genero = load("genero"); tem_genero = True
+except Exception:
+    tem_genero = False
+
+try:
+    grau = load("grau"); tem_grau = True
+except Exception:
+    tem_grau = False
+
+try:
+    top_cursos = load("top_cursos"); tem_top = True
+except Exception:
+    tem_top = False
+
+# ── Extração de KPIs ──────────────────────────────────────────────────────────
 def kpi_val(col, ano):
     try:
         v = kpi[kpi["ano"] == ano][col].values[0]
@@ -104,9 +119,11 @@ def kpi_val(col, ano):
     except Exception:
         return None
 
-t23   = kpi_val("taxa_media", 2023) or 0
-t24   = kpi_val("taxa_media", 2024) or 0
-delta = t24 - t23
+t23    = kpi_val("taxa_media",    2023) or 0
+t24    = kpi_val("taxa_media",    2024) or 0
+med23  = kpi_val("taxa_mediana",  2023)
+med24  = kpi_val("taxa_mediana",  2024)
+delta  = t24 - t23
 n_ies23  = kpi_val("n_instituicoes",     2023)
 n_ies24  = kpi_val("n_instituicoes",     2024)
 n_cur23  = kpi_val("n_cursos_distintos", 2023)
@@ -114,6 +131,9 @@ n_cur24  = kpi_val("n_cursos_distintos", 2024)
 
 def fmt_int(v):
     return f"{int(v):,}".replace(",", ".") if v is not None else "—"
+
+def fmt_pct(v):
+    return f"{v:.1%}" if v is not None else "—"
 
 # ── Cabeçalho ─────────────────────────────────────────────────────────────────
 st.title("🎓 Evasão no Ensino Superior a Distância no Brasil")
@@ -139,9 +159,14 @@ with col_23:
           <div class="kpi-desc">Cursos distintos na modalidade EaD (graduação)</div>
         </div>
         <div class="bloco-item">
-          <div class="kpi-label">Taxa de Evasão</div>
+          <div class="kpi-label">Média de Evasão</div>
           <div class="kpi-value">{t23:.1%}</div>
           <div class="kpi-desc">Desvinculados ÷ ingressantes, média entre os cursos</div>
+        </div>
+        <div class="bloco-item">
+          <div class="kpi-label">Mediana de Evasão</div>
+          <div class="kpi-value kpi-value-sm">{fmt_pct(med23)}</div>
+          <div class="kpi-desc">Valor central — menos afetado por extremos</div>
         </div>
       </div>
     </div>""", unsafe_allow_html=True)
@@ -162,9 +187,14 @@ with col_24:
           <div class="kpi-desc">Cursos distintos na modalidade EaD (graduação)</div>
         </div>
         <div class="bloco-item">
-          <div class="kpi-label">Taxa de Evasão</div>
+          <div class="kpi-label">Média de Evasão</div>
           <div class="kpi-value">{t24:.1%}</div>
           <div class="kpi-desc">Desvinculados ÷ ingressantes, média entre os cursos</div>
+        </div>
+        <div class="bloco-item">
+          <div class="kpi-label">Mediana de Evasão</div>
+          <div class="kpi-value kpi-value-sm">{fmt_pct(med24)}</div>
+          <div class="kpi-desc">Valor central — menos afetado por extremos</div>
         </div>
       </div>
     </div>""", unsafe_allow_html=True)
@@ -206,13 +236,13 @@ with st.expander("⚠️  Premissas e definições — leia antes de interpretar
     variedade de cursos oferecidos, não o volume total de ofertas. Base restrita a
     graduação (bacharelado, licenciatura e tecnólogo).<br><br>
 
-    <b>Taxa de Evasão ({t23:.1%} em 2023 · {t24:.1%} em 2024)</b><br>
-    Calculada por curso: <code>TAXA_EVASAO = QT_SIT_DESVINCULADO / QT_ING</code><br>
-    — <b>Numerador (QT_SIT_DESVINCULADO):</b> alunos que se desvincularam do curso no ano
-    (abandono, desistência formal ou exclusão por norma institucional).<br>
-    — <b>Denominador (QT_ING):</b> total de ingressantes naquele curso no mesmo ano.<br>
-    O valor exibido é a <b>média desta taxa entre todos os cursos EaD</b> com pelo menos
-    1 ingressante. Cursos com dados ausentes foram excluídos.<br><br>
+    <b>Média vs. Mediana de Evasão</b><br>
+    — <b>Média ({t23:.1%} em 2023 · {t24:.1%} em 2024):</b> calculada por curso como
+    <code>QT_SIT_DESVINCULADO / QT_ING</code>, depois calculada a média entre todos os cursos.
+    Sensível a valores extremos (cursos com 100% de evasão).<br>
+    — <b>Mediana ({fmt_pct(med23)} em 2023 · {fmt_pct(med24)} em 2024):</b> valor central da
+    distribuição — indica o ponto onde metade dos cursos tem evasão abaixo e metade acima.
+    Mais robusta a outliers.<br><br>
 
     <b>Atenção: unidade de análise</b><br>
     Os dados do Censo INEP são organizados por <b>curso × IES</b>, não por aluno individual.
@@ -228,7 +258,7 @@ with st.expander("⚠️  Premissas e definições — leia antes de interpretar
 
 st.divider()
 
-# ── Helper layout dark ────────────────────────────────────────────────────────
+# ── Helpers ───────────────────────────────────────────────────────────────────
 def layout_dark(fig, ylim=0.65, height=420, yformat=".0%", ytitle="Taxa de Evasão"):
     fig.update_layout(
         height=height,
@@ -269,19 +299,33 @@ def bar_comparativo(df, x, y, title, ylim=0.65, height=420):
         df, x=x, y=y, color="ano_str", barmode="group",
         color_discrete_map={"2023": COR_2023, "2024": COR_2024},
         text="texto", title=title,
-        labels={y: "Taxa de Evasão", "ano_str": "Ano", x: ""},
+        labels={y: "Taxa de Evasão", "ano_str": "", x: ""},
     )
     fig.update_traces(textposition="outside",
                       textfont=dict(size=13, color="#dddddd"), width=0.33)
-    return layout_dark(fig, ylim=ylim, height=height)
+    fig = layout_dark(fig, ylim=ylim, height=height)
+    fig.update_layout(legend=dict(
+        orientation="h", x=0.5, xanchor="center",
+        y=1.04, yanchor="bottom", title_text="",
+    ), margin=dict(t=70, b=60, l=65, r=20))
+    return fig
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 st.markdown('<p class="tab-instrucao">Selecione a dimensão para analisar a taxa de evasão:</p>',
             unsafe_allow_html=True)
 
-tabs = st.tabs(["🏫  Rede de Ensino", "🗺️  Região", "🏛️  Organização",
-                "💰  Apoio Financeiro", "👤  Gênero", "📊  Distribuição"])
+tabs = st.tabs([
+    "🏫  Rede de Ensino",
+    "🗺️  Região",
+    "🏛️  Organização",
+    "🎓  Grau Acadêmico",
+    "💰  Apoio Financeiro",
+    "👤  Gênero",
+    "📊  Distribuição",
+    "🏆  Top Cursos",
+])
 
+# ── Rede de Ensino ────────────────────────────────────────────────────────────
 with tabs[0]:
     st.subheader("Taxa de Evasão por Rede de Ensino")
     st.caption("Comparativo entre cursos de instituições públicas e privadas.")
@@ -289,6 +333,7 @@ with tabs[0]:
         "Evasão por Rede de Ensino — 2023 vs 2024", ylim=0.60),
         use_container_width=True)
 
+# ── Região ────────────────────────────────────────────────────────────────────
 with tabs[1]:
     st.subheader("Taxa de Evasão por Região do Brasil")
     st.caption("Média da taxa de evasão dos cursos EaD por grande região geográfica.")
@@ -296,6 +341,7 @@ with tabs[1]:
         "Evasão por Região — 2023 vs 2024", ylim=0.60),
         use_container_width=True)
 
+# ── Organização ───────────────────────────────────────────────────────────────
 with tabs[2]:
     st.subheader("Taxa de Evasão por Tipo de Organização Acadêmica")
     st.caption("Universidades, centros universitários, faculdades e institutos federais.")
@@ -303,7 +349,19 @@ with tabs[2]:
         "Evasão por Organização Acadêmica — 2023 vs 2024", ylim=0.75),
         use_container_width=True)
 
+# ── Grau Acadêmico ────────────────────────────────────────────────────────────
 with tabs[3]:
+    st.subheader("Taxa de Evasão por Grau Acadêmico")
+    st.caption("Comparativo entre Bacharelado, Licenciatura e Tecnólogo na modalidade EaD.")
+    if tem_grau:
+        st.plotly_chart(bar_comparativo(grau, "Grau", "taxa_media",
+            "Evasão por Grau Acadêmico — 2023 vs 2024", ylim=0.65),
+            use_container_width=True)
+    else:
+        st.info("Arquivo grau.csv não encontrado. Execute gerar_agregados.py.")
+
+# ── Apoio Financeiro ──────────────────────────────────────────────────────────
+with tabs[4]:
     st.subheader("Taxa de Evasão por Apoio Financeiro (FIES / ProUni)")
     st.caption("Cursos com e sem beneficiários de programas de financiamento e bolsas.")
     df_ap = apoio.copy()
@@ -322,26 +380,29 @@ with tabs[3]:
                                   tickfont=dict(color=TEXTO_EIXO, size=12),
                                   showgrid=True))
     st.plotly_chart(fig, use_container_width=True)
+    st.caption("FIES: Fundo de Financiamento Estudantil. ProUni: Programa Universidade para Todos. "
+               "Cursos 'Com apoio' têm ao menos um ingressante beneficiário do programa.")
 
-with tabs[4]:
+# ── Gênero ────────────────────────────────────────────────────────────────────
+with tabs[5]:
     st.subheader("Taxa de Evasão por Predominância de Gênero")
-    st.caption("Cursos agrupados pela predominância do gênero dos ingressantes.")
-    if tem_sexo:
-        df_s = sexo.rename(columns={"PREDOM_SEXO": "Gênero predominante"})
-        st.plotly_chart(bar_comparativo(df_s, "Gênero predominante", "taxa_media",
+    st.caption("Cursos agrupados pela predominância do gênero dos ingressantes "
+               "(Feminino > 60%, Masculino > 60%, ou Equilibrado).")
+    if tem_genero:
+        st.plotly_chart(bar_comparativo(genero, "Gênero predominante", "taxa_media",
             "Evasão por Gênero Predominante — 2023 vs 2024", ylim=0.60),
             use_container_width=True)
     else:
-        st.info("Variável de gênero não disponível no arquivo de dados.")
+        st.info("Arquivo genero.csv não encontrado. Execute gerar_agregados.py.")
 
-with tabs[5]:
+# ── Distribuição ──────────────────────────────────────────────────────────────
+with tabs[6]:
     st.subheader("Distribuição dos Cursos EaD por Taxa de Evasão")
     st.caption("Quantos cursos se enquadram em cada faixa de evasão? "
                "Alterne entre a visão detalhada (10% em 10%) e a visão por categorias.")
 
     if not tem_dist:
-        st.warning("Arquivo dist_faixas.csv não encontrado. "
-                   "Execute o bloco de geração no Colab e suba o arquivo.")
+        st.warning("Arquivo dist_faixas.csv não encontrado.")
     else:
         opcao = st.selectbox(
             "Granularidade das faixas:",
@@ -359,8 +420,7 @@ with tabs[5]:
                 color_discrete_map={"2023": COR_2023, "2024": COR_2024},
                 text="texto",
                 title="Distribuição dos Cursos EaD por Faixa de Evasão — 2023 vs 2024",
-                labels={"n_cursos": "Nº de Cursos", "Faixa": "Faixa de Evasão",
-                        "ano_str": ""},
+                labels={"n_cursos": "Nº de Cursos", "Faixa": "Faixa de Evasão", "ano_str": ""},
             )
             fig.update_traces(textposition="outside",
                               textfont=dict(size=11, color="#dddddd"), width=0.38)
@@ -368,10 +428,8 @@ with tabs[5]:
                               height=440, yformat=",d", ytitle="Número de Cursos")
             fig.update_layout(
                 xaxis=dict(tickangle=-40, tickfont=dict(size=11, color=TEXTO_EIXO)),
-                legend=dict(
-                    orientation="h", x=0.5, xanchor="center",
-                    y=1.04, yanchor="bottom", title_text="",
-                ),
+                legend=dict(orientation="h", x=0.5, xanchor="center",
+                            y=1.04, yanchor="bottom", title_text=""),
                 margin=dict(t=70, b=60, l=65, r=20),
             )
             st.plotly_chart(fig, use_container_width=True)
@@ -388,8 +446,7 @@ with tabs[5]:
                 category_orders={"Faixa": ordem_cat},
                 text="texto",
                 title="Proporção de Cursos EaD por Categoria de Evasão — 2023 vs 2024",
-                labels={"pct_cursos": "Proporção de Cursos",
-                        "ano_str": "Ano", "Faixa": "Categoria"},
+                labels={"pct_cursos": "Proporção de Cursos", "ano_str": "Ano", "Faixa": "Categoria"},
             )
             fig.update_traces(textposition="inside",
                               textfont=dict(size=13, color="white", family=FONTE),
@@ -398,10 +455,8 @@ with tabs[5]:
                               yformat=".0%", ytitle="Proporção de Cursos")
             fig.update_layout(
                 xaxis=dict(tickfont=dict(size=14, color="#cccccc")),
-                legend=dict(
-                    orientation="v", x=1.02, xanchor="left",
-                    y=0.5, yanchor="middle", title_text="",
-                ),
+                legend=dict(orientation="v", x=1.02, xanchor="left",
+                            y=0.5, yanchor="middle", title_text=""),
                 bargap=0.45,
                 margin=dict(t=55, b=60, l=65, r=160),
             )
@@ -410,6 +465,67 @@ with tabs[5]:
                        "categoria: Baixa (0–25%), Média (25–50%), Alta (50–75%) e "
                        "Crítica (75–100%). Cursos com evasão acima de 50% (Alta + Crítica) "
                        "indicam sinal de alerta.")
+
+# ── Top Cursos ────────────────────────────────────────────────────────────────
+with tabs[7]:
+    st.subheader("Cursos EaD com Maior Taxa de Evasão")
+    st.caption("Top 15 cursos por ano com a maior taxa de evasão registrada. "
+               "Filtro mínimo de 30 ingressantes para evitar distorções estatísticas.")
+
+    if not tem_top:
+        st.info("Arquivo top_cursos.csv não encontrado. Execute gerar_agregados.py.")
+    else:
+        ano_sel = st.radio("Ano:", [2023, 2024], horizontal=True)
+        df_t = top_cursos[top_cursos["ano"] == ano_sel].copy()
+        df_t["Taxa"] = df_t["TAXA_EVASAO"].map(lambda v: f"{v:.1%}")
+        df_t["QT_ING"] = df_t["QT_ING"].astype(int)
+
+        fig = px.bar(
+            df_t, x="TAXA_EVASAO", y="NO_CURSO",
+            orientation="h",
+            color="TAXA_EVASAO",
+            color_continuous_scale=[[0, COR_2023], [1, COR_2024]],
+            text="Taxa",
+            hover_data={"NO_IES": True, "Rede": True, "Grau": True,
+                        "NO_REGIAO_IES": True, "QT_ING": True,
+                        "TAXA_EVASAO": False},
+            title=f"Top 15 Cursos EaD com Maior Taxa de Evasão — {ano_sel}",
+            labels={"TAXA_EVASAO": "Taxa de Evasão", "NO_CURSO": "",
+                    "NO_IES": "Instituição", "NO_REGIAO_IES": "Região",
+                    "QT_ING": "Ingressantes"},
+        )
+        fig.update_traces(textposition="outside",
+                          textfont=dict(size=12, color="#dddddd"))
+        fig.update_layout(
+            height=520,
+            plot_bgcolor=BG_GRAF,
+            paper_bgcolor="rgba(0,0,0,0)",
+            font=dict(family=FONTE, size=12, color="#cccccc"),
+            title_font=dict(size=15, color="#e0e0e0"),
+            coloraxis_showscale=False,
+            yaxis=dict(autorange="reversed",
+                       tickfont=dict(color=TEXTO_EIXO, size=11),
+                       gridcolor=GRID),
+            xaxis=dict(tickformat=".0%", range=[0, 1.15],
+                       tickfont=dict(color=TEXTO_EIXO, size=11),
+                       gridcolor=GRID, showgrid=True),
+            margin=dict(t=60, b=40, l=280, r=80),
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        with st.expander("Ver tabela detalhada"):
+            st.dataframe(
+                df_t[["NO_CURSO", "NO_IES", "Rede", "Grau",
+                       "NO_REGIAO_IES", "Taxa", "QT_ING"]]
+                .rename(columns={"NO_CURSO": "Curso", "NO_IES": "Instituição",
+                                  "NO_REGIAO_IES": "Região", "Taxa": "Taxa de Evasão",
+                                  "QT_ING": "Ingressantes"}),
+                use_container_width=True, hide_index=True,
+            )
+        st.caption("Nota: todos os cursos listados apresentaram taxa de evasão de 100%, "
+                   "indicando que todos os ingressantes se desvincularam no mesmo ano de ingresso. "
+                   "Esse padrão pode refletir descontinuação de oferta, migração de turma ou "
+                   "registro incorreto nos microdados.")
 
 # ── Autores ───────────────────────────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
