@@ -1,4 +1,4 @@
-# app.py — TCC Evasão EaD | Univesp 2026 — v5
+# app.py — TCC Evasão EaD | Univesp 2026 — v6
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -77,8 +77,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Carregamento de dados ──────────────────────────────────────────────────────
+_DATA_VERSION = "20260502-v6"  # atualizar sempre que os CSVs mudarem de formato
+
 @st.cache_data
-def load(nome):
+def load(nome, version=_DATA_VERSION):
     return pd.read_csv(f"streamlit_data/{nome}.csv")
 
 try:
