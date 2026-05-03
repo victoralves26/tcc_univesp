@@ -146,9 +146,13 @@ celulas.append(md("""
 
 ### Filtragem
 
-Mantemos apenas registros com ao menos 30 ingressantes no polo, para que a
+Mantemos apenas registros com ao menos 10 ingressantes no polo, para que a
 taxa de evasão calculada tenha respaldo estatístico mínimo. Também removemos
 registros com taxa ausente ou superior a 1 (inconsistências nos dados).
+
+O filtro de 10 (em vez de um valor maior) foi escolhido porque a maioria dos
+polos EaD é pequena — a média é de ~7 alunos por polo. Um filtro mais restritivo
+eliminaria mais de 95% dos registros, comprometendo a base de treino.
 
 ### Limiar de classificação
 
@@ -563,7 +567,7 @@ print("Conexao com a Analise Exploratoria (EDA):")
 print("-" * 60)
 
 conexoes = [
-    ("Prop. Jovens (<=24)",
+    ("Prop. Jovens (ate 24)",
      "EDA: cursos com publico predominantemente jovem (ate 24 anos)\\n"
      "     apresentaram as maiores taxas de evasao em ambos os anos."),
     ("Prop. ProUni",
