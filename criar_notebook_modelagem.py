@@ -160,7 +160,11 @@ a mediana do conjunto de treino (2023) como ponto de corte. Isso garante:
 """))
 
 celulas.append(code("""
-MIN_INGRESSANTES = 30
+# Mínimo de 10 ingressantes por polo.
+# O filtro de 30 reduziria o dataset para menos de 5% dos registros,
+# pois a maioria dos polos EaD é pequena (média de 7 alunos por polo).
+# Com 10, mantemos representatividade sem distorcer taxas com 1-2 alunos.
+MIN_INGRESSANTES = 10
 
 def filtrar(df):
     return df[
@@ -315,7 +319,7 @@ FEATURES_ENC = FEATURES_NUM + [c + "_ENC" for c in FEATURES_CAT]
 # Nomes legíveis para os gráficos
 NOMES = {
     "PROP_FEM":    "Prop. Feminina",
-    "PROP_JOVEM":  "Prop. Jovens (<=24)",
+    "PROP_JOVEM":  "Prop. Jovens (ate 24)",
     "PROP_FIES":   "Prop. FIES",
     "PROP_PROUNI": "Prop. ProUni",
     "REDE_ENC":    "Rede (Pub/Priv)",
@@ -522,7 +526,7 @@ celulas.append(code("""
 # Responde: "qual variavel mais influencia as previsoes do modelo, no geral?"
 
 plt.figure(figsize=(9, 5))
-shap.summary_plot(shap_values, X_test, plot_type="bar", show=False, color="steelblue")
+shap.summary_plot(shap_values, X_test, plot_type="bar", show=False)
 plt.title("Importancia das Variaveis — SHAP (XGBoost)", fontsize=13)
 plt.xlabel("Impacto medio absoluto nas previsoes")
 plt.tight_layout()
