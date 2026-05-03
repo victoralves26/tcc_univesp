@@ -581,29 +581,187 @@ for feat, descricao in conexoes:
         print(f"     {descricao}")
 """))
 
+# ── Seção 6: Abordagem alternativa — split aleatório ─────────────────────────
+celulas.append(md("""
+---
+## 6. Abordagem alternativa — Split aleatório (70% treino / 30% teste)
+
+Na abordagem anterior, usamos 2023 para treino e 2024 para teste (validação temporal).
+Aqui testamos uma estratégia diferente: combinar os dois anos em um único dataset
+e dividir aleatoriamente em 70% treino e 30% teste.
+
+**Por que testar isso?**
+- Mais dados disponíveis para treino (2023 + 2024 combinados)
+- Permite comparar se a escolha da estratégia de validação afeta os resultados
+- A comparação entre as duas abordagens é, em si, um resultado metodológico relevante
+
+**Diferença principal:**
+No split aleatório, registros de 2023 e 2024 podem aparecer tanto no treino quanto
+no teste. No split temporal, o teste só contém dados de um ano que o modelo nunca viu.
+"""))
+
+celulas.append(code("""
+from sklearn.model_selection import train_test_split
+
+# Combinar os dois anos em um único dataset
+# A coluna "ano" permite rastrear a origem de cada registro após o merge
+df23_v2 = df23.copy()
+df23_v2["ano"] = 2023
+df24_v2 = df24.copy()
+df24_v2["ano"] = 2024
+
+df_all = pd.concat([df23_v2, df24_v2], ignore_index=True)
+print(f"Dataset combinado: {len(df_all):,} registros")
+print(f"  2023: {(df_all['ano'] == 2023).sum():,} | 2024: {(df_all['ano'] == 2024).sum():,}")
+print(f"  Alta evasão: {df_all['TARGET'].mean():.1%}")
+"""))
+
+celulas.append(code("""
+# Aplicar o mesmo encoding nas features do dataset combinado
+for col in FEATURES_CAT:
+    df_all[col + "_ENC"] = encoders[col].transform(df_all[col].astype(str))
+
+X_all = df_all[FEATURES_ENC].fillna(0).rename(columns=NOMES)
+y_all = df_all["TARGET"]
+
+# Split aleatório estratificado — garante mesma proporção de classes em treino e teste
+X_tr2, X_te2, y_tr2, y_te2 = train_test_split(
+    X_all, y_all, test_size=0.30, random_state=42, stratify=y_all
+)
+
+print(f"Treino: {len(X_tr2):,} amostras | Alta evasão: {y_tr2.mean():.1%}")
+print(f"Teste : {len(X_te2):,} amostras | Alta evasão: {y_te2.mean():.1%}")
+"""))
+
+celulas.append(code("""
+# Treinar os mesmos quatro modelos no dataset combinado
+# Criamos novas instâncias para não interferir nos resultados anteriores
+
+modelos_v2 = {
+    "Regressao Logistica": LogisticRegression(max_iter=1000, random_state=42),
+    "Arvore de Decisao":   DecisionTreeClassifier(max_depth=5, random_state=42),
+    "Random Forest":       RandomForestClassifier(n_estimators=100, n_jobs=-1, random_state=42),
+    "XGBoost":             XGBClassifier(
+                               n_estimators=100, eval_metric="logloss",
+                               verbosity=0, random_state=42
+                           ),
+}
+
+resultados_v2, predicoes_v2 = [], {}
+
+for nome, modelo in modelos_v2.items():
+    print(f"Treinando: {nome}...")
+    res, pred, prob = avaliar(nome, modelo, X_tr2, y_tr2, X_te2, y_te2)
+    resultados_v2.append(res)
+    predicoes_v2[nome] = (pred, prob)
+
+df_res2 = pd.DataFrame(resultados_v2).set_index("Modelo")
+print("\\n--- Resultados (split aleatório 70/30) ---")
+print(df_res2.round(3).to_string())
+"""))
+
+# ── Seção 7: Comparação das abordagens ───────────────────────────────────────
+celulas.append(md("""
+---
+## 7. Comparação das abordagens de validação
+
+Comparamos os resultados das duas estratégias para cada modelo e métrica.
+"""))
+
+celulas.append(code("""
+# Tabela comparativa completa
+metricas_comp = ["Acuracia", "Precisao", "Recall", "F1-Score", "AUC-ROC"]
+
+print("=== Validação Temporal (treino 2023 / teste 2024) ===")
+print(df_res[metricas_comp].round(3).to_string())
+
+print("\\n=== Split Aleatório (70% / 30% — anos combinados) ===")
+print(df_res2[metricas_comp].round(3).to_string())
+
+# Diferença: split aleatório minus temporal
+diff = df_res2[metricas_comp] - df_res[metricas_comp]
+print("\\n=== Diferença (Split Aleatório menos Temporal) ===")
+print(diff.round(3).to_string())
+print("\\nValores positivos indicam que o split aleatório deu resultado maior.")
+"""))
+
+celulas.append(code("""
+# Visualização comparativa — AUC-ROC e F1-Score para cada modelo
+fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+
+for ax, metrica in zip(axes, ["AUC-ROC", "F1-Score"]):
+    comp = pd.DataFrame({
+        "Temporal\\n(2023 treino / 2024 teste)": df_res[metrica],
+        "Aleatório\\n(70% / 30% combinado)":     df_res2[metrica],
+    })
+    comp.plot(kind="bar", ax=ax, rot=15, color=["steelblue", "darkorange"],
+              edgecolor="white", width=0.6)
+    ax.set_ylim(0.4, 1.05)
+    ax.set_title(f"{metrica} por abordagem de validação", fontsize=12)
+    ax.set_ylabel(metrica)
+    ax.legend(fontsize=9)
+    for container in ax.containers:
+        ax.bar_label(container, fmt="%.3f", fontsize=8, padding=2)
+
+plt.suptitle("Comparação: Validação Temporal vs Split Aleatório", fontsize=13)
+plt.tight_layout()
+plt.show()
+"""))
+
+celulas.append(code("""
+# Síntese da comparação
+print("Síntese da comparação entre as abordagens:")
+print("-" * 55)
+
+for nome in df_res.index:
+    auc_temp = df_res.loc[nome, "AUC-ROC"]
+    auc_rand = df_res2.loc[nome, "AUC-ROC"]
+    diff_auc = auc_rand - auc_temp
+    sinal = "+" if diff_auc >= 0 else ""
+    print(f"  {nome:<25} Temporal: {auc_temp:.3f} | Aleatório: {auc_rand:.3f} | Dif: {sinal}{diff_auc:.3f}")
+
+print()
+print("Interpretação:")
+print("  - Se o split aleatório der resultados muito superiores, pode indicar que")
+print("    o modelo se beneficia de ver amostras 'parecidas' no treino e no teste.")
+print("  - Se os resultados forem próximos, o modelo generaliza bem entre os anos.")
+print("  - A validação temporal é mais conservadora e mais realista para uso prático.")
+"""))
+
 # ── Conclusões ────────────────────────────────────────────────────────────────
 celulas.append(md("""
 ---
-## 6. Conclusoes
+## 8. Conclusoes
+
+### Sobre a escolha da estratégia de validação
+
+A comparação entre as duas abordagens revela se os modelos dependem ou não
+de ver dados do mesmo período para ter bom desempenho.
+
+- Se os resultados do **split aleatório forem muito superiores** ao temporal,
+  significa que o modelo aproveita a similaridade entre registros de 2023 e 2024
+  que ficaram no mesmo conjunto — o que pode inflar as métricas.
+- Se os resultados forem **próximos entre as abordagens**, o modelo demonstra
+  capacidade de generalização genuína, e qualquer uma das estratégias é defensável.
+
+Para o presente trabalho, a **validação temporal** é a abordagem recomendada,
+pois simula o uso real do modelo: aprende com dados históricos e é avaliado
+em dados futuros que nunca viu.
 
 ### Sobre os modelos
 
-O pipeline seguiu a sequência: **EDA revelou padrões → Modelagem confirmou → SHAP explicou o porquê.**
-
-O XGBoost obteve o melhor desempenho (AUC-ROC mais alto), confirmando que variáveis
-identificadas na análise exploratória têm poder preditivo real sobre a taxa de evasão.
-
-A validação temporal (treino em 2023, teste em 2024) garante que o modelo não foi
-avaliado nos mesmos dados em que aprendeu — o que torna os resultados mais confiáveis.
+O XGBoost obteve o melhor desempenho em ambas as abordagens (AUC-ROC mais alto),
+confirmando que as variáveis identificadas na análise exploratória têm poder
+preditivo real sobre a taxa de evasão.
 
 ### Sobre as variáveis
 
-O SHAP confirmou que as variáveis mais relevantes para a previsão estão alinhadas
-com o que a EDA já apontava:
-- A proporção de ingressantes jovens (até 24 anos) e o tipo de apoio financeiro (ProUni)
-  aparecem consistentemente entre os principais preditores
+O SHAP confirmou que as variáveis mais relevantes estão alinhadas com o que
+a EDA já apontava:
+- A proporção de ingressantes jovens (até 24 anos) e o tipo de apoio financeiro
+  aparecem consistentemente entre os principais preditores.
 - Isso está em linha com o referencial teórico (Juliani, 2025; Silva et al., 2025),
-  que identificam idade e perfil socioeconômico como fatores associados à evasão
+  que identificam idade e perfil socioeconômico como fatores associados à evasão.
 
 ### Limitações
 
@@ -611,11 +769,9 @@ com o que a EDA já apontava:
   As previsões referem-se ao comportamento coletivo de cursos, não à probabilidade
   de um estudante específico evadir.
 - **Definição de evasão:** a taxa compara ingressantes de um ano com desvinculados
-  do mesmo ano, que podem ser de coortes anteriores. Isso é uma limitação dos
-  microdados do Censo INEP, documentada na metodologia do trabalho.
-- **Ausência de variáveis individuais:** fatores como engajamento, distância ao polo
-  e histórico acadêmico — citados na literatura como relevantes — não estão
-  disponíveis nesta base de dados.
+  do mesmo ano, que podem ser de coortes anteriores — limitação dos microdados INEP.
+- **Ausência de variáveis individuais:** fatores como engajamento e distância ao polo,
+  citados na literatura como relevantes, não estão disponíveis nesta base de dados.
 """))
 
 # =============================================================================
